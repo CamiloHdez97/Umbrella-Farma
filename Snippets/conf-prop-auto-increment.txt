@@ -1,0 +1,11 @@
+"Auto-Increment-Configuration-Property":{
+    "prefix":"conf-prop-auto-increment",
+    "body":[
+        "builder.Property(x => x.Id)",
+        "\t.IsRequired()",
+        "\t.HasAnnotation(\"MySql:ValueGenerationStrategy\", MySqlValueGenerationStrategy.IdentityColumn)",
+        "\t.HasColumnName(\"idPk\");\n",
+        "$0"
+    ],
+    "description":"Create a autoincrement configuration property"
+}

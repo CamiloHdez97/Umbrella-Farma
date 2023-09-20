@@ -1,0 +1,7 @@
+"Empty-String-Property":{
+    "prefix":"prop-empty-string",
+    "body":[
+        "public string ${1:property} { get; set; } = String.Empty;"
+    ],
+    "description":"Create a string.Empty prop"
+}

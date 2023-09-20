@@ -1,0 +1,12 @@
+"Single-Entity":{
+    "prefix":"Single-Entity",
+    "body":[
+        "using Domain.Entities.Generics;",
+        "",
+        "namespace Domain.Entities;",
+        "public class Role: BaseEntityWith${1|Int,String|}Id{",
+        "\t${2}",
+        "}"
+    ],
+    "description":"Create Simple Entity"
+},

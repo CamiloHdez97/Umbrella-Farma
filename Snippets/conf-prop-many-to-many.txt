@@ -1,0 +1,21 @@
+"many-to-many-property-configuration":{
+    "prefix":"conf-prop-many-to-many",
+    "body":[
+        "builder.HasMany(p => p.${1:PluralProperyA})",
+        "\t.WithMany(p => p.${2:PluralProperyB})",
+        "\t.UsingEntity<${3:PropertyC}>(",
+        "\t\tt => t.HasOne(j => j.${4:PropertyA})",
+        "\t\t\t.WithMany(j => j.${3:PropertyC})",
+        "\t\t\t.HasForeignKey(j => j.${4:PropertyA}Id),",
+        "\t\tt => t.HasOne(j => j.${5:PropertyB})",
+        "\t\t\t.WithMany(j => j.${3:PropertyC})",
+        "\t\t\t.HasForeignKey(j => j.${5:PropertyB}Id),",
+        "\t\tt => {//--Configurations",
+        "\t\t\tt.ToTable(\"${6:TableName}\");",
+        "\t\t\tt.HasKey(j => new{j.${4:PropertyA}Id,j.${5:PropertyB}Id});",
+        "\n\t\t\t$0"
+        "\t\t}",
+        "\t);"
+    ],
+    "description":"Create configure many to many relationship properties"
+}

@@ -1,0 +1,16 @@
+"Mapping-Class":{
+    "prefix": "Mapping-Class",
+    "body": [
+        "using Api.Dtos;",
+        "using AutoMapper;",
+        "using Domain.Entities;",
+        "namespace Api.Profiles;",
+        "public class Mapping${1:Entity}Profile: Profile{",
+        "   public Mapping${1:Entity}Profile(){",
+        "       CreateMap<${2:EntityDto},${1:Entity}>()",
+        "           .ReverseMap();",
+        "    }",
+        "}"
+    ],
+    "description": "this snipper will create a new basic profile class"
+}

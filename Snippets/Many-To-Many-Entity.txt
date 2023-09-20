@@ -1,0 +1,14 @@
+"Many-To-Many-Entity":{
+    "prefix":"Many-To-Many-Entity",
+    "body":[
+        "namespace Domain.Entities;",
+        "public class ${1:Entity}${3:PluralEntityB}{",
+        "\tpublic int ${2:EntityB}Id { get; set; }",
+        "\tpublic ${2:EntityB}? ${2:EntityB} { get; set; }",
+        "",
+        "\tpublic int ${1:Entity}Id { get; set; }",
+        "\tpublic ${1:Entity}? ${1:Entity} { get; set; }",
+        "}"
+    ],
+    "description":"Create many to many relationship."
+}

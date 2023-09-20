@@ -1,0 +1,7 @@
+"Dbset-property":{
+    "prefix":"prop-DbSet",
+    "body":[
+        "public DbSet<${1:Entity}> ${2:PluralEntity} { get; set; }"
+    ],
+    "description":"Create a DbSet property"
+}

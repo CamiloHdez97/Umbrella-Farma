@@ -1,0 +1,10 @@
+"Single-Interface":{
+    "prefix":"Single-Interface",
+    "body":[
+        "using Domain.Entities;",
+        "using Domain.Interfaces.Generics.GenericById;",
+        "\nnamespace Domain.Interfaces;",
+        "public interface I${1:Entity}Repository: IGenericRepository${2|Int,String|}Id<${1:Entity}>{}"
+    ],
+    "description":"Create a simple interfaz"
+}

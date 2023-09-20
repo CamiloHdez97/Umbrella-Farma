@@ -1,0 +1,10 @@
+"many-to-one-configuration-property":{
+    "prefix":"conf-prop-many-to-one",
+    "body":[
+        "builder.HasOne(x => x.${1:propertyA})",
+        "\t.WithMany(x => x.${2:propertyB})",
+        "\t.HasForeignKey(x => x.${1:propertyA}Id);"
+        "\n$0"
+    ],
+    "description":"create a configuration for many to one relationship property"
+}

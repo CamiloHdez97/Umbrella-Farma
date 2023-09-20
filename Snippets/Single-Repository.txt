@@ -1,0 +1,14 @@
+"Single-Repository":{
+    "prefix":"Single-Repository",
+    "body":[
+        "using Application.Repositories.Generics.GenericById;",
+        "using Domain.Entities;",
+        "using Domain.Interfaces;",
+        "using Persistence;",
+        "\nnamespace Application.Repositories;",
+        "public sealed class ${1:Entity}Repository : GenericRepository${2|Int,String|}Id<${1:Entity}>, I${1:Entity}Repository{",
+        "\tpublic ${1:Entity}Repository(DataContext context) : base(context){}",
+        "}"
+    ],
+    "description":"Create a simple Repository"
+}

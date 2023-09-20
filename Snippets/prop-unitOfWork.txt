@@ -1,0 +1,7 @@
+"UnitOfWork-Repository-property":{
+    "prefix":"prop-UnitOfWork-Repository",
+    "body":[
+        "public I${1:Property}Repository ${2:PluralProperty} => _${1:Property} ??= _${1:Property} = new ${1:Property}Repository(_Context);"
+    ],
+    "description":"Create a new singleton for UnitOfWork"
+},

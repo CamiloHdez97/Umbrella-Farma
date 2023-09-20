@@ -1,0 +1,7 @@
+"many-To-One-property":{
+    "prefix":"prop-many-to-one",
+    "body":[
+        "public IEnumerable<${1:EntityA}> ${3:PluralEntityA} { get; set; } = new HashSet<${1:EntityA}>();",
+    ],
+    "description":"create a one to many relationship property"
+}

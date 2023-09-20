@@ -1,0 +1,12 @@
+"UniqueIndex-configuration-property":{
+    "prefix":"conf-prop-uniqueIndex",
+    "body":[
+        "builder.HasIndex(p => new{",
+        "\tp.${1:property1},p.${2:property2}",
+        "})",
+        ".HasDatabaseName(\"IX_${1:property1}_${2:property2}\")",
+        ".IsUnique();\n",
+        "$0"
+    ],
+    "description":"Create a unique index"
+}

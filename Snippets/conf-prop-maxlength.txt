@@ -1,0 +1,11 @@
+"maxlength-configuration-property":{
+    "prefix":"conf-prop-maxlength",
+    "body":[
+        "builder.Property(x => x.${1:property})",
+        "\t.IsRequired()",
+        "\t.HasColumnName(\"${2:propertyName}${3:Table}\")",
+        "\t.HasMaxLength(${4|50,100,200,250|});\n",
+        "$0"
+    ],
+    "description":"create a configuration property with max lenght"
+}

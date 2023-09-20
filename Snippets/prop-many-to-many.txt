@@ -1,0 +1,8 @@
+"Many-To-Many-Property":{
+    "prefix":"prop-many-to-many",
+    "body":[
+        "public IEnumerable<${1:EntityA}> ${3:PluralEntityA} { get; set; } = new HashSet<${1:EntityA}>();",
+        "public IEnumerable<${2:EntityC}> ${4:PluralEntityC} { get; set; } = new HashSet<${2:EntityC}>();"
+    ],
+    "description":"Create many to many relationship property"
+}

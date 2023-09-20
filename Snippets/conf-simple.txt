@@ -1,0 +1,17 @@
+"Simple-Configuration":{
+    "prefix":"conf-simple",
+    "body":[
+        "using Domain.Entities;",
+        "using Microsoft.EntityFrameworkCore;",
+        "using Microsoft.EntityFrameworkCore.Metadata.Builders;",
+        "\nnamespace Persistence.Data.Configurations;",
+        "public class ${1:Entity}Configuration : IEntityTypeConfiguration<${1:Entity}>{",
+        "\tpublic void Configure(EntityTypeBuilder<${1:Entity}> builder){",
+        "\t\tbuilder.ToTable(\"${2:TableName}\");",
+        "\t\tbuilder.HasKey(x => x.Id);",
+        "\t\t$0",
+        "\t}",
+        "}"
+    ],
+    "description":"Create a simple Configuration"
+}

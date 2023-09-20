@@ -1,0 +1,8 @@
+"One-To-Many-Property":{
+    "prefix":"prop-one-to-many",
+    "body":[
+        "public ${1|int,string|} ${2:property}Id { get; set; }",
+        "public ${2:property}? ${2:property} {get;set;}"
+    ],
+    "description":"Create One to many property"
+}
