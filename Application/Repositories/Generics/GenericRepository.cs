@@ -13,7 +13,7 @@ public abstract class  GenericRepository<T> where T : BaseWithName{
         _Entities = _context.Set<T>();
     }   
 
-    public async virtual Task<T?> FindFirst(Expression<Func<T, bool>> expression){
+    public async virtual Task<T?> FindFirst(Expression<Func<T, bool>>? expression){
         if (expression is not null){
             return await _Entities.Where(expression).FirstAsync();
         }

@@ -11,7 +11,4 @@ public sealed class UserRepository : GenericRepositoryIntId<User>, IUserReposito
 
     public async Task<User?> GetUserByName(string name)=> await FindFirst(x => x.Name == name);
 
-    public override async Task<User?> FindFirst(Expression<Func<User, bool>> expression)
-    =>await _Entities.Include(x => x.Role).Where(expression).FirstOrDefaultAsync();
-
 }
