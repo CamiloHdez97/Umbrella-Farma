@@ -44,15 +44,15 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
 
     public ICityRepository Cities => _City??= new CityRepository(_Context);
 
-    public IContactCategoryRepository ContactCategory => _ContactCategory??= new ContactCategoryRepository(_Context);
+    public IContactCategoryRepository ContactCategories => _ContactCategory??= new ContactCategoryRepository(_Context);
 
-    public IContactTypeRepository ContactType => _ContactType??= new ContactTypeRepository(_Context);
+    public IContactTypeRepository ContactTypes => _ContactType??= new ContactTypeRepository(_Context);
 
-    public ICountryRepository Country => _Country??= new CountryRepository(_Context);
+    public ICountryRepository Countries => _Country??= new CountryRepository(_Context);
 
-    public IDepartmentRepository Department => _Department??= new DepartmentRepository(_Context);
+    public IDepartmentRepository Departments => _Department??= new DepartmentRepository(_Context);
 
-    public IDocumentTypeRepository DocumentType => _DocumentType??= new DocumentTypeRepository(_Context);
+    public IDocumentTypeRepository DocumentTypes => _DocumentType??= new DocumentTypeRepository(_Context);
 
     public IEmployeeRepository Employees => _Employee??= new EmployeeRepository(_Context);
 
@@ -68,7 +68,7 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
 
     public IMedicineInfoRepository MedicineInfos => _MedicineInfo??= new MedicineInfoRepository(_Context);
 
-    public IMedicinePresentationRepository MedicinePresentation => _MedicinePresentation??= new MedicinePresentationRepository(_Context);
+    public IMedicinePresentationRepository MedicinePresentations => _MedicinePresentation??= new MedicinePresentationRepository(_Context);
 
     public IPersonRepository Person => _Person??= new PersonRepository(_Context);
 

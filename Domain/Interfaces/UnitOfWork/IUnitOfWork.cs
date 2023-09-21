@@ -3,11 +3,11 @@ public interface IUnitOfWork{
     IAddressRepository Addresses { get; }
     IChargeRepository Charges { get; }
     ICityRepository Cities { get; }
-    IContactCategoryRepository ContactCategory { get; }
-    IContactTypeRepository ContactType { get; }
-    ICountryRepository Country { get; }
-    IDepartmentRepository Department { get; }
-    IDocumentTypeRepository DocumentType { get; }
+    IContactCategoryRepository ContactCategories { get; }
+    IContactTypeRepository ContactTypes { get; }
+    ICountryRepository Countries { get; }
+    IDepartmentRepository Departments { get; }
+    IDocumentTypeRepository DocumentTypes { get; }
     IEmployeeRepository Employees { get; }
     IEpsTypeRepository EpsTypes { get; }
     IInventoryRepository Inventories { get; }    
@@ -15,7 +15,7 @@ public interface IUnitOfWork{
     IMedicineBrandRepository MedicineBrands { get; }
     IMedicineCategoryRepository MedicineCategories { get; }
     IMedicineInfoRepository MedicineInfos { get; }
-    IMedicinePresentationRepository MedicinePresentation { get; }
+    IMedicinePresentationRepository MedicinePresentations { get; }
     IPersonRepository Person { get; }
     IRecipeRepository Recipes { get; }
     IRoleRepository Roles { get; }    
