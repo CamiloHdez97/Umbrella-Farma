@@ -6,7 +6,7 @@ using Persistence;
 namespace Application.Repositories;
 public sealed class SupplierTypeRepository : GenericRepositoryIntId<SupplierType>, ISupplierTypeRepository{
     public SupplierTypeRepository(DataContext context) : base(context){}
-    protected override bool PaginateExpression(State entity, string search){
+    protected override bool PaginateExpression(SupplierType entity, string search){
         return entity.Name.Trim().StartsWith(search);
     }
 }
