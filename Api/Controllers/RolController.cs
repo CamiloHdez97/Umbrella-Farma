@@ -23,20 +23,20 @@ public class RoleController : BaseApiController{
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IEnumerable<RolDto>> Get(){
+    public async Task<IEnumerable<RoleDto>> Get(){
        var records = await _UnitOfWork.Roles.FindFirst(null);
-       return _Mapper.Map<List<RolDto>>(records);
+       return _Mapper.Map<List<RoleDto>>(records);
     }
 
     [HttpGet]
     [MapToApiVersion("1.1")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Pager<RolXUserDtos>>> Get11([FromQuery]Params conf){
+    public async Task<ActionResult<Pager<RoleXUserDtos>>> Get11([FromQuery]Params conf){
         var param = new Param(conf);
         IEnumerable<Role>? records = await _UnitOfWork.Roles.GetAllAsync(param);
-        var recordDtos = _Mapper.Map<List<RolXUserDtos>>(records);
-        IPager<RolXUserDtos> pager = new Pager<RolXUserDtos>(recordDtos, records?.Count(), param);
+        var recordDtos = _Mapper.Map<List<RoleXUserDtos>>(records);
+        IPager<RoleXUserDtos> pager = new Pager<RoleXUserDtos>(recordDtos, records?.Count(), param);
         return Ok(pager);
     }
 /* 
@@ -53,18 +53,18 @@ public class RoleController : BaseApiController{
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<RolXUserDtos>> Get(int id){
+    public async Task<ActionResult<RoleXUserDtos>> Get(int id){
        var record = await _UnitOfWork.Roles.GetByIdAsync(id);
        if (record == null){
            return NotFound();
        }
-       return _Mapper.Map<RolXUserDtos>(record);
+       return _Mapper.Map<RoleXUserDtos>(record);
     }
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<RolDto>> Post(RolDto recordDto){
+    public async Task<ActionResult<RoleDto>> Post(RoleDto recordDto){
        var record = _Mapper.Map<Role>(recordDto);
        _UnitOfWork.Roles.Add(record);
        await _UnitOfWork.SaveChanges();
@@ -79,7 +79,7 @@ public class RoleController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<RolDtoWithId>> Put([FromBody]RolDtoWithId? recordDto){
+    public async Task<ActionResult<RoleDtoWithId>> Put([FromBody]RoleDtoWithId? recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<Role>(recordDto);

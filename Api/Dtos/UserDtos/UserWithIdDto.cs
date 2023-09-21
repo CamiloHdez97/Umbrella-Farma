@@ -1,4 +1,4 @@
 namespace Api.Dtos;
-public class RolDtoWithId: RolDto{
+public class UserWithIdDto: UserDataDto{
     public int Id { get; set; }
 }

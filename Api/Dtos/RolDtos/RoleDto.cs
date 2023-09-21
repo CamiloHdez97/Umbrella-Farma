@@ -1,4 +1,4 @@
 namespace Api.Dtos;
-public class RolDto{
+public class RoleDto{
     public string Description { get; set; } = null!;
 }
