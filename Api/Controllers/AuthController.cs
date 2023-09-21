@@ -73,7 +73,7 @@ public class AuthController:BaseApiController{
         //-Create Response menssage
         userData.Message = "Ok";
         userData.IsAuthenticated = true;
-        userData.Username = user.Name;
+        userData.Username = user.UserName;
         userData.Email = user.Email!;
         userData.AccessToken = _TokenManager.CreateAccessToken(user);
         userData.RefreshToken = _TokenManager.CreateRefreshToken();
@@ -90,7 +90,7 @@ public class AuthController:BaseApiController{
     }
 
     [HttpPost("changeRol")]
-    [Authorize]
+    [Authorize(Roles = "Administator")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> ChangeRolAsync(AddRol model){
@@ -115,7 +115,7 @@ public class AuthController:BaseApiController{
         //-Obtener rol solicitado
         Role? existingRol = await _UnitOfWork.Roles.GetRolByRoleName(model.RolName);
         if (existingRol == null){//-Validar rol
-            return BadRequest($"Rol {model.RolName} agregado a la cuenta {user.Name} de forma exitosa.");
+            return BadRequest($"Rol {model.RolName} agregado a la cuenta {user.UserName} de forma exitosa.");
         }
                 
         //-Agregar nuevo rol
@@ -126,7 +126,7 @@ public class AuthController:BaseApiController{
         }
 
         //-Retornar respuesta
-        return Ok($"Rol {model.RolName} agregado a la cuenta {user.Name} de forma exitosa.");               
+        return Ok($"Rol {model.RolName} agregado a la cuenta {user.UserName} de forma exitosa.");               
     }
 
     [HttpPost("refresh/{username}")]
@@ -143,7 +143,7 @@ public class AuthController:BaseApiController{
         else if("Bearer " + user.RefreshToken != token){return BadRequest("refresh token invalid");}
 
         return Ok(new {
-            username = user.Name,
+            username = user.UserName,
             AccessToken = _TokenManager.CreateAccessToken(user),
             refreshToken = token
         });
