@@ -1,4 +1,4 @@
 namespace Domain.Entities.Generics;
-public class BaseEntityIdInt: BaseWithName{
+public class BaseEntityWithIntId{
     public int Id { get; set; }
 }

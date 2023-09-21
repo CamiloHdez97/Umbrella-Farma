@@ -14,24 +14,6 @@ public class DataContext: DbContext{
     
     //-Configurations
     protected override void OnModelCreating(ModelBuilder modelBuilder){  
-
-
-        modelBuilder.Entity<Role>().HasData(new[]{
-            new Role{
-                Id= 1,
-                Name = "Administrator"
-            },            
-            new Role{
-                Id= 2,
-                Name = "Manager"
-            },
-            new Role{                
-                Id= 3,
-                Name = "Employee"
-            }
-        });        
-
-
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }

@@ -136,8 +136,8 @@
         "using Domain.Entities.Generics;",
         "",
         "namespace Domain.Entities;",
-        "public class Role: BaseEntityWith${1|Int,String|}Id{",
-        "\t${2}",
+        "public class ${1:entity}: BaseEntityWith${2|Int,String|}Id{",
+        "\t${0}",
         "}"
     ],
     "description":"Create Simple Entity"

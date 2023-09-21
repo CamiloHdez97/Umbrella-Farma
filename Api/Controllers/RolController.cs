@@ -34,7 +34,7 @@ public class RoleController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<Pager<RolXUserDtos>>> Get11([FromQuery]Params conf){
         var param = new Param(conf);
-        IEnumerable<Role>? records = await _UnitOfWork.Roles.GetAllAsync(null,param);
+        IEnumerable<Role>? records = await _UnitOfWork.Roles.GetAllAsync(param);
         var recordDtos = _Mapper.Map<List<RolXUserDtos>>(records);
         IPager<RolXUserDtos> pager = new Pager<RolXUserDtos>(recordDtos, records?.Count(), param);
         return Ok(pager);
