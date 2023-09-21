@@ -8,4 +8,6 @@ public class Inventory : BaseEntityWithIntId {
 
   public int MedicineInfoId { get; set; }
   public MedicineInfo MedicineInfo { get; set; }
+
+  public ICollection<Medicine> Medicines { get; set; }
 }

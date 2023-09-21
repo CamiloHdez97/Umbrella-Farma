@@ -1,6 +1,8 @@
+using Domain.Entities.Generics;
+
 namespace Domain.Entities;
 
-public class Employee {
+public class Employee: BaseEntityWithIntId{
   public int ChargeId { get;set; }
   public Charge Charge { get;set; }
   

@@ -2,7 +2,7 @@ using Domain.Entities.Generics;
 
 namespace Domain.Entities;
 
-public class Eps : BaseEntityWithIntId {
+public class Eps {
 
   public int PersonId { get; set; }
   public Person Person { get; set; }

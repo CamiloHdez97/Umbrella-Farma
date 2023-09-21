@@ -6,8 +6,8 @@ public class Medicine : BaseEntityWithIntId {
   public DateTime CreationDate { get; set; }
   public DateTime ExpirationDate { get; set; }
 
-  public int MedicineInfoId { get; set; }
-  public MedicineInfo MedicineInfo { get; set; }
+  public int InventoryId { get; set; }
+  public Inventory Inventory { get; set; }
 
   public int StateId { get; set; }
   public State State { get; set; }

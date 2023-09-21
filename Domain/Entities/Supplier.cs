@@ -2,7 +2,7 @@ using Domain.Entities.Generics;
 
 namespace Domain.Entities;
 
-public class Supplier {
+public class Supplier: BaseEntityWithIntId {
   public int SupplierTypeId { get; set; }
   public SupplierType SupplierType { get; set; }
 
