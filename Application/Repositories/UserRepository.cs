@@ -13,4 +13,18 @@ public sealed class UserRepository : GenericRepositoryIntId<User>, IUserReposito
     protected override bool PaginateExpression(User entity, string search){
         return entity.UserName.Trim().StartsWith(search);
     }
+    protected override async Task<IEnumerable<User>> GetAll(Expression<Func<User, bool>>? expression = null)
+    {
+        if (expression is not null)
+        {
+            return await _Entities
+                .Include(x => x.Role)
+                .Include(x => x.Person)
+                .Where(expression).ToListAsync();
+        }
+        return await _Entities
+            .Include(x => x.Role)
+            .Include(x => x.Person)
+            .ToListAsync();
+    }
 }
