@@ -4,7 +4,7 @@ namespace Api.Dtos;
 public class SaleDto{
   
   [Required]
-  public string SaleDate { get; set; } = String.Empty;
+  public DateTime SaleDate { get; set; }
   
   [Required]
   public int EmployeeId { get; set; }

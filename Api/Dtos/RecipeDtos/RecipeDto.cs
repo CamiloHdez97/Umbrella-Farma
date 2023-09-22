@@ -4,10 +4,10 @@ namespace Api.Dtos;
 public class RecipeDto{
     
     [Required]
-    public string RecipeDate { get; set; } = String.Empty;
+    public DateTime RecipeDate { get; set; }
     
     [Required]
-    public string ExpirationDate { get; set; } = String.Empty;
+    public DateTime ExpirationDate { get; set; }
     
     [Required]
     public string Detail { get; set; } = String.Empty;

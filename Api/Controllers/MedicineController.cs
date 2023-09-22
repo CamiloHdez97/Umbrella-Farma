@@ -58,13 +58,13 @@ public class MedicineController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<MedicineDto>> Post(MedicineDto recordDto){
-       var record = _Mapper.Map<Medicine>(recordDto);
-       _UnitOfWork.Medicines.Add(record);
-       await _UnitOfWork.SaveChanges();
-       if (record == null){
-           return BadRequest();
-       }
-       return CreatedAtAction(nameof(Post),new {id= record.Id, recordDto});
+        var record = _Mapper.Map<Medicine>(recordDto);
+        _UnitOfWork.Medicines.Add(record);
+        await _UnitOfWork.SaveChanges();
+        if (record == null){
+            return BadRequest();
+        }
+        return CreatedAtAction(nameof(Post),new {id= record.Id, recordDto});
     }
 
     [HttpPut("{id}")]

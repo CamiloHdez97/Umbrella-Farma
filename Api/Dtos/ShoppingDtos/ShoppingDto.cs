@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Api.Dtos;
 public class ShoppingDto{
     [Required]
-    public string ShoppingDate { get; set; } = String.Empty;
+    public DateTime ShoppingDate { get; set; }
     [Required]
     public int SupplierId { get; set; }
     [Required]

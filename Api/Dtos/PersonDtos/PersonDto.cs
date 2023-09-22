@@ -7,10 +7,10 @@ public class PersonDto{
     public string Name { get; set; } = String.Empty;
         
     [Required]
-    public string RegisterDate { get; set; } = String.Empty;
+    public DateTime RegisterDate { get; set; }
     
     [Required]
-    public string BirthDate { get; set; } = String.Empty;
+    public DateTime BirthDate { get; set; }
 
     [Required]
     public int TypePersonId { get; set; }
