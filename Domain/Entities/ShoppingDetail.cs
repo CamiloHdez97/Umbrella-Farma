@@ -1,4 +1,3 @@
-
 namespace Domain.Entities;
 
 public class ShoppingDetail{

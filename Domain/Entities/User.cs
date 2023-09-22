@@ -1,8 +1,7 @@
 using Domain.Entities.Generics;
 
 namespace Domain.Entities;
-public class User: BaseEntityWithIntId{
-
+public class User: BaseEntityWithIntId {
     public string UserName { get; set; } 
     public string Password { get; set; } = String.Empty;
     public string Email { get; set; } = String.Empty;

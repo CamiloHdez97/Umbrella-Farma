@@ -10,5 +10,7 @@ public class Employee: BaseEntityWithIntId{
   public Person Person { get; set; }
 
   public ICollection<Sale> Sales {get; set;}
+  public ICollection<Shopping> Shoppings { get; set; }
+  public ICollection<EpsEmployee> EpsEmployees {get; set;}
 
 }

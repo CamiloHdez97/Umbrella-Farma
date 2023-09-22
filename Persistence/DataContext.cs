@@ -18,6 +18,7 @@ public class DataContext: DbContext{
     public DbSet<Department> Departments { get; set; }
     public DbSet<DocumentType> DocumentTypes { get; set; }
     public DbSet<Employee> Employees { get; set; }
+    public ICollection<EpsEmployee> EpsEmployees {get; set;}
     public DbSet<EpsType> EpsTypes { get; set; }
     public DbSet<Inventory> Inventories { get; set; }
     public DbSet<Medicine> Medicines { get; set; }
@@ -25,14 +26,14 @@ public class DataContext: DbContext{
     public DbSet<MedicineCategory> MedicineCategories { get; set; }
     public DbSet<MedicineInfo> MedicineInfos { get; set; }
     public DbSet<MedicinePresentation> MedicinePresentations { get; set; }
-    public DbSet<Person> Person { get; set; }
+    public DbSet<Person> Persons { get; set; }
+    public DbSet<PersonType> PersonTypes { get; set; }
     public DbSet<Recipe> Recipes { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<Sale> Sales { get; set; }
     public DbSet<Shopping> Shoppings { get; set; }
     public DbSet<State> States { get; set; }
     public DbSet<SupplierType> SupplierTypes { get; set; }
-    public DbSet<TypePerson> TypesPerson { get; set; }
     public DbSet<User> Users { get; set; }
     
     //-Configurations
