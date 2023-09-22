@@ -30,7 +30,7 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
     private IShoppingRepository? _Shopping;
     private IStateRepository? _State;
     private ISupplierTypeRepository? _SupplierType;
-    private ITypePersonRepository? _TypePerson;
+    private IPersonTypeRepository? _PersonType;
 
     public UnitOfWork(DataContext context)=>_Context = context;
 
@@ -82,7 +82,8 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
 
     public ISupplierTypeRepository SupplierTypes => _SupplierType??= new SupplierTypeRepository(_Context);
 
-    public ITypePersonRepository TypesPerson => _TypePerson??= new TypePersonRepository(_Context);
+    public IPersonTypeRepository PersonTypes => _PersonType??= new PersonTypeRepository(_Context);
+
 
     //-Other Properties
     public void Dispose()=> _Context.Dispose();

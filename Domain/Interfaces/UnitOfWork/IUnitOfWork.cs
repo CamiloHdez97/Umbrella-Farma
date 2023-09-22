@@ -23,7 +23,7 @@ public interface IUnitOfWork{
     IShoppingRepository Shoppings { get; }
     IStateRepository States { get; }
     ISupplierTypeRepository SupplierTypes { get; }
-    ITypePersonRepository TypesPerson { get; }
+    IPersonTypeRepository PersonTypes { get; }
     IUserRepository Users { get; }   
 
     Task<int> SaveChanges();

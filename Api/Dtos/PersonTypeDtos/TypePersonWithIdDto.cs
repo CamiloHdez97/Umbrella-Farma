@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 namespace Api.Dtos;
-public class TypePersonWithIdDto: TypePersonDto{
+public class PersonTypeWithIdDto: PersonTypeDto{
     [Required]
     public int Id { get; set; }  
 }

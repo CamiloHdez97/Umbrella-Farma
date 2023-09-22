@@ -72,7 +72,7 @@ public class CategoryMedicineController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<MedicineCategoryDto>> Put(int id, [FromBody]MedicineCategoryDto? recordDto){
+    public async Task<ActionResult<MedicineCategoryDto>> Put(int id, [FromBody]MedicineCategoryDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<MedicineCategory>(recordDto);

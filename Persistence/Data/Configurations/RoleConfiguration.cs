@@ -15,7 +15,7 @@ public class RoleConfiguration : IEntityTypeConfiguration<Role>{
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("idPk");
         
-        builder.Property(x => x.Name)
+        builder.Property(x => x.Description)
             .IsRequired()
             .HasColumnName("descriptionRole")
             .HasMaxLength(100);                                

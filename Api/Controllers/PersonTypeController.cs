@@ -24,9 +24,9 @@ public class TypePersonController : BaseApiController{
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IEnumerable<TypePersonDto>> Get(){
-       var records = await _UnitOfWork.TypesPerson.GetAllAsync();
-       return _Mapper.Map<List<TypePersonDto>>(records);
+    public async Task<IEnumerable<PersonTypeDto>> Get(){
+       var records = await _UnitOfWork.PersonTypes.GetAllAsync();
+       return _Mapper.Map<List<PersonTypeDto>>(records);
     }
 
     [HttpGet("{id}")]
@@ -35,7 +35,7 @@ public class TypePersonController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<TypePersonWithIdDto>> Get(int id){
-       var record = await _UnitOfWork.TypesPerson.GetByIdAsync(id);
+       var record = await _UnitOfWork.PersonTypes.GetByIdAsync(id);
        if (record == null){
            return NotFound();
        }
@@ -46,20 +46,20 @@ public class TypePersonController : BaseApiController{
     [MapToApiVersion("1.1")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Pager<TypePersonDto>>> Get11([FromQuery] Params conf){
+    public async Task<ActionResult<Pager<PersonTypeDto>>> Get11([FromQuery] Params conf){
        var param = new Param(conf);
-       var records = await _UnitOfWork.TypesPerson.GetAllAsync(param);
-       var recordDtos = _Mapper.Map<List<TypePersonDto>>(records);
-       IPager<TypePersonDto> pager = new Pager<TypePersonDto>(recordDtos,records?.Count(),param) ;
+       var records = await _UnitOfWork.PersonTypes.GetAllAsync(param);
+       var recordDtos = _Mapper.Map<List<PersonTypeDto>>(records);
+       IPager<PersonTypeDto> pager = new Pager<PersonTypeDto>(recordDtos,records?.Count(),param) ;
        return Ok(pager);
     }
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<TypePersonDto>> Post(TypePersonDto recordDto){
-       var record = _Mapper.Map<TypePerson>(recordDto);
-       _UnitOfWork.TypesPerson.Add(record);
+    public async Task<ActionResult<PersonTypeDto>> Post(PersonTypeDto recordDto){
+       var record = _Mapper.Map<PersonType>(recordDto);
+       _UnitOfWork.PersonTypes.Add(record);
        await _UnitOfWork.SaveChanges();
        if (record == null){
            return BadRequest();
@@ -72,12 +72,12 @@ public class TypePersonController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<TypePersonDto>> Put(int id, [FromBody]TypePersonDto? recordDto){
+    public async Task<ActionResult<PersonTypeDto>> Put(int id, [FromBody]PersonTypeDto? recordDto){
        if(recordDto == null)
            return NotFound();
-       var record = _Mapper.Map<TypePerson>(recordDto);
+       var record = _Mapper.Map<PersonType>(recordDto);
        record.Id = id;
-       _UnitOfWork.TypesPerson.Update(record);
+       _UnitOfWork.PersonTypes.Update(record);
        await _UnitOfWork.SaveChanges();
        return recordDto;
     }
@@ -87,11 +87,11 @@ public class TypePersonController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(int id){
-       var record = await _UnitOfWork.TypesPerson.GetByIdAsync(id);
+       var record = await _UnitOfWork.PersonTypes.GetByIdAsync(id);
        if(record == null){
            return NotFound();
        }
-       _UnitOfWork.TypesPerson.Remove(record);
+       _UnitOfWork.PersonTypes.Remove(record);
        await _UnitOfWork.SaveChanges();
        return NoContent();
     }
