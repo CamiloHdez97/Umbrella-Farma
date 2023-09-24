@@ -1,5 +1,3 @@
-using Domain.Entities.Generics;
-
 namespace Domain.Entities;
 
 public class Recipe : BaseEntityWithStringId {
