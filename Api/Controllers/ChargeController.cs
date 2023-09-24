@@ -72,7 +72,7 @@ public class ChargeController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<ChargeDto>> Put(int id, [FromBody]ChargeDto? recordDto){
+    public async Task<ActionResult<ChargeDto>> Put(int id, [FromBody]ChargeDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<Charge>(recordDto);

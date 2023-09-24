@@ -72,7 +72,7 @@ public class TypePersonController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<PersonTypeDto>> Put(int id, [FromBody]PersonTypeDto? recordDto){
+    public async Task<ActionResult<PersonTypeDto>> Put(int id, [FromBody]PersonTypeDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<PersonType>(recordDto);

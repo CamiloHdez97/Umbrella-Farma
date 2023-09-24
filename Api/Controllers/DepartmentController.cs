@@ -72,7 +72,7 @@ public class DepartmentController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<DepartmentDto>> Put(int id, [FromBody]DepartmentDto? recordDto){
+    public async Task<ActionResult<DepartmentDto>> Put(int id, [FromBody]DepartmentDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<Department>(recordDto);

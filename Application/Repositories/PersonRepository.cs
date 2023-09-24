@@ -11,7 +11,7 @@ public sealed class PersonRepository : GenericRepositoryIntId<Person>, IPersonRe
     protected override bool PaginateExpression(Person entity, string search){
         return entity.Name.Trim().StartsWith(search);
     }
-    protected override async Task<IEnumerable<Person>> GetAll(Expression<Func<Person, bool>>? expression = null)
+    protected override async Task<IEnumerable<Person>> GetAll(Expression<Func<Person, bool>> expression = null)
     {
         if (expression is not null)
         {

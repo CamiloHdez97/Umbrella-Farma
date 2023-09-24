@@ -72,7 +72,7 @@ public class ShoppingController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<ShoppingDto>> Put(int id, [FromBody]ShoppingDto? recordDto){
+    public async Task<ActionResult<ShoppingDto>> Put(int id, [FromBody]ShoppingDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<Shopping>(recordDto);

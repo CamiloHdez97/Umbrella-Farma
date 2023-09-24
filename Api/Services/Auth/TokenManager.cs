@@ -62,9 +62,14 @@ public sealed class TokenManager : ITokenManager{
         var claims = new List<Claim>(){
             new(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
             new(ClaimTypes.Name,user.UserName),
-            new(ClaimTypes.Email,user.Email!),
-            new(ClaimTypes.Role,user.Role!.Description)
+            new(ClaimTypes.Email,user.Email!),            
         };
+
+        foreach (var role in user.Roles){
+            claims.Add(
+                new(ClaimTypes.Role,role.Description)
+            );            
+        }
 
         var date = new DateTime();
         date = DateTime.Now.AddMinutes(_AccessTokenDuration);

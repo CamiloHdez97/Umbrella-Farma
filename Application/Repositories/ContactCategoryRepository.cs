@@ -11,7 +11,7 @@ public sealed class ContactCategoryRepository : GenericRepositoryIntId<ContactCa
     protected override bool PaginateExpression(ContactCategory entity, string search){
         return entity.Name.Trim().StartsWith(search);
     }
-    protected override async Task<IEnumerable<ContactCategory>> GetAll(Expression<Func<ContactCategory, bool>>? expression = null)
+    protected override async Task<IEnumerable<ContactCategory>> GetAll(Expression<Func<ContactCategory, bool>> expression = null)
     {
         if (expression is not null)
         {

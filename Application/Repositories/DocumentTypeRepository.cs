@@ -12,7 +12,7 @@ public sealed class DocumentTypeRepository : GenericRepositoryIntId<DocumentType
         return entity.Description.Trim().StartsWith(search);
     }
 
-    protected override async Task<IEnumerable<DocumentType>> GetAll(Expression<Func<DocumentType, bool>>? expression = null)
+    protected override async Task<IEnumerable<DocumentType>> GetAll(Expression<Func<DocumentType, bool>> expression = null)
     {
         if (expression is not null)
         {

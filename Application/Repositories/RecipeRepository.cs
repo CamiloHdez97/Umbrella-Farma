@@ -15,7 +15,7 @@ public sealed class RecipeRepository : GenericRepositoryStringId<Recipe>, IRecip
         return true;
     }
 
-    protected override async Task<IEnumerable<Recipe>> GetAll(Expression<Func<Recipe, bool>>? expression = null)
+    protected override async Task<IEnumerable<Recipe>> GetAll(Expression<Func<Recipe, bool>> expression = null)
     {
         if (expression is not null)
         {

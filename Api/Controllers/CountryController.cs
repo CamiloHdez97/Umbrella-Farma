@@ -72,7 +72,7 @@ public class CountryController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<CountryDto>> Put(int id, [FromBody]CountryDto? recordDto){
+    public async Task<ActionResult<CountryDto>> Put(int id, [FromBody]CountryDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<Country>(recordDto);

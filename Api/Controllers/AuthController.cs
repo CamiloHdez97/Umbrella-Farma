@@ -39,7 +39,7 @@ public class AuthController:BaseApiController{
         
         var defaultRol =  (await _UnitOfWork.Roles.GetRolByRoleName( UserRoles.Employee ))!;        
         try{
-            user.Role = defaultRol;
+            user.Roles.Add(defaultRol);
             _UnitOfWork.Users.Add(user);
             await _UnitOfWork.SaveChanges();
             return Ok($"El usuario  {model.Username} ha sido registrado exitosamente");
@@ -57,7 +57,7 @@ public class AuthController:BaseApiController{
     public async Task<ActionResult> GetTokenAsync(UserLoggin model){
         TokenResponse userData = new(){IsAuthenticated = false,};
  
-        User? user = await _UnitOfWork.Users.GetUserByName(model.Username!);
+        User user = await _UnitOfWork.Users.GetUserByName(model.Username!);
 
         //-Validate User
         if (user == null){//-Validar existencia            
@@ -94,9 +94,9 @@ public class AuthController:BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> ChangeRolAsync(AddRol model){
-        User? user;
+        User user;
         try{
-            string? token = HttpContext.Request.Headers["Authorization"].FirstOrDefault() ?? throw new Exception("Invalid Token");                            
+            string token = HttpContext.Request.Headers["Authorization"].FirstOrDefault() ?? throw new Exception("Invalid Token");                            
             //-Obtener usuario                        
             user = await _UnitOfWork.Users.GetUserByName(model.Username!);
 
@@ -113,14 +113,14 @@ public class AuthController:BaseApiController{
             );
         }        
         //-Obtener rol solicitado
-        Role? existingRol = await _UnitOfWork.Roles.GetRolByRoleName(model.RolName);
+        Role existingRol = await _UnitOfWork.Roles.GetRolByRoleName(model.RolName);
         if (existingRol == null){//-Validar rol
             return BadRequest($"Rol {model.RolName} agregado a la cuenta {user.UserName} de forma exitosa.");
         }
                 
         //-Agregar nuevo rol
-        if (user.Role == existingRol){
-            user.Role = existingRol;
+        if (user.Roles.Any(role => role == existingRol) ){
+            user.Roles.Add(existingRol);
             _UnitOfWork.Users.Update(user);
             await _UnitOfWork.SaveChanges();
         }
@@ -135,8 +135,8 @@ public class AuthController:BaseApiController{
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> RefreshToken(string username){        
         //-Obtener token
-        string? token = HttpContext.Request.Headers["Authorization"].FirstOrDefault() ?? throw new Exception("Invalid Token");
-        User? user = await _UnitOfWork.Users.GetUserByName(username);
+        string token = HttpContext.Request.Headers["Authorization"].FirstOrDefault() ?? throw new Exception("Invalid Token");
+        User user = await _UnitOfWork.Users.GetUserByName(username);
 
         if(user == null ){return BadRequest("User not found");}
 

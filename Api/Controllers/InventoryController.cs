@@ -72,7 +72,7 @@ public class InventoryController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<InventoryDto>> Put(int id, [FromBody]InventoryDto? recordDto){
+    public async Task<ActionResult<InventoryDto>> Put(int id, [FromBody]InventoryDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<Inventory>(recordDto);

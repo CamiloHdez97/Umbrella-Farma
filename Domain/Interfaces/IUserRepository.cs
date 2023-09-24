@@ -3,5 +3,5 @@ using Domain.Interfaces.Generics.GenericById;
 
 namespace Domain.Interfaces;
 public interface IUserRepository: IGenericRepositoryIntId<User>{
-    Task<User?> GetUserByName(string name);
+    Task<User> GetUserByName(string name);
 }

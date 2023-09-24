@@ -13,7 +13,7 @@ public sealed class DepartmentRepository : GenericRepositoryIntId<Department>, I
         return entity.Name.Trim().StartsWith(search);
     }
 
-    protected override async Task<IEnumerable<Department>> GetAll(Expression<Func<Department, bool>>? expression = null)
+    protected override async Task<IEnumerable<Department>> GetAll(Expression<Func<Department, bool>> expression = null)
     {
         if (expression is not null)
         {

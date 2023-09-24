@@ -72,7 +72,7 @@ public class SupplierTypeController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<SupplierTypeDto>> Put(int id, [FromBody]SupplierTypeDto? recordDto){
+    public async Task<ActionResult<SupplierTypeDto>> Put(int id, [FromBody]SupplierTypeDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<SupplierType>(recordDto);

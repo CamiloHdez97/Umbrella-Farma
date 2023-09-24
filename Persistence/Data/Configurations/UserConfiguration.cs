@@ -44,23 +44,21 @@ public class UserConfiguration : IEntityTypeConfiguration<User>{
         .IsUnique();
         
         //-Relations
-        builder.HasOne(x => x.Roles)
+        builder.HasMany(x => x.Roles)
             .WithMany(r => r.Users) 
             .UsingEntity<UserRol>(
                 j => j
                 .HasOne(pt => pt.Role)
                 .WithMany(t => t.UserRols)
                 .HasForeignKey(ut => ut.RoleId),
-
-
                 j => j
                 .HasOne(et => et.User)
                 .WithMany(et => et.UserRols)
-                .HasForeignKey(el => el.RoleId),
+                .HasForeignKey(el => el.UserId),
 
                 j =>
                 {
-                    j.HasKey(t => new { t.Id, t.Id });
+                    j.HasKey(t => new { t.UserId, t.RoleId });
            }); 
     }
 }

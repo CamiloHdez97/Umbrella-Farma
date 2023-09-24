@@ -11,7 +11,7 @@ public sealed class EpsTypeRepository : GenericRepositoryIntId<EpsType>, IEpsTyp
     protected override bool PaginateExpression(EpsType entity, string search){
         return entity.Name.Trim().StartsWith(search);
     }
-    protected override async Task<IEnumerable<EpsType>> GetAll(Expression<Func<EpsType, bool>>? expression = null)
+    protected override async Task<IEnumerable<EpsType>> GetAll(Expression<Func<EpsType, bool>> expression = null)
     {
         if (expression is not null)
         {

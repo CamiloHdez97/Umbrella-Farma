@@ -72,7 +72,7 @@ public class EpsTypeController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<EpsTypeDto>> Put(int id, [FromBody]EpsTypeDto? recordDto){
+    public async Task<ActionResult<EpsTypeDto>> Put(int id, [FromBody]EpsTypeDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<EpsType>(recordDto);

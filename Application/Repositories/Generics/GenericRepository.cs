@@ -18,7 +18,7 @@ public abstract class GenericRepository<T> where T : class{
         _Entities = _context.Set<T>();
     }
 
-    public async virtual Task<T?> FindFirst(Expression<Func<T, bool>>? expression)
+    public async virtual Task<T> FindFirst(Expression<Func<T, bool>> expression)
     {
         if (expression is not null)
         {
@@ -34,10 +34,10 @@ public abstract class GenericRepository<T> where T : class{
     public virtual void RemoveRange(IEnumerable<T> entities) => _Entities.RemoveRange(entities);
     public virtual void Update(T entity) => _Entities.Update(entity);
 
-    public virtual async Task<IEnumerable<T>?> GetAllAsync() => await GetAll();
-    public virtual async Task<IEnumerable<T>?> GetAllAsync(Expression<Func<T, bool>> expression) => await GetAll(expression);
+    public virtual async Task<IEnumerable<T>> GetAllAsync() => await GetAll();
+    public virtual async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> expression) => await GetAll(expression);
 
-    protected virtual async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? expression = null)
+    protected virtual async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> expression = null)
     {
         if (expression is not null)
         {
@@ -46,9 +46,9 @@ public abstract class GenericRepository<T> where T : class{
         return await _Entities.ToListAsync();
     }
 
-    public virtual async Task<IEnumerable<T>?> GetAllAsync(IParam param) => await GetAllPaginated(param);
-    public virtual async Task<IEnumerable<T>?> GetAllAsync(Expression<Func<T, bool>> expression, IParam param) => await GetAllPaginated(param, expression);
-    private async Task<IEnumerable<T>> GetAllPaginated(IParam param, Expression<Func<T, bool>>? expression = null){
+    public virtual async Task<IEnumerable<T>> GetAllAsync(IParam param) => await GetAllPaginated(param);
+    public virtual async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> expression, IParam param) => await GetAllPaginated(param, expression);
+    private async Task<IEnumerable<T>> GetAllPaginated(IParam param, Expression<Func<T, bool>> expression = null){
         return (await GetAll(expression))
                 .Where(x => PaginateExpression(x,param.Search))
                 .Skip((param.PageIndex - 1) * param.PageSize)

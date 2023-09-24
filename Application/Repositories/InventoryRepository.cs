@@ -12,7 +12,7 @@ public sealed class InventoryRepository : GenericRepositoryIntId<Inventory>, IIn
         return entity.Location.Trim().StartsWith(search);
     }
 
-    protected override async Task<IEnumerable<Inventory>> GetAll(Expression<Func<Inventory, bool>>? expression = null)
+    protected override async Task<IEnumerable<Inventory>> GetAll(Expression<Func<Inventory, bool>> expression = null)
     {
         if (expression is not null)
         {

@@ -8,7 +8,7 @@ using Persistence;
 namespace Application.Repositories;
 public sealed class EmployeeRepository : GenericRepositoryIntId<Employee>, IEmployeeRepository{
     public EmployeeRepository(DataContext context) : base(context){}
-    protected override async Task<IEnumerable<Employee>> GetAll(Expression<Func<Employee, bool>>? expression = null)
+    protected override async Task<IEnumerable<Employee>> GetAll(Expression<Func<Employee, bool>> expression = null)
     {
         if (expression is not null)
         {

@@ -11,7 +11,7 @@ public sealed class SupplierTypeRepository : GenericRepositoryIntId<SupplierType
     protected override bool PaginateExpression(SupplierType entity, string search){
         return entity.Name.Trim().StartsWith(search);
     }
-    protected override async Task<IEnumerable<SupplierType>> GetAll(Expression<Func<SupplierType, bool>>? expression = null)
+    protected override async Task<IEnumerable<SupplierType>> GetAll(Expression<Func<SupplierType, bool>> expression = null)
     {
         if (expression is not null)
         {

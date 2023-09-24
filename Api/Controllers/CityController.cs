@@ -72,7 +72,7 @@ public class CityController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<CityDto>> Put(int id, [FromBody]CityDto? recordDto){
+    public async Task<ActionResult<CityDto>> Put(int id, [FromBody]CityDto recordDto){
        if(recordDto == null)
            return NotFound();
        var record = _Mapper.Map<City>(recordDto);

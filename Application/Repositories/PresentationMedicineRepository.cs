@@ -12,7 +12,7 @@ public sealed class MedicinePresentationRepository : GenericRepositoryIntId<Medi
         return entity.Name.Trim().StartsWith(search);
     }
 
-    protected override async Task<IEnumerable<MedicinePresentation>> GetAll(Expression<Func<MedicinePresentation, bool>>? expression = null)
+    protected override async Task<IEnumerable<MedicinePresentation>> GetAll(Expression<Func<MedicinePresentation, bool>> expression = null)
     {
         if (expression is not null)
         {

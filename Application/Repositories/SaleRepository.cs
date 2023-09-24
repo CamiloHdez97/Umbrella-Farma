@@ -15,7 +15,7 @@ public sealed class SaleRepository : GenericRepositoryIntId<Sale>, ISaleReposito
         return true;
     }
 
-    protected override async Task<IEnumerable<Sale>> GetAll(Expression<Func<Sale, bool>>? expression = null)
+    protected override async Task<IEnumerable<Sale>> GetAll(Expression<Func<Sale, bool>> expression = null)
     {
         if (expression is not null)
         {

@@ -12,7 +12,7 @@ public sealed class ChargeRepository : GenericRepositoryIntId<Charge>, IChargeRe
         return entity.Name.Trim().StartsWith(search);
     }
 
-    protected override async Task<IEnumerable<Charge>> GetAll(Expression<Func<Charge, bool>>? expression = null)
+    protected override async Task<IEnumerable<Charge>> GetAll(Expression<Func<Charge, bool>> expression = null)
     {
         if (expression is not null)
         {

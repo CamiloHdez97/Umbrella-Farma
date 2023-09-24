@@ -11,7 +11,7 @@ public sealed class MedicineCategoryRepository : GenericRepositoryIntId<Medicine
     protected override bool PaginateExpression(MedicineCategory entity, string search){
         return entity.Name.Trim().StartsWith(search);
     }
-    protected override async Task<IEnumerable<MedicineCategory>> GetAll(Expression<Func<MedicineCategory, bool>>? expression = null)
+    protected override async Task<IEnumerable<MedicineCategory>> GetAll(Expression<Func<MedicineCategory, bool>> expression = null)
     {
         if (expression is not null)
         {

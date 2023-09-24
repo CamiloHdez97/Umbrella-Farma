@@ -13,7 +13,7 @@ public sealed class CountryRepository : GenericRepositoryIntId<Country>, ICountr
     protected override bool PaginateExpression(Country entity, string search){
         return entity.Name.Trim().StartsWith(search);
     }
-    protected override async Task<IEnumerable<Country>> GetAll(Expression<Func<Country, bool>>? expression = null)
+    protected override async Task<IEnumerable<Country>> GetAll(Expression<Func<Country, bool>> expression = null)
     {
         if (expression is not null)
         {
