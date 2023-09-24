@@ -11,6 +11,8 @@ public class Eps : BaseEntityWithIntId {
   public EpsType EpsType { get; set; }
 
   public ICollection<Recipe> Recipes {get; set;}
+
+  //M:M employee-eps
   public ICollection<Employee> Employees {get; set;}
   public ICollection<EpsEmployee> EpsEmployees {get; set;}
 }

@@ -18,27 +18,23 @@ public sealed class PersonRepository : GenericRepositoryIntId<Person>, IPersonRe
             return await _Entities
                 .Include(x => x.PersonEps)
                 .Include(x => x.User)
-                .Include(x => x.Employees)
+                .Include(x => x.Employee)
                 .Include(x => x.DocumentType)
                 .Include(x => x.PersonType)
                 .Include(x => x.Sales)
                 .Include(x => x.Suppliers)
                 .Include(x => x.Contacts)
-                .Include(x => x.ContactType)
-                .Include(x => x.ContactCategory)
                 .Where(expression).ToListAsync();
         }
         return await _Entities
             .Include(x => x.PersonEps)
             .Include(x => x.User)
-            .Include(x => x.Employees)
+            .Include(x => x.Employee)
             .Include(x => x.DocumentType)
             .Include(x => x.PersonType)
             .Include(x => x.Sales)
             .Include(x => x.Suppliers)
             .Include(x => x.Contacts)
-            .Include(x => x.ContactType)
-            .Include(x => x.ContactCategory)           
             .ToListAsync();
     }
 }

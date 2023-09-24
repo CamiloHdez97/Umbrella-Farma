@@ -16,15 +16,11 @@ public sealed class ContactCategoryRepository : GenericRepositoryIntId<ContactCa
         if (expression is not null)
         {
             return await _Entities
-                .Include(x => x.Person)
                 .Include(x => x.Contacts)
-                .Include(x => x.ContactType)
                 .Where(expression).ToListAsync();
         }
         return await _Entities
-            .Include(x => x.Person)
             .Include(x => x.Contacts)
-            .Include(x => x.ContactType)
             .ToListAsync();
     }
 }

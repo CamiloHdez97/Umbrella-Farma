@@ -5,8 +5,5 @@ namespace Domain.Entities;
 public class ContactType : BaseEntityWithIntId {
   public string Name { get; set; }
 
-  public Person Person { get; set; } 
-  public ContactCategory ContactCategory { get; set; }
-
   public ICollection<Contact> Contacts {get;set;}
 }

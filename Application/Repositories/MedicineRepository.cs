@@ -15,15 +15,19 @@ public sealed class MedicineRepository : GenericRepositoryIntId<Medicine>, IMedi
             return await _Entities
                 .Include(x => x.Inventory)
                 .Include(x => x.State)
-                .Include(x => x.SaleDetail)
-                .Include(x => x.ShoppingDetail)
+                .Include(x => x.Sales)
+                .Include(x => x.Shoppings)
+                .Include(x => x.SaleDetails)
+                .Include(x => x.ShoppingDetails)
                 .Where(expression).ToListAsync();
         }
         return await _Entities
             .Include(x => x.Inventory)
             .Include(x => x.State)
-            .Include(x => x.SaleDetail)
-            .Include(x => x.ShoppingDetail)            
+            .Include(x => x.Sales)
+            .Include(x => x.Shoppings)
+            .Include(x => x.SaleDetails)
+            .Include(x => x.ShoppingDetails)            
             .ToListAsync();
     }
 }

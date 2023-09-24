@@ -11,5 +11,7 @@ public class Shopping : BaseEntityWithIntId {
   public int EmployeeId { get; set; }
   public Employee Employee { get; set; }
 
+  //M:M medicine-shopping
+  public ICollection<Medicine> Medicines {get; set;}
   public ICollection<ShoppingDetail> ShoppingDetails {get; set;}
 }

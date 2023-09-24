@@ -19,6 +19,38 @@ public class SaleConfiguration : IEntityTypeConfiguration<Sale>{
                 .IsRequired()
                 .HasColumnType("DateTime");
 
-        // Relations
+        builder.Property(x => x.EmployeeId)
+            .IsRequired()
+            .HasColumnName("employeeId");
+        
+        builder.Property(x => x.PersonId)
+            .IsRequired()
+            .HasColumnName("personId");
+
+        builder.HasOne(x => x.Person)
+            .WithMany(x => x.Sales)
+            .HasForeignKey(x => x.PersonId);
+
+        builder.HasOne(x => x.Employee)
+            .WithMany(x => x.Sales)
+            .HasForeignKey(x => x.EmployeeId);
+        
+        builder.HasMany(p => p.Medicines)
+            .WithMany(p => p.Sales)
+            .UsingEntity<SaleDetail>(
+                t => t.HasOne(j => j.Medicine)
+                    .WithMany(j => j.SaleDetails)
+                    .HasForeignKey(j => j.MedicineId),
+                t => t.HasOne(j => j.Sale)
+                    .WithMany(j => j.SaleDetails)
+                    .HasForeignKey(j => j.SaleId),
+                t => {//--Configurations
+                    t.ToTable("saleDetail");
+                    t.HasKey(j => new{j.MedicineId,j.SaleId});
+        
+                    
+                }
+            );
+        
     }
 }

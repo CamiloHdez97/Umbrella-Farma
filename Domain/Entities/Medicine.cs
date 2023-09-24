@@ -14,7 +14,12 @@ public class Medicine : BaseEntityWithIntId {
   public int StateId { get; set; }
   public State State { get; set; }
 
-  public ICollection<SaleDetail> SaleDetail { get; set; }
-  public ICollection<ShoppingDetail> ShoppingDetail { get; set; }
+  //M:M medicine-shopping
+  public ICollection<Shopping> Shoppings {get; set;}
+  public ICollection<ShoppingDetail> ShoppingDetails { get; set; }
+
+  //M:M medicine-sale
+  public ICollection<Sale> Sales {get; set;}
+  public ICollection<SaleDetail> SaleDetails { get; set; }
 
 }

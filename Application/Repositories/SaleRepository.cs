@@ -24,6 +24,7 @@ public sealed class SaleRepository : GenericRepositoryIntId<Sale>, ISaleReposito
                 .Include(x => x.Person)
                 .Include(x => x.Recipes)
                 .Include(x => x.SaleDetails)
+                .Include(x => x.Medicines)
                 .Where(expression).ToListAsync();
         }
         return await _Entities
@@ -31,6 +32,7 @@ public sealed class SaleRepository : GenericRepositoryIntId<Sale>, ISaleReposito
             .Include(x => x.Person)
             .Include(x => x.Recipes)
             .Include(x => x.SaleDetails)
+            .Include(x => x.Medicines)
             .ToListAsync();
     }
 }

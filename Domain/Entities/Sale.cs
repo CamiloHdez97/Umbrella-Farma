@@ -12,5 +12,8 @@ public class Sale : BaseEntityWithIntId {
   public Person Person { get; set; }
 
   public ICollection<Recipe> Recipes {get; set;}
+
+  //M:M medicine-sale
+  public ICollection<Medicine> Medicines {get; set;}
   public ICollection<SaleDetail> SaleDetails {get; set;}
 }
