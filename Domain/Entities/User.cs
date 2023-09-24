@@ -8,9 +8,11 @@ public class User: BaseEntityWithIntId {
     public string AccessToken { get; set; } = String.Empty;
     public string RefreshToken { get; set; } = String.Empty;
 
-    public int RoleId { get; set; }
-    public Role Role {get;set;}
-    
+   // public int RoleId { get; set; }
+    //public Role Role {get;set;}
+    public ICollection<Role> Roles { get; set; } = new HashSet<Role>();
     public int PersonId { get; set; }
     public Person Person {get; set; }
+
+    public ICollection<UserRol> UserRols { get; set; } 
 }
