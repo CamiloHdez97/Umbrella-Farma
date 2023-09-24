@@ -16,11 +16,11 @@ public sealed class MedicineCategoryRepository : GenericRepositoryIntId<Medicine
         if (expression is not null)
         {
             return await _Entities
-                .Include(x => x.Medicines)
+                .Include(x => x.MedicineInfos)
                 .Where(expression).ToListAsync();
         }
         return await _Entities
-            .Include(x => x.Medicines)
+            .Include(x => x.MedicineInfos)
             .ToListAsync();
     }
 }

@@ -17,11 +17,11 @@ public sealed class DocumentTypeRepository : GenericRepositoryIntId<DocumentType
         if (expression is not null)
         {
             return await _Entities
-                .Include(x => x.Person)                                
+                .Include(x => x.Persons)                                
                 .Where(expression).ToListAsync();
         }
         return await _Entities
-            .Include(x => x.Person)                        
+            .Include(x => x.Persons)                        
             .ToListAsync();
     }
 }

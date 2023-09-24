@@ -51,7 +51,7 @@ public class MappignProfiles: Profile{
             .ReverseMap();
         CreateMap<SupplierTypeDto,SupplierType>()
             .ReverseMap();
-        CreateMap<TypePersonDto,TypePerson>()
+        CreateMap<PersonTypeDto,PersonType>()
             .ReverseMap();
         CreateMap<UserDto,User>()
             .ReverseMap();
@@ -103,7 +103,7 @@ public class MappignProfiles: Profile{
             .ReverseMap();
         CreateMap<SupplierTypeWithIdDto,SupplierType>()
             .ReverseMap();
-        CreateMap<TypePersonWithIdDto,TypePerson>()
+        CreateMap<PersonTypeWithIdDto,PersonType>()
             .ReverseMap();
         CreateMap<UserWithIdDto,User>()
             .ReverseMap();

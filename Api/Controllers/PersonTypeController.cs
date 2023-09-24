@@ -34,12 +34,12 @@ public class TypePersonController : BaseApiController{
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<TypePersonWithIdDto>> Get(int id){
+    public async Task<ActionResult<PersonTypeWithIdDto>> Get(int id){
        var record = await _UnitOfWork.PersonTypes.GetByIdAsync(id);
        if (record == null){
            return NotFound();
        }
-       return _Mapper.Map<TypePersonWithIdDto>(record);
+       return _Mapper.Map<PersonTypeWithIdDto>(record);
     }
 
     [HttpGet]

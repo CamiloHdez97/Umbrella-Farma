@@ -16,11 +16,11 @@ public sealed class EpsTypeRepository : GenericRepositoryIntId<EpsType>, IEpsTyp
         if (expression is not null)
         {
             return await _Entities
-                .Include(x => x.Eps)       
+                .Include(x => x.Epss)       
                 .Where(expression).ToListAsync();
         }
         return await _Entities
-            .Include(x => x.Eps)            
+            .Include(x => x.Epss)            
             .ToListAsync();
     }
 }
