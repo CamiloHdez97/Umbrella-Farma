@@ -121,6 +121,21 @@ namespace Persistence.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "medicine_category",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_medicine_category", x => x.id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "medicine_presentation",
                 columns: table => new
                 {
@@ -218,6 +233,49 @@ namespace Persistence.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "medicineInfo",
+                columns: table => new
+                {
+                    idPk = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    description = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    price = table.Column<float>(type: "float", nullable: false),
+                    discount = table.Column<float>(type: "float", nullable: false),
+                    image = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    requiredRecipe = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    medicineBrandId = table.Column<int>(type: "int", nullable: false),
+                    medicinePresentationId = table.Column<int>(type: "int", nullable: false),
+                    medicineCategoryId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_medicineInfo", x => x.idPk);
+                    table.ForeignKey(
+                        name: "FK_medicineInfo_medicine_brand_medicineBrandId",
+                        column: x => x.medicineBrandId,
+                        principalTable: "medicine_brand",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_medicineInfo_medicine_category_medicineCategoryId",
+                        column: x => x.medicineCategoryId,
+                        principalTable: "medicine_category",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_medicineInfo_medicine_presentation_medicinePresentationId",
+                        column: x => x.medicinePresentationId,
+                        principalTable: "medicine_presentation",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "person",
                 columns: table => new
                 {
@@ -268,6 +326,29 @@ namespace Persistence.Data.Migrations
                         column: x => x.DepartmentId,
                         principalTable: "department",
                         principalColumn: "id_department",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "inventory",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    location = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    TotalStock = table.Column<int>(type: "int", maxLength: 3, nullable: false),
+                    MedicineInfoId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_inventory", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_inventory_medicineInfo_MedicineInfoId",
+                        column: x => x.MedicineInfoId,
+                        principalTable: "medicineInfo",
+                        principalColumn: "idPk",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -458,6 +539,41 @@ namespace Persistence.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Medicines",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CreationDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    ExpirationDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    InventoryId = table.Column<int>(type: "int", nullable: false),
+                    StateId = table.Column<int>(type: "int", nullable: false),
+                    MedicineInfoId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Medicines", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Medicines_States_StateId",
+                        column: x => x.StateId,
+                        principalTable: "States",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Medicines_inventory_InventoryId",
+                        column: x => x.InventoryId,
+                        principalTable: "inventory",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Medicines_medicineInfo_MedicineInfoId",
+                        column: x => x.MedicineInfoId,
+                        principalTable: "medicineInfo",
+                        principalColumn: "idPk");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "sale",
                 columns: table => new
                 {
@@ -596,117 +712,6 @@ namespace Persistence.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "inventory",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    location = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    TotalStock = table.Column<int>(type: "int", maxLength: 3, nullable: false),
-                    MedicineInfoId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_inventory", x => x.id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "medicine_category",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    MedicineInfoId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_medicine_category", x => x.id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "medicineInfo",
-                columns: table => new
-                {
-                    idPk = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    description = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    price = table.Column<float>(type: "float", nullable: false),
-                    discount = table.Column<float>(type: "float", nullable: false),
-                    image = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    requiredRecipe = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    medicineBrandId = table.Column<int>(type: "int", nullable: false),
-                    medicinePresentationId = table.Column<int>(type: "int", nullable: false),
-                    medicineCategoryId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_medicineInfo", x => x.idPk);
-                    table.ForeignKey(
-                        name: "FK_medicineInfo_medicine_brand_medicineBrandId",
-                        column: x => x.medicineBrandId,
-                        principalTable: "medicine_brand",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_medicineInfo_medicine_category_medicineCategoryId",
-                        column: x => x.medicineCategoryId,
-                        principalTable: "medicine_category",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_medicineInfo_medicine_presentation_medicinePresentationId",
-                        column: x => x.medicinePresentationId,
-                        principalTable: "medicine_presentation",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Medicines",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CreationDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ExpirationDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    InventoryId = table.Column<int>(type: "int", nullable: false),
-                    StateId = table.Column<int>(type: "int", nullable: false),
-                    MedicineInfoId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Medicines", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Medicines_States_StateId",
-                        column: x => x.StateId,
-                        principalTable: "States",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Medicines_inventory_InventoryId",
-                        column: x => x.InventoryId,
-                        principalTable: "inventory",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Medicines_medicineInfo_MedicineInfoId",
-                        column: x => x.MedicineInfoId,
-                        principalTable: "medicineInfo",
-                        principalColumn: "idPk");
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "saleDetail",
                 columns: table => new
                 {
@@ -819,11 +824,6 @@ namespace Persistence.Data.Migrations
                 column: "MedicineInfoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_medicine_category_MedicineInfoId",
-                table: "medicine_category",
-                column: "MedicineInfoId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_medicineInfo_medicineBrandId",
                 table: "medicineInfo",
                 column: "medicineBrandId");
@@ -929,30 +929,11 @@ namespace Persistence.Data.Migrations
                 name: "IX_UserRol_RoleId",
                 table: "UserRol",
                 column: "RoleId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_inventory_medicineInfo_MedicineInfoId",
-                table: "inventory",
-                column: "MedicineInfoId",
-                principalTable: "medicineInfo",
-                principalColumn: "idPk",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_medicine_category_medicineInfo_MedicineInfoId",
-                table: "medicine_category",
-                column: "MedicineInfoId",
-                principalTable: "medicineInfo",
-                principalColumn: "idPk");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_medicine_category_medicineInfo_MedicineInfoId",
-                table: "medicine_category");
-
             migrationBuilder.DropTable(
                 name: "address");
 
@@ -1023,6 +1004,9 @@ namespace Persistence.Data.Migrations
                 name: "country");
 
             migrationBuilder.DropTable(
+                name: "medicineInfo");
+
+            migrationBuilder.DropTable(
                 name: "charge");
 
             migrationBuilder.DropTable(
@@ -1032,15 +1016,6 @@ namespace Persistence.Data.Migrations
                 name: "suppliertype");
 
             migrationBuilder.DropTable(
-                name: "DocumentTypes");
-
-            migrationBuilder.DropTable(
-                name: "PersonTypes");
-
-            migrationBuilder.DropTable(
-                name: "medicineInfo");
-
-            migrationBuilder.DropTable(
                 name: "medicine_brand");
 
             migrationBuilder.DropTable(
@@ -1048,6 +1023,12 @@ namespace Persistence.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "medicine_presentation");
+
+            migrationBuilder.DropTable(
+                name: "DocumentTypes");
+
+            migrationBuilder.DropTable(
+                name: "PersonTypes");
         }
     }
 }

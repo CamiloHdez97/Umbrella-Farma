@@ -22,5 +22,4 @@ public class MedicineInfo : BaseEntityWithIntId {
 
   public ICollection<Medicine> Medicines { get; set; }
   public ICollection<Inventory> Inventories { get; set; }
-  public ICollection<MedicineCategory> MedicineCategories { get; set; }
 }

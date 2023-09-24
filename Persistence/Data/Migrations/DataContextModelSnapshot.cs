@@ -420,9 +420,6 @@ namespace Persistence.Data.Migrations
                         .HasColumnName("id")
                         .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("MedicineInfoId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -430,8 +427,6 @@ namespace Persistence.Data.Migrations
                         .HasColumnName("name");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MedicineInfoId");
 
                     b.ToTable("medicine_category", (string)null);
                 });
@@ -1000,13 +995,6 @@ namespace Persistence.Data.Migrations
                     b.Navigation("State");
                 });
 
-            modelBuilder.Entity("Domain.Entities.MedicineCategory", b =>
-                {
-                    b.HasOne("Domain.Entities.MedicineInfo", null)
-                        .WithMany("MedicineCategories")
-                        .HasForeignKey("MedicineInfoId");
-                });
-
             modelBuilder.Entity("Domain.Entities.MedicineInfo", b =>
                 {
                     b.HasOne("Domain.Entities.MedicineBrand", "MedicineBrand")
@@ -1276,8 +1264,6 @@ namespace Persistence.Data.Migrations
             modelBuilder.Entity("Domain.Entities.MedicineInfo", b =>
                 {
                     b.Navigation("Inventories");
-
-                    b.Navigation("MedicineCategories");
 
                     b.Navigation("Medicines");
                 });
