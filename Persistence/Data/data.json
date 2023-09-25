@@ -1,0 +1,481 @@
+db.createCollection("Medicamentos");
+db.Medicamentos.insertMany(
+    [
+        {
+            "nombre": "Paracetamol",
+            "precio": 20,
+            "stock": 150,
+            "fechaExpiracion": ISODate("2024-06-15"),
+            "proveedor": {
+                "nombre": "ProveedorA",
+                "contacto": "contacto@proveedora.com"
+            }
+        },
+        {
+            "nombre": "Ibuprofeno",
+            "precio": 25,
+            "stock": 50,
+            "fechaExpiracion": ISODate("2024-12-01"),
+            "proveedor": {
+                "nombre": "ProveedorB",
+                "contacto": "contacto@proveedora.com"
+            }
+        },
+        {
+            "nombre": "Aspirina",
+            "precio": 15,
+            "stock": 30,
+            "fechaExpiracion": ISODate("2024-05-20"),
+            "proveedor": {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedora.com"
+            }
+        },
+        {
+            "nombre": "Amoxicilina",
+            "precio": 40,
+            "stock": 75,
+            "fechaExpiracion": ISODate("2025-08-11"),
+            "proveedor": {
+                "nombre": "ProveedorA",
+                "contacto": "contacto@proveedora.com"
+            }
+        },
+        {
+            "nombre": "Cetirizina",
+            "precio": 10,
+            "stock": 110,
+            "fechaExpiracion": ISODate("2024-01-23"),
+            "proveedor": {
+                "nombre": "ProveedorB",
+                "contacto": "contacto@proveedora.com"
+            }
+        },
+        {
+            "nombre": "Losartan",
+            "precio": 55,
+            "stock": 95,
+            "fechaExpiracion": ISODate("2024-07-30"),
+            "proveedor": {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedora.com"
+            }
+        },
+        {
+            "nombre": "Metformina",
+            "precio": 60,
+            "stock": 180,
+            "fechaExpiracion": ISODate("2024-09-29"),
+            "proveedor": {
+                "nombre": "ProveedorA",
+                "contacto": "contacto@proveedora.com"
+            }
+        },
+        {
+            "nombre": "Atorvastatina",
+            "precio": 45,
+            "stock": 200,
+            "fechaExpiracion": ISODate("2024-10-05"),
+            "proveedor": {
+                "nombre": "ProveedorB",
+                "contacto": "contacto@proveedora.com"
+            }
+        },
+        {
+            "nombre": "Clonazepam",
+            "precio": 35,
+            "stock": 25,
+            "fechaExpiracion": ISODate("2024-04-21"),
+            "proveedor": {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedora.com"
+            }
+        },
+        {
+            "nombre": "Loratadina",
+            "precio": 22,
+            "stock": 120,
+            "fechaExpiracion": ISODate("2025-02-19"),
+            "proveedor": {
+                "nombre": "ProveedorA",
+                "contacto": "contacto@proveedora.com"
+            }
+        }
+    ]
+);
+
+db.createCollection("Ventas");
+db.Ventas.insertMany(
+    [
+        {
+            "fechaVenta": ISODate("2023-01-10"),
+            "paciente": {
+                "nombre": "Juan",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Pedro",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [{
+                "nombreMedicamento": "Paracetamol",
+                "cantidadVendida": 2, "precio": 20
+            }]
+        },
+        {
+            "fechaVenta": ISODate("2023-01-15"),
+            "paciente": {
+                "nombre": "Maria",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Ana",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [
+                {
+                    "nombreMedicamento": "Ibuprofeno",
+                    "cantidadVendida": 1, "precio": 25
+                },
+                {
+                    "nombreMedicamento": "Aspirina",
+                    "cantidadVendida": 2, "precio": 15
+                }]
+        },
+        {
+            "fechaVenta": ISODate("2023-02-05"),
+            "paciente": {
+                "nombre": "Luis",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Pedro",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [{
+                "nombreMedicamento": "Amoxicilina",
+                "cantidadVendida": 1, "precio": 40
+            }]
+        },
+        {
+            "fechaVenta": ISODate("2023-02-12"),
+            "paciente": {
+                "nombre": "Elena",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Pedro",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [{
+                "nombreMedicamento": "Cetirizina",
+                "cantidadVendida": 1, "precio": 10
+            }]
+        },
+        {
+            "fechaVenta": ISODate("2023-03-10"),
+            "paciente": {
+                "nombre": "Juan",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Ana",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [{
+                "nombreMedicamento": "Losartan",
+                "cantidadVendida": 1, "precio": 55
+            }]
+        },
+        {
+            "fechaVenta": ISODate("2023-04-15"),
+            "paciente": {
+                "nombre": "Maria",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Ana",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [{
+                "nombreMedicamento": "Metformina",
+                "cantidadVendida": 1, "precio": 60
+            }]
+        },
+        {
+            "fechaVenta": ISODate("2023-05-05"),
+            "paciente": {
+                "nombre": "Sofia",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Pedro",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [{
+                "nombreMedicamento": "Atorvastatina",
+                "cantidadVendida": 1, "precio": 45
+            }]
+        },
+        {
+            "fechaVenta": ISODate("2023-05-25"),
+            "paciente": {
+                "nombre": "Elena",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Pedro",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [{
+                "nombreMedicamento": "Clonazepam",
+                "cantidadVendida": 1, "precio": 35
+            }]
+        },
+        {
+            "fechaVenta": ISODate("2023-06-10"),
+            "paciente": {
+                "nombre": "Juan",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Ana",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [{
+                "nombreMedicamento": "Loratadina",
+                "cantidadVendida": 1, "precio": 22
+            }]
+        },
+        {
+            "fechaVenta": ISODate("2023-06-30"),
+            "paciente": {
+                "nombre": "Sofia",
+                "direccion": "Calle 123"
+            },
+            "empleado": {
+                "nombre": "Ana",
+                "cargo": "Vendedor"
+            },
+            "medicamentosVendidos": [{
+                "nombreMedicamento": "Paracetamol",
+                "cantidadVendida": 2, "precio": 20
+            }]
+        }
+    ]
+);
+
+db.createCollection("Compras");
+db.Compras.insertMany(
+    [
+        {
+            "fechaCompra": ISODate("2023-01-01"),
+            "proveedor":
+            {
+                "nombre": "ProveedorA",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Paracetamol",
+                "cantidadComprada": 50,
+                "precioCompra": 15
+            }]
+        },
+        {
+            "fechaCompra": ISODate("2023-01-10"),
+            "proveedor":
+            {
+                "nombre": "ProveedorB",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Ibuprofeno",
+                "cantidadComprada": 25,
+                "precioCompra": 20
+            }]
+        },
+        {
+            "fechaCompra": ISODate("2023-02-01"),
+            "proveedor":
+            {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Aspirina",
+                "cantidadComprada": 10,
+                "precioCompra": 12
+            }]
+        },
+        {
+            "fechaCompra": ISODate("2023-02-15"),
+            "proveedor":
+            {
+                "nombre": "ProveedorA",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Amoxicilina",
+                "cantidadComprada": 30,
+                "precioCompra": 35
+            }]
+        },
+        {
+            "fechaCompra": ISODate("2023-03-05"),
+            "proveedor":
+            {
+                "nombre": "ProveedorB",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Cetirizina",
+                "cantidadComprada": 50,
+                "precioCompra": 8
+            }]
+        },
+        {
+            "fechaCompra": ISODate("2023-04-01"),
+            "proveedor":
+            {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Losartan",
+                "cantidadComprada": 40,
+                "precioCompra": 50
+            }]
+        },
+        {
+            "fechaCompra": ISODate("2023-04-20"),
+            "proveedor":
+            {
+                "nombre": "ProveedorA",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Metformina",
+                "cantidadComprada": 60,
+                "precioCompra": 55
+            }]
+        },
+        {
+            "fechaCompra": ISODate("2023-05-05"),
+            "proveedor":
+            {
+                "nombre": "ProveedorB",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Atorvastatina",
+                "cantidadComprada": 70,
+                "precioCompra": 40
+            }]
+        },
+        {
+            "fechaCompra": ISODate("2023-06-10"),
+            "proveedor":
+            {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Clonazepam",
+                "cantidadComprada": 15,
+                "precioCompra": 32
+            }]
+        },
+        {
+            "fechaCompra": ISODate("2023-06-30"),
+            "proveedor":
+            {
+                "nombre": "ProveedorA",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [{
+                "nombreMedicamento": "Loratadina",
+                "cantidadComprada": 50,
+                "precioCompra": 20
+            }]
+        }
+    ]
+
+);
+
+db.createCollection("Proveedores");
+db.Proveedores.insertMany(
+    [
+        {
+            "nombre": "ProveedorA",
+            "contacto": "contacto@proveedora.com",
+            "direccion": "Calle Proveedor 456",
+        },
+        {
+            "nombre": "ProveedorB",
+            "contacto": "contacto@proveedorb.com",
+            "direccion": "Calle Proveedor 789",
+        },
+        {
+            "nombre": "ProveedorC",
+            "contacto": "contacto@proveedorc.com",
+            "direccion": "Calle Proveedor 123",
+        }
+    ]
+);
+
+db.createCollection("Pacientes");
+db.Pacientes.insertMany(
+    [
+        {
+            "nombre": "Juan",
+            "direccion": "Calle 123",
+            "telefono": "555-1234"
+        },
+        {
+            "nombre": "Maria",
+            "direccion": "Calle 456",
+            "telefono": "555-5678"
+        },
+        {
+            "nombre": "Luis",
+            "direccion": "Calle 789",
+            "telefono": "555-9012"
+        },
+        {
+            "nombre": "Elena",
+            "direccion": "Calle 101",
+            "telefono": "555-3456"
+        },
+        {
+            "nombre": "Sofia",
+            "direccion": "Calle 112",
+            "telefono": "555-7890"
+        }
+    ]
+);
+
+db.createCollection("Empleados");
+db.Empleados.insertMany(
+    [
+        {
+            "nombre": "Pedro",
+            "cargo": "Vendedor",
+            "fechaContratacion": ISODate("2020-01-01")
+        },
+        {
+            "nombre": "Ana",
+            "cargo": "Vendedora",
+            "fechaContratacion": ISODate("2019-05-15")
+        },
+        {
+            "nombre": "Luis",
+            "cargo": "Gerente",
+            "fechaContratacion": ISODate("2018-02-10")
+        },
+        {
+            "nombre": "Sofia",
+            "cargo": "Administradora",
+            "fechaContratacion": ISODate("2021-03-01")
+        }
+    ]
+);

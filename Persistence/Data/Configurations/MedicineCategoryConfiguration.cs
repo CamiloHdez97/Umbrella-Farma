@@ -18,6 +18,19 @@ namespace Persistence.Data.Configuration{
 
             builder.Property(p => p.Name).HasColumnName("name")
             .HasColumnType("varchar").IsRequired().HasMaxLength(50);
+
+            //-NO COMPRENDO LA FUNCION DE ESTA TABLA
+            builder.HasData(
+                new{
+                    Id = 1,
+                    Name = "Legal"
+                },
+                new{
+                    Id = 2,
+                    Name = "Illegal"
+                }
+            );
+            
         }
     }
 

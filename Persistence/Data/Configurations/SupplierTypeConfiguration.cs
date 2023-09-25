@@ -18,5 +18,20 @@ public class SupplierTypeConfiguration : IEntityTypeConfiguration<SupplierType> 
             .IsRequired()
             .HasColumnName("suppliertypename")
             .HasMaxLength(50);
+
+        builder.HasData(
+            new{
+                Id=1,
+                Name = "Drugs"
+            },
+            new{
+                Id=2,
+                Name = "syrups"
+            },
+            new{
+                Id=3,
+                Name = "hallucinogens"
+            }
+        );
     }
 }

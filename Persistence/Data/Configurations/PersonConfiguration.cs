@@ -16,7 +16,7 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>{
         
         builder.Property(p => p.Name)
             .IsRequired()
-            .HasColumnName("personname")
+            .HasColumnName("Name")
             .HasMaxLength(50);
 
         builder.Property(p => p.RegisterDate)
@@ -38,6 +38,33 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>{
                 TypePersonId = 1,                
                 DocumentTypeId = 3,                
                 DocumentNumber = "0000000000",                
+            },
+            new{
+                Id=2,
+                Name = "ProveedorA",
+                RegisterDate = DateTime.Now,
+                BirthDate = DateTime.Now,
+                TypePersonId = 2,
+                DocumentTypeId = 3,                
+                DocumentNumber = "0000000001",                
+            },
+            new{
+                Id=3,
+                Name = "ProveedorB",
+                RegisterDate = DateTime.Now,
+                BirthDate = DateTime.Now,
+                TypePersonId = 2,
+                DocumentTypeId = 3,                
+                DocumentNumber = "0000000002",                
+            },
+            new{
+                Id=4,
+                Name = "ProveedorC",
+                RegisterDate = DateTime.Now,
+                BirthDate = DateTime.Now,
+                TypePersonId = 2,
+                DocumentTypeId = 3,                
+                DocumentNumber = "0000000003",                
             }
         );
     }

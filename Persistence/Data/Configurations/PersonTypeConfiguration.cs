@@ -22,7 +22,11 @@ namespace Persistence.Data.Configuration{
             builder.HasData(
                 new{
                     Id =1,
-                    Description = "Administrator"
+                    Description = "Natural"
+                },
+                new{
+                    Id = 2,
+                    Description = "Juridica"
                 }
             );
         }

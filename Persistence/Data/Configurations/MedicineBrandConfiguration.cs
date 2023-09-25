@@ -18,6 +18,37 @@ namespace Persistence.Data.Configuration{
 
             builder.Property(p => p.Name).HasColumnName("name")
             .HasColumnType("varchar").IsRequired().HasMaxLength(30);
+
+            builder.HasData(
+                new{
+                    Id=1,
+                    Name = "TQ"
+                },
+                new{
+                    Id=2,
+                    Name = "MK"
+                },
+                new{
+                    Id=3,
+                    Name = "La Sante"
+                },
+                new{
+                    Id=4,
+                    Name = "Durafex"
+                },
+                new{
+                    Id=5,
+                    Name = "Ferrer"
+                },
+                new{
+                    Id=6,
+                    Name = "Bayer"
+                },
+                new{
+                    Id=7,
+                    Name = "Genfar"
+                }
+            );
         }
     }
 

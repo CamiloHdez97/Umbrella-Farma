@@ -19,6 +19,19 @@ public class ContactCategoryConfiguration : IEntityTypeConfiguration<ContactCate
             .HasColumnName("contactcategoryname")
             .HasMaxLength(50);
 
-        // Relations 
+        builder.HasData(
+            new{
+                Id=1,
+                Name = "Email"
+            },
+            new{
+                Id=2,
+                Name = "Phone"
+            },
+            new{
+                Id=3,
+                Name = "telepathic"
+            }
+        );
     }
 }

@@ -21,9 +21,10 @@ namespace Persistence.Data.Configurations;
             .HasColumnType("date").IsRequired();
             builder.Property(p => p.ExpirationDate).HasColumnName("expiration_date")
             .HasColumnType("date").IsRequired();
-
-            builder.HasOne(e => e.MedicineInfo).WithMany(p => p.Medicines).HasForeignKey(p => p.id_medicine_info);
+            
             builder.HasOne(e => e.State).WithMany(p => p.Medicines).HasForeignKey(p => p.StateId);
+
+            builder.HasData();
 
         }
 

@@ -18,6 +18,29 @@ namespace Persistence.Data.Configuration{
 
             builder.Property(p => p.Description).HasColumnName("description")
             .HasColumnType("varchar").IsRequired().HasMaxLength(50);
+
+            builder.HasData(
+                new{
+                    Id = 1,
+                    Description = "default"
+                },
+                new{
+                    Id = 2,
+                    Description = "expired"
+                },
+                new{
+                    Id = 3,
+                    Description = "damaged"
+                },
+                new{
+                    Id = 4,
+                    Description = "Sold"
+                },
+                new{
+                    Id = 5,
+                    Description = "Returned"
+                }
+            );
         }
     }
 

@@ -19,6 +19,15 @@ public class ContactTypeConfiguration : IEntityTypeConfiguration<ContactType> {
             .HasColumnName("contacttypename")
             .HasMaxLength(50);
 
-        // Relations
+        builder.HasData(
+            new{
+                Id=1,
+                Name = "staff",
+            },
+            new{
+                Id=2,
+                Name="profesional"
+            }
+        );
     }
 }

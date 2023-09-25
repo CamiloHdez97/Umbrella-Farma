@@ -13,5 +13,20 @@ public class SupplierConfiguration : IEntityTypeConfiguration<Supplier>{
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("idPk");
+
+        builder.HasData(
+            new{
+                PersonId = 2,
+                SupplierTypeId = 1
+            },
+            new{
+                PersonId = 3,
+                SupplierTypeId = 2
+            },
+            new{
+                PersonId = 4,
+                SupplierTypeId = 3
+            }            
+        );
     }
 }
