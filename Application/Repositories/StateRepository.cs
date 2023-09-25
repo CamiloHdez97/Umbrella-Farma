@@ -9,7 +9,7 @@ namespace Application.Repositories;
 public sealed class StateRepository : GenericRepositoryIntId<State>, IStateRepository{
     public StateRepository(DataContext context) : base(context){}
     protected override bool PaginateExpression(State entity, string search){
-        return entity.Name.Trim().StartsWith(search);
+        return entity.Description.Trim().StartsWith(search);
     }
     protected override async Task<IEnumerable<State>> GetAll(Expression<Func<State, bool>> expression = null)
     {

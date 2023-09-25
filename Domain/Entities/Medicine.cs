@@ -11,6 +11,9 @@ public class Medicine : BaseEntityWithIntId {
   public int InventoryId { get; set; }
   public Inventory Inventory { get; set; }
 
+  public int id_medicine_info { get; set; }
+  public MedicineInfo MedicineInfo { get; set; }
+
   public int StateId { get; set; }
   public State State { get; set; }
 
