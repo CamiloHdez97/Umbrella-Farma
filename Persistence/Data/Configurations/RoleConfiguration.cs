@@ -18,6 +18,13 @@ public class RoleConfiguration : IEntityTypeConfiguration<Role>{
         builder.Property(x => x.Description)
             .IsRequired()
             .HasColumnName("descriptionRole")
-            .HasMaxLength(100);                                
+            .HasMaxLength(100);   
+
+        builder.HasData(
+            new{
+                Id =1,
+                Description = "Administrator"
+            }
+        );
     }
 }

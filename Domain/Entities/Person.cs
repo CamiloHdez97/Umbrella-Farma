@@ -4,10 +4,10 @@ namespace Domain.Entities;
 
 public class Person : BaseEntityWithIntId {
   public string Name { get; set; }
-  public string LastName { get; set; }
 
   public DateTime RegisterDate { get; set; }
   public DateTime BirthDate { get; set; }
+  public string DocumentNumber { get; set; }
 
   public Eps PersonEps { get; set; }//1:1 Eps
   public User User { get; set; }//1:1 User

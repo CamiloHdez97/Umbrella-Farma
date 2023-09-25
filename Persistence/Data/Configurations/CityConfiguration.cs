@@ -22,6 +22,28 @@ namespace Persistence.Data.Configurations;
 
             builder.HasOne(e => e.Department).WithMany(p => p.Cities).HasForeignKey(p => p.DepartmentId);
 
+            builder.HasData(
+                new {
+                    Id=1,
+                    Name = "Bucaramanga",
+                    DepartmentId = 1
+                },
+                new {
+                    Id=2,
+                    Name = "Florida Blanca",
+                    DepartmentId = 1
+                },
+                new {
+                    Id=3,
+                    Name = "San Gil",
+                    DepartmentId = 1
+                },
+                new {
+                    Id=4,
+                    Name = "Barichara",
+                    DepartmentId = 1
+                }
+            );
         }
 
 }

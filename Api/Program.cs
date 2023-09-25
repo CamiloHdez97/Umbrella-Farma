@@ -57,6 +57,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+using(var scope = app.Services.CreateScope()){
+    var services = scope.ServiceProvider;
+    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+    try{
+        
+        var context = services.GetRequiredService<DataContext>();
+        await context.Database.MigrateAsync();
+
+    }catch (Exception ex){
+        var logger = loggerFactory.CreateLogger<Program>();
+        logger.LogError(ex,"Ocurrio un error durante la migracion");
+    }
+}
+
 app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();

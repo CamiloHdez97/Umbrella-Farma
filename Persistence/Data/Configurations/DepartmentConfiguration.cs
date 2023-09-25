@@ -21,6 +21,13 @@ namespace Persistence.Data.Configuration{
 
             builder.HasOne(p => p.Country).WithMany(p => p.Departments).HasForeignKey(p => p.CountryId);
 
+            builder.HasData(
+                new {
+                    Id=1,
+                    Name = "Santander",
+                    CountryId = 1,                    
+                }
+            );
         }
     }
 

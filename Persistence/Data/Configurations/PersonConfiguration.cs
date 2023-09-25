@@ -19,11 +19,6 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>{
             .HasColumnName("personname")
             .HasMaxLength(50);
 
-        builder.Property(p => p.LastName)
-            .IsRequired()
-            .HasColumnName("lastname")
-            .HasMaxLength(70);
-
         builder.Property(p => p.RegisterDate)
                 .HasColumnName("registerdate")
                 .IsRequired()
@@ -34,7 +29,17 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>{
                 .IsRequired()
                 .HasColumnType("DateTime");
 
-        // Relations
+        builder.HasData(
+            new{
+                Id=1,
+                Name = "root",
+                RegisterDate = DateTime.Now,
+                BirthDate = DateTime.Now,                
+                TypePersonId = 1,                
+                DocumentTypeId = 3,                
+                DocumentNumber = "0000000000",                
+            }
+        );
     }
 }
 

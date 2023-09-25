@@ -122,6 +122,32 @@ namespace Persistence.Data.Migrations
                     b.HasIndex("DepartmentId");
 
                     b.ToTable("city", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DepartmentId = 1,
+                            Name = "Bucaramanga"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DepartmentId = 1,
+                            Name = "Florida Blanca"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DepartmentId = 1,
+                            Name = "San Gil"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DepartmentId = 1,
+                            Name = "Barichara"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Contact", b =>
@@ -208,6 +234,13 @@ namespace Persistence.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("country", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Colombia"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Department", b =>
@@ -232,20 +265,50 @@ namespace Persistence.Data.Migrations
                     b.HasIndex("CountryId");
 
                     b.ToTable("department", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CountryId = 1,
+                            Name = "Santander"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.DocumentType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar")
+                        .HasColumnName("description");
 
                     b.HasKey("Id");
 
-                    b.ToTable("DocumentTypes");
+                    b.ToTable("document_type", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "CC"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "TI"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "NIT"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Employee", b =>
@@ -365,32 +428,36 @@ namespace Persistence.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("date")
+                        .HasColumnName("creation_date");
 
                     b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("date")
+                        .HasColumnName("expiration_date");
 
                     b.Property<int>("InventoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MedicineInfoId")
+                    b.Property<int>("StateId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StateId")
+                    b.Property<int>("id_medicine_info")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("InventoryId");
 
-                    b.HasIndex("MedicineInfoId");
-
                     b.HasIndex("StateId");
 
-                    b.ToTable("Medicines");
+                    b.HasIndex("id_medicine_info");
+
+                    b.ToTable("medicine", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.MedicineBrand", b =>
@@ -523,14 +590,11 @@ namespace Persistence.Data.Migrations
                         .HasColumnType("DateTime")
                         .HasColumnName("birthdate");
 
+                    b.Property<string>("DocumentNumber")
+                        .HasColumnType("longtext");
+
                     b.Property<int>("DocumentTypeId")
                         .HasColumnType("int");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(70)
-                        .HasColumnType("varchar(70)")
-                        .HasColumnName("lastname");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -555,20 +619,44 @@ namespace Persistence.Data.Migrations
                     b.HasIndex("PersonTypeId");
 
                     b.ToTable("person", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BirthDate = new DateTime(2023, 9, 25, 9, 0, 22, 738, DateTimeKind.Local).AddTicks(8946),
+                            DocumentNumber = "0000000000",
+                            DocumentTypeId = 3,
+                            Name = "root",
+                            RegisterDate = new DateTime(2023, 9, 25, 9, 0, 22, 738, DateTimeKind.Local).AddTicks(8931),
+                            TypePersonId = 1
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.PersonType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar")
+                        .HasColumnName("description");
 
                     b.HasKey("Id");
 
-                    b.ToTable("PersonTypes");
+                    b.ToTable("person_type", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Administrator"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Recipe", b =>
@@ -625,6 +713,13 @@ namespace Persistence.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("role", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Administrator"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Sale", b =>
@@ -719,14 +814,19 @@ namespace Persistence.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar")
+                        .HasColumnName("description");
 
                     b.HasKey("Id");
 
-                    b.ToTable("States");
+                    b.ToTable("state", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Supplier", b =>
@@ -819,6 +919,15 @@ namespace Persistence.Data.Migrations
                         .HasDatabaseName("IX_Username_Email");
 
                     b.ToTable("user", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Password = "root",
+                            PersonId = 1,
+                            UserName = "root"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.UserRol", b =>
@@ -980,17 +1089,21 @@ namespace Persistence.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.MedicineInfo", null)
-                        .WithMany("Medicines")
-                        .HasForeignKey("MedicineInfoId");
-
                     b.HasOne("Domain.Entities.State", "State")
                         .WithMany("Medicines")
                         .HasForeignKey("StateId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Entities.MedicineInfo", "MedicineInfo")
+                        .WithMany("Medicines")
+                        .HasForeignKey("id_medicine_info")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Inventory");
+
+                    b.Navigation("MedicineInfo");
 
                     b.Navigation("State");
                 });

@@ -60,5 +60,15 @@ public class UserConfiguration : IEntityTypeConfiguration<User>{
                 {
                     j.HasKey(t => new { t.UserId, t.RoleId });
            }); 
+
+           builder.HasData(
+                new{
+                    Id = 1,
+                    UserName = "root",
+                    Password = "root",
+                    PersonId = 1
+                }
+
+           );
     }
 }
