@@ -22,7 +22,14 @@ public class EpsConfiguration : IEntityTypeConfiguration<Eps>{
             .HasForeignKey(p => p.EpsTypeId);
 
         builder.HasOne(p => p.Person)
+<<<<<<< HEAD
             .WithOne(m => m.PersonEps)
             .HasForeignKey<Eps>(p => p.PersonId);
+=======
+            .WithMany(m => m.Epss)
+            .HasForeignKey(p => p.PersonId);
+
+>>>>>>> 33611803cbfbb92657e716e175d861f8d03dd928
     }
+    
 }

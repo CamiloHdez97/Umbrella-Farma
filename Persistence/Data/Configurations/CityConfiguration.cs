@@ -30,9 +30,9 @@ namespace Persistence.Data.Configurations;
                 .HasColumnName("departamentIdFk");
 
             //--Relations 
-            builder.HasOne(e => e.Departament)
+            builder.HasOne(e => e.Department)
                 .WithMany(p => p.Cities)
-                .HasForeignKey(p => p.DepartamentId);
+                .HasForeignKey(p => p.DepartmentId);
 
             builder.HasData(
                 new {
