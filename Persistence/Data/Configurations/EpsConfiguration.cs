@@ -5,7 +5,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data.Configurations;
 public class EpsConfiguration : IEntityTypeConfiguration<Eps>{
-    public void Configure(EntityTypeBuilder<Eps> builder) {
+    public void Configure(EntityTypeBuilder<Eps> builder) 
+    {
         builder.ToTable("eps");
         builder.HasKey(p => p.Id);
 
