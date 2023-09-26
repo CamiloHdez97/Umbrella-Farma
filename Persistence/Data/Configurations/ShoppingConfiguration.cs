@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data.Configurations;
 public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>{
-    private Random _random = new();
+    private static readonly Random _random = new();
 
     public void Configure(EntityTypeBuilder<Shopping> builder){
         builder.ToTable("shopping");
@@ -47,36 +47,40 @@ public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>{
                     .HasForeignKey(j => j.ShoppingId),
                 t => {//--Configurations
                     t.ToTable("shoppingDetail");
-                    t.HasKey(j => new{j.MedicineId,j.ShoppingId});
-        
-                    t.HasData(
-                        ()=>{
-                            
-                            List<ShoppingDetail> ShoppingDetailsList = new();
-                            for (int i = 0; i < 100; i++){
-                                ShoppingDetailsList.Add(new ShoppingDetail{
-                                    MedicineId = _random.Next(i+100,100),
-                                    ShoppingId = _random.Next(1,16)
-                                });
-                            }
-                            return ShoppingDetailsList;
-                        }
-                    );
+                    t.HasKey(j => new{j.MedicineId,j.ShoppingId});    
+                    t.HasData(GetShoppingDetailSeed()) ;
                 }
             );
 
         builder.HasData(
-            ()=>{
-                List<Shopping> ShoppingsList = new();
-                for (int i = 0; i < 16; i++){
-                    ShoppingsList.Add(new Shopping{
-                        Id = i+1,
-                        ShoppingDate = new DateTime(2023,05,05).AddDays(_random.Next(1,365)),
-                        SupplierId = _random.Next(1,3)                         
-                    });
-                }
-                return ShoppingsList;
-            } 
-        );       
+            GetShoppingSeed()
+        );   
+        
+            
+    }
+
+     private static List<Shopping> GetShoppingSeed(){
+        List<Shopping> ShoppingsList = new();
+        for (int i = 1; i <= 16; i++){
+            ShoppingsList.Add(new Shopping{
+                Id = i,
+                ShoppingDate = new DateTime(2023,05,05).AddDays(_random.Next(1,365)),
+                EmployeeId = _random.Next(1,4),
+                SupplierId = _random.Next(1,3)
+            });
+
+        }
+        return ShoppingsList;
+            
+    }
+    private static List<ShoppingDetail> GetShoppingDetailSeed(){
+        List<ShoppingDetail> ShoppingDetailsList = new();
+        for (int i = 0; i < 100; i++){
+            ShoppingDetailsList.Add(new ShoppingDetail{                                    
+                MedicineId = _random.Next(i + 200 ,100),
+                ShoppingId = _random.Next(1,16)
+            });
+        }
+        return ShoppingDetailsList;
     }
 }

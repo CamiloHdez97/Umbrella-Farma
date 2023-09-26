@@ -41,21 +41,21 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact> {
             .HasForeignKey(p => p.ContactCategoryId);
 
         builder.HasData(
-            new{                
+            new{          
                 Description = "contacto@proveedor_a.com",
                 PersonId = 2,
                 ContactTypeId = 2,
                 ContactCategoryId = 1
             },
-            new{                
+            new{       
                 Description = "contacto@proveedor_b.com",
                 PersonId = 3,
                 ContactTypeId = 2,
                 ContactCategoryId = 1
             },
-            new{                
+            new{    
                 Description = "contacto@proveedor_c.com",
-                PersonId = 3,
+                PersonId = 4,
                 ContactTypeId = 2,
                 ContactCategoryId = 1
             }

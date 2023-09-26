@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Persistence.Data.Configurations;
 public class SaleConfiguration : IEntityTypeConfiguration<Sale>
 {
-    private Random _random = new();
+    private static readonly Random _random = new();
     public void Configure(EntityTypeBuilder<Sale> builder){
         builder.ToTable("sale");
         builder.HasKey(p => p.Id);
@@ -50,36 +50,37 @@ public class SaleConfiguration : IEntityTypeConfiguration<Sale>
                     .HasForeignKey(j => j.SaleId),
                 t => {//--Configurations
                     t.ToTable("saleDetail");
-                    t.HasKey(j => new{j.MedicineId,j.SaleId});
-
-                    t.HasData(
-                        ()=>{
-                            
-                            List<SaleDetail> SaleDetailsList = new();
-                            for (int i = 0; i < 100; i++){
-                                SaleDetailsList.Add(new SaleDetail{
-                                    MedicineId = _random.Next(i,100),
-                                    SaleId = _random.Next(1,16)
-                                });
-                            }
-                            return SaleDetailsList;
-                        }
-                    );
+                    t.HasKey(j => new{j.MedicineId,j.SaleId});                    
+                    
                 }
             );
         builder.HasData(
-            ()=>{
-                List<Sale> salesList = new();
-                for (int i = 0; i < 16; i++){
-                    salesList.Add(new Sale{
-                        Id = i+1,
-                        SaleDate = new DateTime(2023,05,05).AddDays(_random.Next(1,365)),
-                        EmployeeId = _random.Next(1,4),
-                        PersonId = _random.Next(5,11)
-                    });
-                }
-                return salesList;
-            }
+            GetSaleSeed()
         );
+    }
+
+    private static List<Sale> GetSaleSeed(){
+        List<Sale> salesList = new();
+        for (int i = 1; i <= 16; i++){
+            salesList.Add(new Sale{
+                Id = i,
+                SaleDate = new DateTime(2023,05,05).AddDays(_random.Next(1,365)),
+                EmployeeId = _random.Next(1,4),
+                PersonId = _random.Next(5,11)
+            });
+
+        }
+        return salesList;
+            
+    }
+    private static List<SaleDetail> GetSaleDetailSeed(){
+        List<SaleDetail> SaleDetailsList = new();
+        for (int i = 0; i < 100; i++){
+            SaleDetailsList.Add(new SaleDetail{                                    
+                MedicineId = _random.Next(i,100),
+                SaleId = _random.Next(1,16)
+            });
+        }
+        return SaleDetailsList;
     }
 }
