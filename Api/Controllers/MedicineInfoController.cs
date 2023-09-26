@@ -7,6 +7,7 @@ using Dominio.Interfaces.Pager;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using System.Runtime.CompilerServices;
 
 namespace ApiIncidencias.Controllers;
 [ApiVersion("1.0")]
@@ -18,6 +19,17 @@ public class MedicineInfoController : BaseApiController{
         _UnitOfWork = unitOfWork;
         _Mapper = mapper;
     }
+    
+    //*1 Obtener todos los medicamentos con menos de 50 unidades en stock
+    [HttpGet("MinStock/{minStock}")]
+    //[Authorize]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IEnumerable<object>> MinStock(int minStock){
+       return await _UnitOfWork.MedicineInfos.MedicineWithMinStock(minStock);                                                       
+    }
+    //*Fin de la consulta
 
     [HttpGet]
     //[Authorize]
