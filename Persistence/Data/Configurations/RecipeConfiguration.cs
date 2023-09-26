@@ -4,8 +4,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data.Configurations;
-public class RecipeConfiguration : IEntityTypeConfiguration<Recipe>{
-    public void Configure(EntityTypeBuilder<Recipe> builder){
+public class RecipeConfiguration : IEntityTypeConfiguration<Recipe>
+{
+    public void Configure(EntityTypeBuilder<Recipe> builder)
+    {
         builder.ToTable("recipe");
         builder.HasKey(p => p.Id);
 
@@ -30,9 +32,13 @@ public class RecipeConfiguration : IEntityTypeConfiguration<Recipe>{
             .HasColumnName("detail")
             .HasMaxLength(100);
 
+        builder.Property(p => p.SaleId)
+            .IsRequired()
+            .HasColumnName("saleIdFk");
+
         //--Relations
         builder.HasOne(p => p.Sale)
             .WithMany(m => m.Recipes)
-            .HasForeignKey(p => p.SaleId)
+            .HasForeignKey(p => p.SaleId);
     }
 }

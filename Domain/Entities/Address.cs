@@ -9,7 +9,7 @@ public class Address: BaseEntityWithIntId{
   public string NumberWay {get; set;}
   public string NumberVenereableWay {get; set;}
   public string NumberPlate {get; set;}
-  public string Description {get; set }
+  public string Description {get; set; }
   public int PersonId { get; set; }
   public Person Person { get; set; }  
   public int CityId { get; set; }

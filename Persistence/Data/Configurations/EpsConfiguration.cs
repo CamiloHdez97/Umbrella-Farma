@@ -19,10 +19,10 @@ public class EpsConfiguration : IEntityTypeConfiguration<Eps>{
         //--Relations
         builder.HasOne(p => p.EpsType)
             .WithMany(m => m.Epss)
-            .HasForeignKey(p => p.EpsTypeId)
+            .HasForeignKey(p => p.EpsTypeId);
 
         builder.HasOne(p => p.Person)
-            .WithMany(m => m.Epss)
-            .HasForeignKey(p => p.
+            .WithOne(m => m.PersonEps)
+            .HasForeignKey<Eps>(p => p.PersonId);
     }
 }

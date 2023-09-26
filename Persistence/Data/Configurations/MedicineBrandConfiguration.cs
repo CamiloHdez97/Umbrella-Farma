@@ -10,14 +10,19 @@ namespace Persistence.Data.Configuration{
         public void Configure(EntityTypeBuilder<MedicineBrand> builder)
         {
             builder.ToTable("medicine_brand");
+
+            //--Properties
             builder.Property(p => p.Id)
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasColumnName("id")
                 .HasColumnType("int")
                 .IsRequired();
 
-            builder.Property(p => p.Name).HasColumnName("name")
-            .HasColumnType("varchar").IsRequired().HasMaxLength(30);
+            builder.Property(p => p.Name)
+                .HasColumnName("name")
+                .HasColumnType("varchar")
+                .IsRequired()
+                .HasMaxLength(30);
 
             builder.HasData(
                 new{

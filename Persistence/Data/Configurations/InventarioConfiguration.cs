@@ -11,16 +11,28 @@ namespace Persistence.Data.Configuration{
         public void Configure(EntityTypeBuilder<Inventory> builder)
         {
             builder.ToTable("inventory");
+
+            //--Properties
             builder.Property(p => p.Id)
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasColumnName("id")
                 .HasColumnType("int")
                 .IsRequired();
 
-            builder.Property(p => p.Location).HasColumnName("location")
-            .HasColumnType("varchar").IsRequired().HasMaxLength(50);            
+            builder.Property(p => p.Location)
+                .HasColumnName("location")
+                .HasColumnType("varchar")
+                .IsRequired()
+                .HasMaxLength(50);
 
-            builder.HasOne(e => e.MedicineInfo).WithMany(m => m.Inventories).HasForeignKey(e => e.MedicineInfoId);
+            builder.Property(p => p.MedicineInfoId)
+                .IsRequired()
+                .HasColumnName("medicineInfoId");            
+
+            //--Relations
+            builder.HasOne(e => e.MedicineInfo)
+                .WithMany(m => m.Inventories)
+                .HasForeignKey(e => e.MedicineInfoId);
 
 
             builder.HasData(

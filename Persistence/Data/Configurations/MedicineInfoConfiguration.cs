@@ -4,65 +4,72 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data.Configurations;
-public class MedicineInfoConfiguration : IEntityTypeConfiguration<MedicineInfo>{
-    public void Configure(EntityTypeBuilder<MedicineInfo> builder){
+public class MedicineInfoConfiguration : IEntityTypeConfiguration<MedicineInfo>
+{
+    public void Configure(EntityTypeBuilder<MedicineInfo> builder)
+    {
         builder.ToTable("medicineInfo");
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id)
+
+        //--Properties
+        builder.Property(p => p.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("idPk");
-        builder.Property(x => x.Name)
+
+        builder.Property(p => p.Name)
             .IsRequired()
             .HasColumnName("name")
             .HasMaxLength(50);
         
-        builder.Property(x => x.Description)
+        builder.Property(p => p.Description)
             .IsRequired()
             .HasColumnName("description")
             .HasMaxLength(250);
         
-        builder.Property(x => x.Price)
+        builder.Property(p => p.Price)
             .IsRequired()
             .HasColumnName("price");
 
-        builder.Property(x => x.Discount)
+        builder.Property(p => p.Discount)
             .IsRequired()
             .HasColumnName("discount");
         
-        builder.Property(x => x.Image)
+        builder.Property(p => p.Image)
             .IsRequired()
             .HasColumnName("image")
             .HasMaxLength(250);
         
-        builder.Property(x => x.RequiredRecipe)
+        builder.Property(p => p.RequiredRecipe)
             .IsRequired()
             .HasColumnName("requiredRecipe");
         
-        builder.Property(x => x.MedicineBrandId)
+        builder.Property(p => p.MedicineBrandId)
             .IsRequired()
             .HasColumnName("medicineBrandId");
         
-        builder.Property(x => x.MedicinePresentationId)
+        builder.Property(p => p.MedicinePresentationId)
             .IsRequired()
             .HasColumnName("medicinePresentationId");
         
-        builder.Property(x => x.MedicineCategoryId)
+        builder.Property(p => p.MedicineCategoryId)
             .IsRequired()
             .HasColumnName("medicineCategoryId");
+
+        //--Relations
+        builder.HasOne(p => p.MedicinePresentation)
+            .WithMany(p => p.Medicines)
+            .HasForeignKey(p => p.MedicinePresentationId);
         
-        builder.HasOne(x => x.MedicinePresentation)
-            .WithMany(x => x.Medicines)
-            .HasForeignKey(x => x.MedicinePresentationId);
+        builder.HasOne(p => p.MedicineCategory)
+            .WithMany(p => p.MedicineInfos)
+            .HasForeignKey(p => p.MedicineCategoryId);
         
-        builder.HasOne(x => x.MedicineCategory)
-            .WithMany(x => x.MedicineInfos)
-            .HasForeignKey(x => x.MedicineCategoryId);
+        builder.HasOne(p => p.MedicineBrand)
+            .WithMany(p => p.MedicineInfos)
+            .HasForeignKey(p => p.MedicineBrandId);
         
-        builder.HasOne(x => x.MedicineBrand)
-            .WithMany(x => x.MedicineInfos)
-            .HasForeignKey(x => x.MedicineBrandId);
-        
+
         builder.HasData(
             new{
                 Id=1,
@@ -185,8 +192,6 @@ public class MedicineInfoConfiguration : IEntityTypeConfiguration<MedicineInfo>{
                 MedicineCategoryId =2
             }
 
-        );
-        
-                
+        );        
     }
 }

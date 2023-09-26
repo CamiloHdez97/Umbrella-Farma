@@ -26,14 +26,17 @@ public class SupplierConfiguration : IEntityTypeConfiguration<Supplier>{
         
         builder.HasData(
             new{
+                Id = 1,
                 PersonId = 2,
                 SupplierTypeId = 1
             },
             new{
+                Id = 2,
                 PersonId = 3,
                 SupplierTypeId = 2
             },
             new{
+                Id = 3,
                 PersonId = 4,
                 SupplierTypeId = 3
             }            

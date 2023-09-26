@@ -4,8 +4,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data.Configurations;
-public class PersonConfiguration : IEntityTypeConfiguration<Person>{
-    public void Configure(EntityTypeBuilder<Person> builder){
+public class PersonConfiguration : IEntityTypeConfiguration<Person>
+{
+    public void Configure(EntityTypeBuilder<Person> builder)
+    {
         builder.ToTable("person");
         builder.HasKey(p => p.Id);
 
@@ -28,7 +30,15 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>{
         builder.Property(p => p.BirthDate)
                 .HasColumnName("birthdate")
                 .IsRequired()
-                .HasColumnType("DateTime");
+                .HasColumnType("DateTime");     
+
+        builder.Property(p => p.PersonTypeId)
+            .IsRequired()
+            .HasColumnName("personTypeIdFk");
+
+        builder.Property(p => p.DocumentTypeId)
+            .IsRequired()
+            .HasColumnName("documentTypeIdFk");
 
         // --Relations  
         builder.HasOne(p => p.DocumentType)
@@ -38,6 +48,7 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>{
         builder.HasOne(p => p.PersonType)
             .WithMany(m => m.Persons)
             .HasForeignKey(p => p.PersonTypeId);
+
 
         builder.HasData(
             new{

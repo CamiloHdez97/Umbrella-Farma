@@ -10,16 +10,20 @@ namespace Persistence.Data.Configuration{
         public void Configure(EntityTypeBuilder<MedicineCategory> builder)
         {
             builder.ToTable("medicine_category");
+
+            //--Properties
             builder.Property(p => p.Id)
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasColumnName("id")
                 .HasColumnType("int")
                 .IsRequired();
 
-            builder.Property(p => p.Name).HasColumnName("name")
-            .HasColumnType("varchar").IsRequired().HasMaxLength(50);
+            builder.Property(p => p.Name)
+                .HasColumnName("name")
+                .HasColumnType("varchar")
+                .IsRequired()
+                .HasMaxLength(50);
 
-            //-NO COMPRENDO LA FUNCION DE ESTA TABLA
             builder.HasData(
                 new{
                     Id = 1,

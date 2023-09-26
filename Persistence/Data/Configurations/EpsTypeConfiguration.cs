@@ -9,6 +9,7 @@ public class EpsTypeConfiguration : IEntityTypeConfiguration<EpsType>{
         builder.ToTable("epstype");
         builder.HasKey(p => p.Id);
 
+        //--Properties
         builder.Property(p => p.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
@@ -18,7 +19,5 @@ public class EpsTypeConfiguration : IEntityTypeConfiguration<EpsType>{
             .IsRequired()
             .HasColumnName("epstypename")
             .HasMaxLength(50);
-
-        // Relations
     }
 }

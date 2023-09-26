@@ -6,14 +6,14 @@ using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 namespace Application.Repositories;
-public sealed class DepartmentRepository : GenericRepositoryIntId<Department>, IDepartmentRepository{
-    public DepartmentRepository(DataContext context) : base(context){}
+public sealed class DepartamentRepository : GenericRepositoryIntId<Departament>, IDepartmentRepository{
+    public DepartamentRepository(DataContext context) : base(context){}
 
-    protected override bool PaginateExpression(Department entity, string search){
+    protected override bool PaginateExpression(Departament entity, string search){
         return entity.Name.Trim().StartsWith(search);
     }
 
-    protected override async Task<IEnumerable<Department>> GetAll(Expression<Func<Department, bool>> expression = null)
+    protected override async Task<IEnumerable<Departament>> GetAll(Expression<Func<Departament, bool>> expression = null)
     {
         if (expression is not null)
         {

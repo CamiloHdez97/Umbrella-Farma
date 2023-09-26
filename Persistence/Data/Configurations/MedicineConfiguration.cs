@@ -8,24 +8,46 @@ namespace Persistence.Data.Configurations;
 
     public class MedicineConfiguration : IEntityTypeConfiguration<Medicine>
     {
-        public void Configure(EntityTypeBuilder<Medicine> builder){
-            
+        public void Configure(EntityTypeBuilder<Medicine> builder)
+        {
             builder.ToTable("medicine");
+
+            //--Properties
             builder.Property(p => p.Id)
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasColumnName("id")
                 .HasColumnType("int")
                 .IsRequired();
     
-            builder.Property(p => p.CreationDate).HasColumnName("creation_date")
-            .HasColumnType("date").IsRequired();
-            builder.Property(p => p.ExpirationDate).HasColumnName("expiration_date")
-            .HasColumnType("date").IsRequired();
+            builder.Property(p => p.CreationDate)
+                .HasColumnName("creation_date")
+                .HasColumnType("date")
+                .IsRequired();
+
+            builder.Property(p => p.ExpirationDate)
+                .HasColumnName("expiration_date")
+                .HasColumnType("date")
+                .IsRequired();
+
+            builder.Property(p => p.InventoryId)
+                .IsRequired()
+                .HasColumnName("inventoryIdFk");
+
+            builder.Property(p => p.StateId)
+                .IsRequired()
+                .HasColumnName("stateIdFk");
             
-            builder.HasOne(e => e.State).WithMany(p => p.Medicines).HasForeignKey(p => p.StateId);
+            //--Relations
+            builder.HasOne(p => p.State)
+                .WithMany(m => m.Medicines)
+                .HasForeignKey(p => p.StateId);
+
+            builder.HasOne(p => p.Inventory)
+                .WithMany(m => m.Medicines)
+                .HasForeignKey(p => p.InventoryId);
+
 
             builder.HasData(MedicineGenerator(200));
-
         }      
 
         private List<Medicine> MedicineGenerator(int NumberOfMedicines){
@@ -42,6 +64,5 @@ namespace Persistence.Data.Configurations;
                 data.Add(medicine);
             }
             return data;
-
         }
 }

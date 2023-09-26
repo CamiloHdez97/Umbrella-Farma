@@ -6,7 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data.Configuration{
 
-    public class DepartmentConfiguration : IEntityTypeConfiguration<Department>{
+    public class DepartmentConfiguration : IEntityTypeConfiguration<Department>
+    {
         public void Configure(EntityTypeBuilder<Department> builder)
         {
             builder.ToTable("department");
@@ -14,7 +15,7 @@ namespace Persistence.Data.Configuration{
             //--Properties
             builder.Property(p => p.Id)
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                .HasColumnName("id_department")
+                .HasColumnName("departmentid")
                 .HasColumnType("int")
                 .IsRequired();
 
