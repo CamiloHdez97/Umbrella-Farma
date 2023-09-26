@@ -39,26 +39,6 @@ public class DataContext: DbContext{
     //-Configurations
     protected override void OnModelCreating(ModelBuilder modelBuilder){  
         base.OnModelCreating(modelBuilder);
-        Random _random = new();
-                Console.WriteLine("fdjgklfdjgkdfjkl!!!!!\n\n");
-
-        /* 
-        modelBuilder.Entity<ShoppingDetail>().HasData(
-            ()=>{
-                
-                List<ShoppingDetail> ShoppingDetailsList = new();
-                for (int i = 0; i < 100; i++){
-                    ShoppingDetailsList.Add(new ShoppingDetail{
-                        MedicineId = _random.Next(i+100,100),
-                        ShoppingId = _random.Next(1,16)
-                    });
-                }
-                return ShoppingDetailsList;
-            }
-        ); */
-
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-        
     }
 }

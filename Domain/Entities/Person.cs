@@ -20,7 +20,6 @@ public class Person : BaseEntityWithIntId {
 
   public ICollection<Address> Addresses { get; set; }
   
-  public ICollection<Eps> Epss { get; set; } 
   public ICollection<Sale> Sales { get; set; }//1:M Sales
   public ICollection<Supplier> Suppliers { get; set; }//1:M Suppliers
   public ICollection<Contact> Contacts {get; set;}

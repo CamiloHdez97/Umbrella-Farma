@@ -73,11 +73,11 @@ public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>{
         return ShoppingsList;
             
     }
-    private static List<ShoppingDetail> GetShoppingDetailSeed(){
-        List<ShoppingDetail> ShoppingDetailsList = new();
-        for (int i = 0; i < 99; i++){
+    private static HashSet<ShoppingDetail> GetShoppingDetailSeed(){
+        HashSet<ShoppingDetail> ShoppingDetailsList = new();
+        for (int i = 0; i < 20; i++){
             ShoppingDetailsList.Add(new ShoppingDetail{                                    
-                MedicineId = _random.Next(i + 101 ,199),
+                MedicineId = _random.Next(i + 100 ,200),
                 ShoppingId = _random.Next(1,16)
             });
         }
