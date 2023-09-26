@@ -73,9 +73,13 @@ public class SaleConfiguration : IEntityTypeConfiguration<Sale>
         return salesList;
             
     }
-    private static List<SaleDetail> GetSaleDetailSeed(){
-        List<SaleDetail> SaleDetailsList = new();
-        for (int i = 0; i < 100; i++){
+    private static HashSet<SaleDetail> GetSaleDetailSeed(){
+        HashSet<Dictionary<int,int>> sales = new();
+
+        
+        HashSet<SaleDetail> SaleDetailsList = new();
+        for (int i = 0; i < 20; i++){
+            
             SaleDetailsList.Add(new SaleDetail{                                    
                 MedicineId = _random.Next(i,100),
                 SaleId = _random.Next(1,16)

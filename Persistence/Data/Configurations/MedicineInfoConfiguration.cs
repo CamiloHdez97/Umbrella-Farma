@@ -38,7 +38,7 @@ public class MedicineInfoConfiguration : IEntityTypeConfiguration<MedicineInfo>
         builder.Property(p => p.Image)
             .IsRequired()
             .HasColumnName("image")
-            .HasMaxLength(250);
+            .HasMaxLength(500);
         
         builder.Property(p => p.RequiredRecipe)
             .IsRequired()
