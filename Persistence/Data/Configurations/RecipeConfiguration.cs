@@ -33,6 +33,6 @@ public class RecipeConfiguration : IEntityTypeConfiguration<Recipe>{
         //--Relations
         builder.HasOne(p => p.Sale)
             .WithMany(m => m.Recipes)
-            .HasForeignKey(p => p.SaleId)
+            .HasForeignKey(p => p.SaleId);
     }
 }
