@@ -16,13 +16,11 @@ public class Person : BaseEntityWithIntId {
   public int DocumentTypeId { get; set; }//M:1 DocumentType
   public DocumentType DocumentType { get; set; }
 
-  public int TypePersonId { get; set; }//M:1 TypePerson
+  public int PersonTypeId { get; set; }//M:1 PersonType
   public PersonType PersonType { get; set; }
 
   public ICollection<Address> Addresses { get; set; }
   public ICollection<Sale> Sales { get; set; }//1:M Sales
   public ICollection<Supplier> Suppliers { get; set; }//1:M Suppliers
-
-
   public ICollection<Contact> Contacts {get; set;}
 }

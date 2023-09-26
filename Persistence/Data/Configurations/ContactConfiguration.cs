@@ -9,6 +9,7 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact> {
 
         builder.HasKey(x => new{x.PersonId,x.ContactTypeId,x.ContactCategoryId});
         
+        //--Properties
         builder.Property(x => x.Description)
             .IsRequired()
             .HasColumnName("description")
@@ -16,27 +17,28 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact> {
 
         builder.Property(x => x.PersonId)
             .IsRequired()
-            .HasColumnName("personId");
+            .HasColumnName("personIdFk");
         
         builder.Property(x => x.ContactTypeId)
             .IsRequired()
-            .HasColumnName("contactTypeId");
+            .HasColumnName("contactTypeIdFk");
         
         builder.Property(x => x.ContactCategoryId)
             .IsRequired()
-            .HasColumnName("ContactCategoryId");
+            .HasColumnName("ContactCategoryIdFk");
         
-        builder.HasOne(x => x.Person)
-            .WithMany(x => x.Contacts)
-            .HasForeignKey(x => x.PersonId);
+        //--Relations 
+        builder.HasOne(p => p.Person)
+            .WithMany(m => m.Contacts)
+            .HasForeignKey(p => p.PersonId);
 
-        builder.HasOne(x => x.ContactType)
-            .WithMany(x => x.Contacts)
-            .HasForeignKey(x => x.ContactTypeId);
+        builder.HasOne(p => p.ContactType)
+            .WithMany(m => m.Contacts)
+            .HasForeignKey(p => p.ContactTypeId);
         
-        builder.HasOne(x => x.ContactCategory)
-            .WithMany(x => x.Contacts)
-            .HasForeignKey(x => x.ContactCategoryId);
+        builder.HasOne(p => p.ContactCategory)
+            .WithMany(m => m.Contacts)
+            .HasForeignKey(p => p.ContactCategoryId);
 
         builder.HasData(
             new{                

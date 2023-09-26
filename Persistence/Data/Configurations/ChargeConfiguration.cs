@@ -17,7 +17,23 @@ public class ChargeConfiguration : IEntityTypeConfiguration<Charge> {
 
         builder.Property(p => p.Name)
             .IsRequired()
-            .HasColumnName("chargename")
+            .HasColumnName("chargeName")
             .HasMaxLength(50);
+
+        builder.HasData(
+            new{
+                Id=1,
+                Name = "seller"
+            },
+            new{
+                Id=2,
+                Name = "manager"
+            },
+            new{
+                Id=3,
+                Name = "Administrator"
+            }
+        );
+        
     }
 }

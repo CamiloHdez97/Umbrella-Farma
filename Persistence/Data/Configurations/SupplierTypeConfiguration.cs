@@ -9,6 +9,7 @@ public class SupplierTypeConfiguration : IEntityTypeConfiguration<SupplierType> 
         builder.ToTable("suppliertype");
         builder.HasKey(p => p.Id);
 
+        //--Properties
         builder.Property(p => p.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)

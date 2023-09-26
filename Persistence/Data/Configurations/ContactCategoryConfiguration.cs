@@ -9,6 +9,7 @@ public class ContactCategoryConfiguration : IEntityTypeConfiguration<ContactCate
         builder.ToTable("contactCategory");
         builder.HasKey(p => p.Id);
 
+        //--Properties
         builder.Property(p => p.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)

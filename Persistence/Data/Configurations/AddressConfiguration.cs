@@ -10,6 +10,7 @@ namespace Persistence.Configuration;
     {
         builder.ToTable("address");
 
+        //--Properties
         builder.Property(p => p.Id)
           .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
           .HasColumnName("id_address")
@@ -22,14 +23,12 @@ namespace Persistence.Configuration;
           .HasMaxLength(200)
           .IsRequired();
 
-            
         builder.Property(p => p.TypeWay)
           .HasColumnName("type_way")
           .HasColumnType("varchar")
           .HasMaxLength(200)
           .IsRequired();
 
-  
         builder.Property(p => p.NumberWay)
           .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
           .HasColumnName("number_way")
@@ -55,15 +54,27 @@ namespace Persistence.Configuration;
           .HasMaxLength(200)
           .IsRequired();
 
+        builder.Property(p => p.Description)
+          .HasColumnName("description")
+          .HasColumnType("varchar")
+          .HasMaxLength(200)
+          .IsRequired();
 
+        builder.Property(p => p.CityId)
+            .IsRequired()
+            .HasColumnName("cityIdFk");
+        
+        builder.Property(p => p.PersonId)
+            .IsRequired()
+            .HasColumnName("personIdFk");
+
+        //--Relations
         builder.HasOne(p => p.Person)
-          .WithMany(p => p.Addresses)
+          .WithMany(m => m.Addresses)
           .HasForeignKey(p => p.PersonId);
 
         builder.HasOne(p => p.City)
-          .WithMany(p => p.Addresses)
+          .WithMany(m => m.Addresses)
           .HasForeignKey(p => p.CityId);
-
-        
     }
 }

@@ -9,6 +9,7 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee> {
         builder.ToTable("employee");
         builder.HasKey(p => p.Id);
 
+        //--Properties
         builder.Property(p => p.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
@@ -16,12 +17,13 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee> {
 
         builder.Property(x => x.ChargeId)
             .IsRequired()
-            .HasColumnName("ChargeId");
+            .HasColumnName("chargeIdFk");
 
         builder.Property(x => x.PersonId)
             .IsRequired()
-            .HasColumnName("PersonId");
+            .HasColumnName("personIdFk");
 
+        //--Relations
         builder.HasOne(x => x.Charge)
             .WithMany(x => x.Employees)
             .HasForeignKey(x => x.ChargeId);
@@ -46,5 +48,28 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee> {
                     
                 }
             );   
+
+        builder.HasData(
+            new{
+                Id=1,                
+                ChargeId = 1,
+                PersonId = 6
+            },
+            new{
+                Id=2,
+                ChargeId = 1,
+                PersonId = 8
+            },
+            new{
+                Id=3,
+                ChargeId = 2,
+                PersonId = 9
+            },
+            new{
+                Id=4,
+                ChargeId = 3,
+                PersonId = 10
+            }
+        );
     }    
 }

@@ -15,7 +15,7 @@ namespace Persistence.Data.Configuration{
                 .HasColumnName("id")
                 .HasColumnType("int")
                 .IsRequired();
-
+    
             builder.Property(p => p.Description).HasColumnName("description")
             .HasColumnType("varchar").IsRequired().HasMaxLength(50);
 

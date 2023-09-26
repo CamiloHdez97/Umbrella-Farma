@@ -1,7 +1,7 @@
 using Domain.Entities.Generics;
 
 namespace Domain.Entities;
-public class Department: BaseEntityWithIntId{
+public class Departament: BaseEntityWithIntId{
     public string Name { get; set; }
 
     public int CountryId { get; set; }

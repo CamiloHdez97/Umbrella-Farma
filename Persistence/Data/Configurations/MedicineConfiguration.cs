@@ -24,8 +24,24 @@ namespace Persistence.Data.Configurations;
             
             builder.HasOne(e => e.State).WithMany(p => p.Medicines).HasForeignKey(p => p.StateId);
 
-            builder.HasData();
+            builder.HasData(MedicineGenerator(200));
+
+        }      
+
+        private List<Medicine> MedicineGenerator(int NumberOfMedicines){
+            var data = new List<Medicine>();
+            Random random = new();
+            for (int i = 0; i < NumberOfMedicines; i++){
+                var medicine = new Medicine{
+                    Id = i + 1,
+                    CreationDate = new DateTime(2023,03,2).AddDays(random.Next(1,365)),
+                    ExpirationDate = new DateTime(2025,12,2).AddDays(random.Next(1,365)),
+                    InventoryId = random.Next(1,10),
+                    StateId = random.Next(1,5)
+                };      
+                data.Add(medicine);
+            }
+            return data;
 
         }
-
 }

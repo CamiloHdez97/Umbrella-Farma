@@ -9,11 +9,21 @@ public class SupplierConfiguration : IEntityTypeConfiguration<Supplier>{
         builder.ToTable("supplier");
         builder.HasKey(p => p.Id);
 
+        //--Properties
         builder.Property(p => p.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("idPk");
 
+        //--Relations
+        builder.HasOne(p => p.Person)
+            .WithMany(m => m.Suppliers)
+            .HasForeignKey(p => p.PersonId);
+
+        builder.HasOne(p => p.SupplierType)
+            .WithMany(m => m.Suppliers)
+            .HasForeignKey(p => p.SupplierTypeId);
+        
         builder.HasData(
             new{
                 PersonId = 2,

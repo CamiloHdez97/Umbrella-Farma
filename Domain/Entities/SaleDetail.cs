@@ -8,4 +8,4 @@ public class SaleDetail{
 
   public int SaleId { get; set; }
   public Sale Sale { get; set; }
-} 
+}  

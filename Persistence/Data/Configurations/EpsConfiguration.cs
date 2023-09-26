@@ -9,11 +9,15 @@ public class EpsConfiguration : IEntityTypeConfiguration<Eps>{
         builder.ToTable("eps");
         builder.HasKey(p => p.Id);
 
+        //--Properties
         builder.Property(p => p.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("idPk");
 
-        // Relations
+        //--Relations
+        builder.HasOne(p => p.EpsType)
+            .WithMany(m => m.Epss)
+            .HasForeignKey(p => p.EpsTypeId)
     }
 }

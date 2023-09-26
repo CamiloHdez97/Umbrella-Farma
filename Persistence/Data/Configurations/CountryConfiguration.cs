@@ -10,14 +10,19 @@ namespace Persistence.Data.Configuration{
         public void Configure(EntityTypeBuilder<Country> builder)
         {
             builder.ToTable("country");
+
+            //--Properties
             builder.Property(p => p.Id)
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasColumnName("id_country")
                 .HasColumnType("int")
                 .IsRequired();
 
-            builder.Property(p => p.Name).HasColumnName("name")
-            .HasColumnType("varchar").IsRequired().HasMaxLength(50);
+            builder.Property(p => p.Name)
+                .HasColumnName("name")
+                .HasColumnType("varchar")
+                .IsRequired()
+                .HasMaxLength(50);
 
             builder.HasData(
                 new {
