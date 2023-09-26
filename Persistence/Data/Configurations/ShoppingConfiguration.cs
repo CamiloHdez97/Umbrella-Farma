@@ -75,9 +75,9 @@ public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>{
     }
     private static List<ShoppingDetail> GetShoppingDetailSeed(){
         List<ShoppingDetail> ShoppingDetailsList = new();
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 99; i++){
             ShoppingDetailsList.Add(new ShoppingDetail{                                    
-                MedicineId = _random.Next(i + 200 ,100),
+                MedicineId = _random.Next(i + 101 ,199),
                 ShoppingId = _random.Next(1,16)
             });
         }
