@@ -7,5 +7,5 @@ public class Department: BaseEntityWithIntId{
     public int CountryId { get; set; }
     public Country Country { get; set; }
 
-    public ICollection<Department> Departments {get;set;}
+    public ICollection<City> Cities {get;set;}
 }

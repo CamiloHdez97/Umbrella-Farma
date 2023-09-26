@@ -46,7 +46,7 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>
             .HasForeignKey(p => p.DocumentTypeId);
 
         builder.HasOne(p => p.PersonType)
-            .WithMany(m => m.Persons)
+            .WithMany(m => m.Person)
             .HasForeignKey(p => p.PersonTypeId);
 
 
