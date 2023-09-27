@@ -81,7 +81,7 @@ public class SaleConfiguration : IEntityTypeConfiguration<Sale>
         for (int i = 0; i < 20; i++){
             
             SaleDetailsList.Add(new SaleDetail{                                    
-                MedicineId = _random.Next(i,100),
+                MedicineId = i,
                 SaleId = _random.Next(1,16)
             });
         }

@@ -8,6 +8,7 @@ using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Runtime.CompilerServices;
+using Application.Models;
 
 namespace ApiIncidencias.Controllers;
 [ApiVersion("1.0")]
@@ -26,7 +27,7 @@ public class MedicineInfoController : BaseApiController{
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IEnumerable<object>> MinStock(int minStock){
+    public async Task<IEnumerable<MedicineInfoWithStockModel>> MinStock(int minStock){
        return await _UnitOfWork.MedicineInfos.MedicineWithMinStock(minStock);                                                       
     }
     //*Fin de la consulta

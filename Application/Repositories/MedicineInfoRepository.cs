@@ -4,8 +4,7 @@ using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
-using System.Linq;
-using System.IO.Compression;
+using Application.Models;
 
 namespace Application.Repositories;
 public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo>, IMedicineInfoRepository{
@@ -14,19 +13,19 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
         _Medicines = context.Medicines;
     }
 
-    public async Task<IEnumerable<object>> MedicineWithMinStock (int minStock){
-        IEnumerable<object> medicines = await(
+    public async Task<IEnumerable<MedicineInfoWithStockModel>> MedicineWithMinStock (int minStock){
+        IEnumerable<MedicineInfoWithStockModel> medicines = await(
         (from medicineItem in  _Entities                      
-            select new {
-                medicineItem.Name,
-                medicineItem.Price,
-                medicineItem.Discount,
-                medicineItem.Image,
-                medicineItem.RequiredRecipe,
+            select new MedicineInfoWithStockModel{
+                Name = medicineItem.Name,
+                Price = medicineItem.Price,
+                Discount = medicineItem.Discount,
+                Image = medicineItem.Image,
+                RequiredRecipe = medicineItem.RequiredRecipe,
                 MedicineBrand = medicineItem.MedicineBrand.Name,
                 MedicinePresentation = medicineItem.MedicinePresentation.Name,
                 MedicineCategory = medicineItem.MedicineCategory.Name,
-                TotalStok = _Medicines.Where(x => x.Inventory.MedicineInfoId == medicineItem.Id).Count()            
+                TotalStok = _Medicines.Where(x => x.Inventory.MedicineInfoId == medicineItem.Id && x.StateId == 1).Count()            
         }).Where(x => x.TotalStok >= minStock).ToListAsync());
         return medicines;
     }

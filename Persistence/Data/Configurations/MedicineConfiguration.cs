@@ -50,7 +50,7 @@ namespace Persistence.Data.Configurations;
             builder.HasData(MedicineGenerator(200));
         }      
 
-        private List<Medicine> MedicineGenerator(int NumberOfMedicines){
+        private static List<Medicine> MedicineGenerator(int NumberOfMedicines){
             var data = new List<Medicine>();
             Random random = new();
             for (int i = 0; i < NumberOfMedicines; i++){

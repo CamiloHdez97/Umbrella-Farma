@@ -77,7 +77,7 @@ public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>{
         HashSet<ShoppingDetail> ShoppingDetailsList = new();
         for (int i = 0; i < 20; i++){
             ShoppingDetailsList.Add(new ShoppingDetail{                                    
-                MedicineId = _random.Next(i + 100 ,200),
+                MedicineId = i + 100,
                 ShoppingId = _random.Next(1,16)
             });
         }
