@@ -3,11 +3,15 @@ using Application.Repositories.Generics.GenericById;
 using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using Persistence;
 
 namespace Application.Repositories;
 public sealed class RecipeRepository : GenericRepositoryStringId<Recipe>, IRecipeRepository{
-    public RecipeRepository(DataContext context) : base(context){}
+    private readonly DataContext _context;
+    public RecipeRepository(DataContext context) : base(context){
+        _context = context;
+    }
     protected override bool PaginateExpression(Recipe entity, string search){        
         if(DateTime.TryParse(search,out DateTime searchDate)){
             return entity.RecipeDate.Equals(searchDate);
@@ -29,4 +33,13 @@ public sealed class RecipeRepository : GenericRepositoryStringId<Recipe>, IRecip
             .Include(x => x.Eps)
             .ToListAsync();
     }
+
+            public async Task<IEnumerable<object>> GetDateJunary2023(int year){
+                
+            return await _context.Recipes.Where(recipe => recipe.RecipeDate > new DateTime(year,1,1)).ToListAsync();
+
+        }
+
+
+    
 }

@@ -22,13 +22,13 @@ public class MedicineInfoController : BaseApiController{
     }
     
     //*1 Obtener todos los medicamentos con menos de 50 unidades en stock
-    [HttpGet("MinStock/{minStock}")]
+    [HttpGet("MinStock")]
     //[Authorize]
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IEnumerable<MedicineInfoWithStockModel>> MinStock(int minStock){
-       return await _UnitOfWork.MedicineInfos.MedicineWithMinStock(minStock);                                                       
+    public async Task<IEnumerable<object>> MinStock(){
+       return await _UnitOfWork.MedicineInfos.MedicineWithMinStock();                                                       
     }
     //*Fin de la consulta
 

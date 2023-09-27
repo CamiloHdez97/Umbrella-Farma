@@ -12,21 +12,20 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
     public MedicineInfoRepository(DataContext context) : base(context){
         _Medicines = context.Medicines;
     }
-
-    public async Task<IEnumerable<MedicineInfoWithStockModel>> MedicineWithMinStock (int minStock){
-        IEnumerable<MedicineInfoWithStockModel> medicines = await(
+    public async Task<IEnumerable<object>> MedicineWithMinStock (){
+        IEnumerable<object> medicines = await(
         (from medicineItem in  _Entities                      
-            select new MedicineInfoWithStockModel{
-                Name = medicineItem.Name,
-                Price = medicineItem.Price,
-                Discount = medicineItem.Discount,
-                Image = medicineItem.Image,
-                RequiredRecipe = medicineItem.RequiredRecipe,
+            select new {
+                medicineItem.Name,
+                medicineItem.Price,
+                medicineItem.Discount,
+                medicineItem.Image,
+                medicineItem.RequiredRecipe,
                 MedicineBrand = medicineItem.MedicineBrand.Name,
                 MedicinePresentation = medicineItem.MedicinePresentation.Name,
                 MedicineCategory = medicineItem.MedicineCategory.Name,
-                TotalStok = _Medicines.Where(x => x.Inventory.MedicineInfoId == medicineItem.Id && x.StateId == 1).Count()            
-        }).Where(x => x.TotalStok >= minStock).ToListAsync());
+                TotalStok = _Medicines.Where(x => x.Inventory.MedicineInfoId == medicineItem.Id).Count()            
+        }).Where(x => x.TotalStok < 50).ToListAsync());
         return medicines;
     }
 
@@ -49,4 +48,5 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
             .Include(x => x.MedicineBrand)            
             .ToListAsync();
     }
+
 }

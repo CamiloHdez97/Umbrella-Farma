@@ -29,6 +29,18 @@ public class RecipeController : BaseApiController{
        return _Mapper.Map<List<RecipeDto>>(records);
     }
 
+    [HttpGet("year/{year}")]
+    //[Authorize]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IEnumerable<RecipeDto>> Get(int year){
+       var records = await _UnitOfWork.Recipes.GetDateJunary2023(year);
+       return _Mapper.Map<List<RecipeDto>>(records);
+    }
+
+    
+
     [HttpGet("{id}")]
     [Authorize]
     [MapToApiVersion("1.0")]
@@ -81,6 +93,7 @@ public class RecipeController : BaseApiController{
        await _UnitOfWork.SaveChanges();
        return recordDto;
     }
+
 
     [HttpDelete("{id}")]
     [MapToApiVersion("1.0")]

@@ -4,5 +4,5 @@ using Domain.Interfaces.Generics.GenericById;
 
 namespace Domain.Interfaces;
 public interface IMedicineInfoRepository: IGenericRepositoryIntId<MedicineInfo>{
-    Task<IEnumerable<MedicineInfoWithStockModel>> MedicineWithMinStock(int minStock);
+    Task<IEnumerable<Object>> MedicineWithMinStock();
 }
