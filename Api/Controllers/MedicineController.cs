@@ -29,6 +29,15 @@ public class MedicineController : BaseApiController{
        return _Mapper.Map<List<MedicineDto>>(records);
     }
 
+    [HttpGet("ProviderContact")]
+    //[Authorize]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IEnumerable<object>> ProviderContact(){
+       return await _UnitOfWork.Medicines.ProviderContactMedicine();                                                       
+    }
+
     [HttpGet("{id}")]
     [Authorize]
     [MapToApiVersion("1.0")]
