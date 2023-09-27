@@ -51,7 +51,7 @@ public class SaleConfiguration : IEntityTypeConfiguration<Sale>
                 t => {//--Configurations
                     t.ToTable("saleDetail");
                     t.HasKey(j => new{j.MedicineId,j.SaleId});                    
-                    
+                    t.HasData(GetSaleDetailSeed());
                 }
             );
         builder.HasData(
@@ -74,12 +74,8 @@ public class SaleConfiguration : IEntityTypeConfiguration<Sale>
             
     }
     private static HashSet<SaleDetail> GetSaleDetailSeed(){
-        HashSet<Dictionary<int,int>> sales = new();
-
-        
         HashSet<SaleDetail> SaleDetailsList = new();
-        for (int i = 0; i < 20; i++){
-            
+        for (int i = 1; i < 100; i++){
             SaleDetailsList.Add(new SaleDetail{                                    
                 MedicineId = i,
                 SaleId = _random.Next(1,16)

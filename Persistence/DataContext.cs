@@ -31,9 +31,12 @@ public class DataContext: DbContext{
     public DbSet<Recipe> Recipes { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<Sale> Sales { get; set; }
+    public DbSet<SaleDetail> SaleDetails { get; set; }
     public DbSet<Shopping> Shoppings { get; set; }
+    public DbSet<ShoppingDetail> ShoppingDetails { get; set; }
     public DbSet<State> States { get; set; }
     public DbSet<SupplierType> SupplierTypes { get; set; }
+    public DbSet<Supplier> Suppliers { get; set; }
     public DbSet<User> Users { get; set; }
     
     //-Configurations
