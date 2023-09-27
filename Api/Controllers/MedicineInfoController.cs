@@ -33,6 +33,16 @@ public class MedicineInfoController : BaseApiController{
     }
     //*Fin de la consulta 1
 
+   //Obtener Fecha Expiración por año
+   [HttpGet("ExpireDate/{year}")]
+   //[Authorize]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> MedicineExpireYear(int year){
+      return await _UnitOfWork.MedicineInfos.MedicineExpireYear(year);
+   }
+
    //*3 Medicamentos comprados al ‘Proveedor A’
    //*11 Número de medicamentos por proveedor.
    [HttpGet("PurchasedBySupplier/{supplierName}")]

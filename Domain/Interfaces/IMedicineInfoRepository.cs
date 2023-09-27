@@ -10,4 +10,6 @@ public interface IMedicineInfoRepository: IGenericRepositoryIntId<MedicineInfo>{
     Task<IEnumerable<object>> TotalMedicationsSoldByProvider();
     Task<float> MoneyRaisedFromSales(string medicineName = null);
     Task<IEnumerable<MedicineDetailTotalModel>> MedicationsThatWereNotSold();    
+    Task<IEnumerable<Object>> MedicineExpireYear(int year);
+    
 }
