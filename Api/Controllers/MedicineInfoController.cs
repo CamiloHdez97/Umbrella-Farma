@@ -1,3 +1,4 @@
+using System;
 using Api.Controllers;
 using Api.Dtos;
 using AutoMapper;
@@ -7,8 +8,8 @@ using Dominio.Interfaces.Pager;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using System.Runtime.CompilerServices;
-using Application.Models;
+using Domain.Models;
+using Microsoft.AspNetCore.Builder.Extensions;
 
 namespace ApiIncidencias.Controllers;
 [ApiVersion("1.0")]
@@ -22,15 +23,121 @@ public class MedicineInfoController : BaseApiController{
     }
     
     //*1 Obtener todos los medicamentos con menos de 50 unidades en stock
-    [HttpGet("MinStock")]
+    [HttpGet("MinStock/{minStock}")]
     //[Authorize]
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IEnumerable<object>> MinStock(){
-       return await _UnitOfWork.MedicineInfos.MedicineWithMinStock();                                                       
+    public async Task<IEnumerable<object>> MinStock(int minStock){
+       return await _UnitOfWork.MedicineInfos.MedicineWithMinStock(minStock);                                                       
     }
-    //*Fin de la consulta
+    //*Fin de la consulta 1
+
+   //Obtener Fecha Expiración por año
+   [HttpGet("ExpireDate/{year}")]
+   //[Authorize]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> MedicineExpireYear(int year){
+      return await _UnitOfWork.MedicineInfos.MedicineExpireYear(year);
+   }
+
+   //*3 Medicamentos comprados al ‘Proveedor A’
+   //*11 Número de medicamentos por proveedor.
+   //*Proveedores que no han vendido medicamentos en el último año.
+   [HttpGet("PurchasedBySupplier")]
+   //[Authorize]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> PurchasedBySupplier([FromBody ] MedicineInfoSupplierModel data = null){
+      return await _UnitOfWork.MedicineInfos.PurchasedBySupplier(data);
+   }
+   //* fin de la consulta 
+   
+   //*5 Total de ventas del medicamento ‘Paracetamol’
+   [HttpGet("TotalDrugSales/{MedicineName}")]
+   //[Authorize]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string MedicineName){
+      return await _UnitOfWork.MedicineInfos.TotalDrugSales(MedicineName);
+   }
+   //* fin de la consulta
+
+   //*7 Total de medicamentos vendidos por cada proveedor.
+   [HttpGet("TotalMedicationsSoldByProvider")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> TotalMedicationsSoldByProvider(){
+      return await _UnitOfWork.MedicineInfos.TotalMedicationsSoldByProvider();
+   }
+   //* fin de la consulta
+
+   //*8 Cantidad total de dinero recaudado por las ventas de medicamentos.
+   [HttpGet("MoneyRaisedFromSales/{medicineName?}")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<float> MoneyRaisedFromSales(string medicineName = null){
+      return await _UnitOfWork.MedicineInfos.MoneyRaisedFromSales(medicineName);
+   }
+   //* fin de la consulta
+
+
+   //*9 Medicamentos que no han sido vendidos
+   //*34 Medicamentos que no han sido vendidos en 2023.
+   //*21 Medicamentos que no han sido vendidos nunca.   
+   [HttpGet("MedicationsThatHaveNotBeenSold/{year?}")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> MedicationsThatHaveNotBeenSold(int? year = null){
+      return await _UnitOfWork.MedicineInfos.MedicationsThatHaveNotBeenSold(year);
+   }
+   
+
+
+   //*15 Obtener el medicamento menos vendido en 2023
+   //*17 Promedio de medicamentos comprados por venta.
+   //*14 Obtener el total de medicamentos vendidos en marzo de 2023.
+   //*26 Total de medicamentos vendidos por mes en 2023.
+   //*31 Medicamentos que han sido vendidos cada mes del año 2023.
+   //*36 Total de medicamentos vendidos en el primer trimestre de 2023.
+   [HttpGet("TotalMedicineSold")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> TotalMedicineSold([FromBody] TotalMedicineSoldModel data = null){
+      return await _UnitOfWork.MedicineInfos.TotalMedicineSold(data);
+   }
+   //* fin de la consulta
+
+   //*10 Obtener el medicamento más caro   
+   [HttpGet("GetTheMostExpensiveMedicine")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<MedicineInfoSimpleDto> GetTheMostExpensiveMedicine(){
+      var medicines = await _UnitOfWork.MedicineInfos.GetAllAsync();
+      float maxPrice = medicines.Max(x => x.Price - (x.Price * (x.Discount / 100)));
+      var MostExpensiveMedicine = medicines.First(x => x.Price - (x.Price * (x.Discount / 100)) == maxPrice);
+      return _Mapper.Map<MedicineInfoSimpleDto>(MostExpensiveMedicine);
+   }
+   //* fin de la consulta
+
+   //*12 Pacientes que han comprado Paracetamol.
+   [HttpGet("PatientsWhoHaveAcquiredParacetamol/{Patients?}")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> PatientsWhoHaveAcquiredParacetamol(string Patients = null ){
+      return await _UnitOfWork.MedicineInfos.PatientsWhoHaveAcquiredParacetamol(Patients);
+   }
+   //* fin de la consulta
 
     [HttpGet]
     //[Authorize]

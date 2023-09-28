@@ -56,8 +56,8 @@ namespace Persistence.Data.Configurations;
             for (int i = 0; i < NumberOfMedicines; i++){
                 var medicine = new Medicine{
                     Id = i + 1,
-                    CreationDate = new DateTime(2023,03,2).AddDays(random.Next(1,365)),
-                    ExpirationDate = new DateTime(2025,12,2).AddDays(random.Next(1,365)),
+                    CreationDate = DateTime.Now.AddDays(-1 * random.Next(1,365)).AddMonths(-1 * random.Next(0,12)),
+                    ExpirationDate = DateTime.Now.AddDays(random.Next(1,365)).AddYears(random.Next(0,3)),
                     InventoryId = random.Next(1,10),
                     StateId = random.Next(1,5)
                 };      

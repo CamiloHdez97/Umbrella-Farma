@@ -24,4 +24,35 @@ public sealed class EmployeeRepository : GenericRepositoryIntId<Employee>, IEmpl
             .Include(x => x.Charge)
             .ToListAsync();
     }
+
+        public async Task<IEnumerable<object>> GetEmployeSale(int year){
+
+        var listPerson = _context.Set<Person>();
+        var listEmployee = _context.Set<Employee>();
+        var listSales = _context.Set<Sale>();
+
+        var query = (
+            from person in listPerson
+            join employee in listEmployee on person.Id equals employee.PersonId
+            join sale in listSales on employee.Id equals sale.EmployeeId
+            where sale.SaleDate.Year == year
+            group sale by new {
+                                CodEmpleado = employee.Id,
+                                Empleado = person.Name,
+                                year
+
+                                } into g
+
+            select new {
+
+                Empleado = g.Key,
+                Sales = g.Count(),
+
+            }
+
+        );
+
+        return await query.ToListAsync();
+
+    }
 }

@@ -12,7 +12,7 @@ using Persistence;
 namespace Persistence.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230926174922_InitialCreate")]
+    [Migration("20230928011003_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -626,1602 +626,1602 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(2023, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
+                            CreationDate = new DateTime(2023, 2, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4341),
+                            ExpirationDate = new DateTime(2026, 3, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4523),
+                            InventoryId = 6,
                             StateId = 3
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(2023, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
-                            StateId = 3
+                            CreationDate = new DateTime(2023, 2, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4536),
+                            ExpirationDate = new DateTime(2025, 9, 6, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4539),
+                            InventoryId = 8,
+                            StateId = 2
                         },
                         new
                         {
                             Id = 3,
-                            CreationDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 12, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4544),
+                            ExpirationDate = new DateTime(2023, 12, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4547),
+                            InventoryId = 6,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreationDate = new DateTime(2023, 4, 2, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4551),
+                            ExpirationDate = new DateTime(2023, 10, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4553),
                             InventoryId = 3,
                             StateId = 3
                         },
                         new
                         {
-                            Id = 4,
-                            CreationDate = new DateTime(2023, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 1
-                        },
-                        new
-                        {
                             Id = 5,
-                            CreationDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
-                            StateId = 2
+                            CreationDate = new DateTime(2023, 5, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4557),
+                            ExpirationDate = new DateTime(2025, 4, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4559),
+                            InventoryId = 1,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 6,
-                            CreationDate = new DateTime(2023, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 2
+                            CreationDate = new DateTime(2023, 9, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4587),
+                            ExpirationDate = new DateTime(2025, 11, 2, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4590),
+                            InventoryId = 3,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 7,
-                            CreationDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
+                            CreationDate = new DateTime(2022, 11, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4595),
+                            ExpirationDate = new DateTime(2026, 7, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4598),
+                            InventoryId = 8,
                             StateId = 2
                         },
                         new
                         {
                             Id = 8,
-                            CreationDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 5, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4603),
+                            ExpirationDate = new DateTime(2023, 10, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4606),
+                            InventoryId = 9,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 9,
-                            CreationDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
+                            CreationDate = new DateTime(2022, 11, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4610),
+                            ExpirationDate = new DateTime(2023, 10, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4613),
+                            InventoryId = 7,
                             StateId = 1
                         },
                         new
                         {
                             Id = 10,
-                            CreationDate = new DateTime(2023, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 10, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4618),
+                            ExpirationDate = new DateTime(2024, 3, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4621),
+                            InventoryId = 3,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 11,
-                            CreationDate = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 9, 14, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4626),
+                            ExpirationDate = new DateTime(2026, 7, 30, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4628),
+                            InventoryId = 2,
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreationDate = new DateTime(2022, 7, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4632),
+                            ExpirationDate = new DateTime(2026, 8, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4634),
                             InventoryId = 7,
                             StateId = 3
                         },
                         new
                         {
-                            Id = 12,
-                            CreationDate = new DateTime(2023, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 1
-                        },
-                        new
-                        {
                             Id = 13,
-                            CreationDate = new DateTime(2023, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
-                            StateId = 4
+                            CreationDate = new DateTime(2022, 3, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4639),
+                            ExpirationDate = new DateTime(2025, 11, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4641),
+                            InventoryId = 6,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 14,
-                            CreationDate = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 4
+                            CreationDate = new DateTime(2023, 2, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4656),
+                            ExpirationDate = new DateTime(2026, 8, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4659),
+                            InventoryId = 2,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 15,
-                            CreationDate = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
-                            StateId = 3
+                            CreationDate = new DateTime(2023, 1, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4663),
+                            ExpirationDate = new DateTime(2024, 8, 12, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4676),
+                            InventoryId = 6,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 16,
-                            CreationDate = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 8, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4719),
+                            ExpirationDate = new DateTime(2026, 3, 22, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4723),
+                            InventoryId = 1,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 17,
-                            CreationDate = new DateTime(2023, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 11, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4727),
+                            ExpirationDate = new DateTime(2025, 11, 12, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4730),
+                            InventoryId = 4,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 18,
-                            CreationDate = new DateTime(2023, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 7, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4736),
+                            ExpirationDate = new DateTime(2024, 7, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4738),
+                            InventoryId = 4,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 19,
-                            CreationDate = new DateTime(2023, 10, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 3
+                            CreationDate = new DateTime(2022, 10, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4742),
+                            ExpirationDate = new DateTime(2024, 5, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4744),
+                            InventoryId = 7,
+                            StateId = 2
                         },
                         new
                         {
                             Id = 20,
-                            CreationDate = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 9, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4748),
+                            ExpirationDate = new DateTime(2024, 6, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4751),
+                            InventoryId = 7,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 21,
-                            CreationDate = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 3, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4776),
+                            ExpirationDate = new DateTime(2026, 9, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4779),
+                            InventoryId = 1,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CreationDate = new DateTime(2022, 4, 18, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4785),
+                            ExpirationDate = new DateTime(2025, 7, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4788),
+                            InventoryId = 4,
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CreationDate = new DateTime(2022, 11, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4792),
+                            ExpirationDate = new DateTime(2025, 11, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4795),
                             InventoryId = 6,
                             StateId = 2
                         },
                         new
                         {
-                            Id = 22,
-                            CreationDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 24,
+                            CreationDate = new DateTime(2022, 7, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4798),
+                            ExpirationDate = new DateTime(2026, 5, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4800),
                             InventoryId = 1,
                             StateId = 4
                         },
                         new
                         {
-                            Id = 23,
-                            CreationDate = new DateTime(2023, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 25,
+                            CreationDate = new DateTime(2023, 5, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4804),
+                            ExpirationDate = new DateTime(2024, 8, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4807),
                             InventoryId = 4,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 24,
-                            CreationDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
                             StateId = 2
                         },
                         new
                         {
-                            Id = 25,
-                            CreationDate = new DateTime(2024, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 4
-                        },
-                        new
-                        {
                             Id = 26,
-                            CreationDate = new DateTime(2023, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 4
+                            CreationDate = new DateTime(2023, 1, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4811),
+                            ExpirationDate = new DateTime(2025, 12, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4813),
+                            InventoryId = 7,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 27,
-                            CreationDate = new DateTime(2023, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 3
+                            CreationDate = new DateTime(2023, 3, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4818),
+                            ExpirationDate = new DateTime(2025, 7, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4821),
+                            InventoryId = 6,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 28,
-                            CreationDate = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
+                            CreationDate = new DateTime(2022, 6, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4826),
+                            ExpirationDate = new DateTime(2024, 1, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4828),
+                            InventoryId = 8,
                             StateId = 3
                         },
                         new
                         {
                             Id = 29,
-                            CreationDate = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 3
+                            CreationDate = new DateTime(2023, 3, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4833),
+                            ExpirationDate = new DateTime(2023, 11, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4835),
+                            InventoryId = 7,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 30,
-                            CreationDate = new DateTime(2023, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 3
+                            CreationDate = new DateTime(2022, 10, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4839),
+                            ExpirationDate = new DateTime(2026, 4, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4848),
+                            InventoryId = 2,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 31,
-                            CreationDate = new DateTime(2023, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 11, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4857),
+                            ExpirationDate = new DateTime(2024, 6, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4861),
+                            InventoryId = 8,
+                            StateId = 2
                         },
                         new
                         {
                             Id = 32,
-                            CreationDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 2, 12, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4864),
+                            ExpirationDate = new DateTime(2026, 5, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4867),
                             InventoryId = 2,
-                            StateId = 3
+                            StateId = 4
                         },
                         new
                         {
                             Id = 33,
-                            CreationDate = new DateTime(2023, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
-                            StateId = 2
+                            CreationDate = new DateTime(2023, 1, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4871),
+                            ExpirationDate = new DateTime(2025, 9, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4875),
+                            InventoryId = 5,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 34,
-                            CreationDate = new DateTime(2023, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 35,
-                            CreationDate = new DateTime(2023, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
+                            CreationDate = new DateTime(2023, 6, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4880),
+                            ExpirationDate = new DateTime(2024, 6, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4883),
+                            InventoryId = 5,
                             StateId = 2
                         },
                         new
                         {
+                            Id = 35,
+                            CreationDate = new DateTime(2022, 8, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4888),
+                            ExpirationDate = new DateTime(2024, 10, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4891),
+                            InventoryId = 5,
+                            StateId = 3
+                        },
+                        new
+                        {
                             Id = 36,
-                            CreationDate = new DateTime(2023, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
+                            CreationDate = new DateTime(2023, 3, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4894),
+                            ExpirationDate = new DateTime(2026, 4, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4897),
+                            InventoryId = 6,
                             StateId = 3
                         },
                         new
                         {
                             Id = 37,
-                            CreationDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
+                            CreationDate = new DateTime(2022, 11, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4901),
+                            ExpirationDate = new DateTime(2026, 4, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4903),
+                            InventoryId = 7,
                             StateId = 4
                         },
                         new
                         {
                             Id = 38,
-                            CreationDate = new DateTime(2024, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 3
+                            CreationDate = new DateTime(2023, 2, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4906),
+                            ExpirationDate = new DateTime(2025, 8, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4908),
+                            InventoryId = 9,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 39,
-                            CreationDate = new DateTime(2023, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 10, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4911),
+                            ExpirationDate = new DateTime(2025, 6, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4914),
+                            InventoryId = 6,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 40,
-                            CreationDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
-                            StateId = 1
+                            CreationDate = new DateTime(2023, 7, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4919),
+                            ExpirationDate = new DateTime(2025, 11, 21, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4922),
+                            InventoryId = 9,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 41,
-                            CreationDate = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 9, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4925),
+                            ExpirationDate = new DateTime(2025, 8, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4928),
                             InventoryId = 2,
                             StateId = 3
                         },
                         new
                         {
                             Id = 42,
-                            CreationDate = new DateTime(2024, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 3
-                        },
-                        new
-                        {
-                            Id = 43,
-                            CreationDate = new DateTime(2023, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 2, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4931),
+                            ExpirationDate = new DateTime(2024, 5, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4933),
                             InventoryId = 2,
                             StateId = 1
                         },
                         new
                         {
+                            Id = 43,
+                            CreationDate = new DateTime(2022, 8, 2, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4938),
+                            ExpirationDate = new DateTime(2023, 11, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4940),
+                            InventoryId = 1,
+                            StateId = 4
+                        },
+                        new
+                        {
                             Id = 44,
-                            CreationDate = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
+                            CreationDate = new DateTime(2021, 12, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4944),
+                            ExpirationDate = new DateTime(2026, 9, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4946),
+                            InventoryId = 3,
                             StateId = 3
                         },
                         new
                         {
                             Id = 45,
-                            CreationDate = new DateTime(2023, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
+                            CreationDate = new DateTime(2023, 1, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4950),
+                            ExpirationDate = new DateTime(2025, 12, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4953),
+                            InventoryId = 8,
                             StateId = 3
                         },
                         new
                         {
                             Id = 46,
-                            CreationDate = new DateTime(2023, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 4, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4957),
+                            ExpirationDate = new DateTime(2024, 12, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4960),
+                            InventoryId = 6,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 47,
+                            CreationDate = new DateTime(2023, 3, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4965),
+                            ExpirationDate = new DateTime(2024, 1, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4967),
+                            InventoryId = 4,
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 48,
+                            CreationDate = new DateTime(2022, 9, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4971),
+                            ExpirationDate = new DateTime(2023, 12, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4975),
+                            InventoryId = 7,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 49,
+                            CreationDate = new DateTime(2023, 4, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4980),
+                            ExpirationDate = new DateTime(2025, 7, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4983),
+                            InventoryId = 4,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 50,
+                            CreationDate = new DateTime(2022, 6, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4987),
+                            ExpirationDate = new DateTime(2024, 3, 21, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4990),
+                            InventoryId = 4,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 51,
+                            CreationDate = new DateTime(2022, 7, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4993),
+                            ExpirationDate = new DateTime(2026, 1, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(4996),
+                            InventoryId = 4,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 52,
+                            CreationDate = new DateTime(2022, 12, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5000),
+                            ExpirationDate = new DateTime(2026, 9, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5003),
                             InventoryId = 6,
                             StateId = 3
                         },
                         new
                         {
-                            Id = 47,
-                            CreationDate = new DateTime(2023, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 48,
-                            CreationDate = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 49,
-                            CreationDate = new DateTime(2023, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 50,
-                            CreationDate = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 51,
-                            CreationDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 52,
-                            CreationDate = new DateTime(2023, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 4
-                        },
-                        new
-                        {
                             Id = 53,
-                            CreationDate = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 4, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5007),
+                            ExpirationDate = new DateTime(2025, 4, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5010),
+                            InventoryId = 8,
+                            StateId = 2
                         },
                         new
                         {
                             Id = 54,
-                            CreationDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 12, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5015),
+                            ExpirationDate = new DateTime(2024, 9, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5018),
+                            InventoryId = 2,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 55,
-                            CreationDate = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 7, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5022),
+                            ExpirationDate = new DateTime(2025, 5, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5025),
+                            InventoryId = 7,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 56,
-                            CreationDate = new DateTime(2023, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
+                            CreationDate = new DateTime(2021, 12, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5028),
+                            ExpirationDate = new DateTime(2025, 7, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5031),
+                            InventoryId = 7,
                             StateId = 1
                         },
                         new
                         {
                             Id = 57,
-                            CreationDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
+                            CreationDate = new DateTime(2023, 2, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5034),
+                            ExpirationDate = new DateTime(2026, 2, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5038),
+                            InventoryId = 9,
                             StateId = 3
                         },
                         new
                         {
                             Id = 58,
-                            CreationDate = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
-                            StateId = 4
+                            CreationDate = new DateTime(2023, 1, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5041),
+                            ExpirationDate = new DateTime(2024, 4, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5044),
+                            InventoryId = 7,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 59,
-                            CreationDate = new DateTime(2023, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 9, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5048),
+                            ExpirationDate = new DateTime(2024, 3, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5051),
+                            InventoryId = 5,
+                            StateId = 2
                         },
                         new
                         {
                             Id = 60,
-                            CreationDate = new DateTime(2024, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
+                            CreationDate = new DateTime(2023, 1, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5055),
+                            ExpirationDate = new DateTime(2026, 8, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5057),
+                            InventoryId = 7,
                             StateId = 1
                         },
                         new
                         {
                             Id = 61,
-                            CreationDate = new DateTime(2023, 3, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
+                            CreationDate = new DateTime(2023, 9, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5062),
+                            ExpirationDate = new DateTime(2025, 6, 6, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5065),
+                            InventoryId = 8,
                             StateId = 1
                         },
                         new
                         {
                             Id = 62,
-                            CreationDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 3
+                            CreationDate = new DateTime(2022, 5, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5068),
+                            ExpirationDate = new DateTime(2024, 8, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5070),
+                            InventoryId = 6,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 63,
-                            CreationDate = new DateTime(2023, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
+                            CreationDate = new DateTime(2022, 11, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5073),
+                            ExpirationDate = new DateTime(2025, 12, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5076),
+                            InventoryId = 1,
                             StateId = 2
                         },
                         new
                         {
                             Id = 64,
-                            CreationDate = new DateTime(2023, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
+                            CreationDate = new DateTime(2023, 1, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5079),
+                            ExpirationDate = new DateTime(2025, 4, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5081),
+                            InventoryId = 1,
                             StateId = 2
                         },
                         new
                         {
                             Id = 65,
-                            CreationDate = new DateTime(2023, 10, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 66,
-                            CreationDate = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 67,
-                            CreationDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 68,
-                            CreationDate = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 69,
-                            CreationDate = new DateTime(2023, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 70,
-                            CreationDate = new DateTime(2023, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 4, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5084),
+                            ExpirationDate = new DateTime(2025, 12, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5087),
                             InventoryId = 6,
                             StateId = 3
                         },
                         new
                         {
-                            Id = 71,
-                            CreationDate = new DateTime(2023, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 66,
+                            CreationDate = new DateTime(2022, 9, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5092),
+                            ExpirationDate = new DateTime(2024, 1, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5095),
                             InventoryId = 1,
-                            StateId = 1
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 67,
+                            CreationDate = new DateTime(2023, 8, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5099),
+                            ExpirationDate = new DateTime(2025, 10, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5101),
+                            InventoryId = 8,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 68,
+                            CreationDate = new DateTime(2023, 6, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5105),
+                            ExpirationDate = new DateTime(2024, 7, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5107),
+                            InventoryId = 4,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 69,
+                            CreationDate = new DateTime(2023, 3, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5112),
+                            ExpirationDate = new DateTime(2026, 5, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5114),
+                            InventoryId = 8,
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 70,
+                            CreationDate = new DateTime(2023, 3, 6, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5117),
+                            ExpirationDate = new DateTime(2026, 3, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5120),
+                            InventoryId = 7,
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 71,
+                            CreationDate = new DateTime(2022, 12, 18, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5123),
+                            ExpirationDate = new DateTime(2026, 9, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5125),
+                            InventoryId = 6,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 72,
-                            CreationDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
+                            CreationDate = new DateTime(2022, 6, 14, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5129),
+                            ExpirationDate = new DateTime(2023, 10, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5132),
+                            InventoryId = 2,
                             StateId = 1
                         },
                         new
                         {
                             Id = 73,
-                            CreationDate = new DateTime(2024, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 3
+                            CreationDate = new DateTime(2022, 10, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5135),
+                            ExpirationDate = new DateTime(2024, 10, 30, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5138),
+                            InventoryId = 1,
+                            StateId = 2
                         },
                         new
                         {
                             Id = 74,
-                            CreationDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 4, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5142),
+                            ExpirationDate = new DateTime(2023, 11, 22, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5145),
+                            InventoryId = 4,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 75,
-                            CreationDate = new DateTime(2023, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
+                            CreationDate = new DateTime(2022, 11, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5148),
+                            ExpirationDate = new DateTime(2025, 4, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5151),
+                            InventoryId = 7,
                             StateId = 2
                         },
                         new
                         {
                             Id = 76,
-                            CreationDate = new DateTime(2023, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 3
+                            CreationDate = new DateTime(2022, 11, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5155),
+                            ExpirationDate = new DateTime(2024, 8, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5157),
+                            InventoryId = 3,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 77,
-                            CreationDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
+                            CreationDate = new DateTime(2022, 9, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5160),
+                            ExpirationDate = new DateTime(2025, 12, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5163),
+                            InventoryId = 9,
                             StateId = 4
                         },
                         new
                         {
                             Id = 78,
-                            CreationDate = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 3
+                            CreationDate = new DateTime(2023, 3, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5166),
+                            ExpirationDate = new DateTime(2025, 3, 31, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5169),
+                            InventoryId = 1,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 79,
-                            CreationDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 10, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5173),
+                            ExpirationDate = new DateTime(2023, 10, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5175),
+                            InventoryId = 7,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 80,
-                            CreationDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 3
+                            CreationDate = new DateTime(2021, 12, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5178),
+                            ExpirationDate = new DateTime(2024, 5, 12, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5180),
+                            InventoryId = 1,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 81,
-                            CreationDate = new DateTime(2023, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
+                            CreationDate = new DateTime(2022, 9, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5184),
+                            ExpirationDate = new DateTime(2023, 10, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5187),
+                            InventoryId = 4,
                             StateId = 3
                         },
                         new
                         {
                             Id = 82,
-                            CreationDate = new DateTime(2024, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 4, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5191),
+                            ExpirationDate = new DateTime(2024, 11, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5193),
+                            InventoryId = 7,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 83,
+                            CreationDate = new DateTime(2023, 6, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5197),
+                            ExpirationDate = new DateTime(2024, 1, 18, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5200),
+                            InventoryId = 8,
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 84,
+                            CreationDate = new DateTime(2022, 8, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5204),
+                            ExpirationDate = new DateTime(2025, 2, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5206),
+                            InventoryId = 9,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 85,
+                            CreationDate = new DateTime(2022, 12, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5210),
+                            ExpirationDate = new DateTime(2026, 9, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5213),
                             InventoryId = 8,
                             StateId = 4
                         },
                         new
                         {
-                            Id = 83,
-                            CreationDate = new DateTime(2023, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 86,
+                            CreationDate = new DateTime(2022, 1, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5217),
+                            ExpirationDate = new DateTime(2024, 11, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5219),
                             InventoryId = 6,
-                            StateId = 4
+                            StateId = 1
                         },
                         new
                         {
-                            Id = 84,
-                            CreationDate = new DateTime(2024, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 85,
-                            CreationDate = new DateTime(2024, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 87,
+                            CreationDate = new DateTime(2022, 7, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5222),
+                            ExpirationDate = new DateTime(2024, 7, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5225),
                             InventoryId = 2,
                             StateId = 1
                         },
                         new
                         {
-                            Id = 86,
-                            CreationDate = new DateTime(2023, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 3
-                        },
-                        new
-                        {
-                            Id = 87,
-                            CreationDate = new DateTime(2024, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 2
-                        },
-                        new
-                        {
                             Id = 88,
-                            CreationDate = new DateTime(2023, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
+                            CreationDate = new DateTime(2022, 12, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5229),
+                            ExpirationDate = new DateTime(2025, 4, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5231),
+                            InventoryId = 2,
                             StateId = 3
                         },
                         new
                         {
                             Id = 89,
-                            CreationDate = new DateTime(2023, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 7, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5248),
+                            ExpirationDate = new DateTime(2026, 1, 30, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5250),
                             InventoryId = 6,
-                            StateId = 3
-                        },
-                        new
-                        {
-                            Id = 90,
-                            CreationDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
                             StateId = 1
                         },
                         new
                         {
+                            Id = 90,
+                            CreationDate = new DateTime(2023, 6, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5254),
+                            ExpirationDate = new DateTime(2024, 5, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5256),
+                            InventoryId = 2,
+                            StateId = 3
+                        },
+                        new
+                        {
                             Id = 91,
-                            CreationDate = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
+                            CreationDate = new DateTime(2022, 6, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5259),
+                            ExpirationDate = new DateTime(2025, 9, 12, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5262),
+                            InventoryId = 6,
                             StateId = 2
                         },
                         new
                         {
                             Id = 92,
-                            CreationDate = new DateTime(2023, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 4
+                            CreationDate = new DateTime(2022, 2, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5265),
+                            ExpirationDate = new DateTime(2026, 8, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5268),
+                            InventoryId = 5,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 93,
-                            CreationDate = new DateTime(2023, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 12, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5272),
+                            ExpirationDate = new DateTime(2025, 9, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5274),
+                            InventoryId = 3,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 94,
-                            CreationDate = new DateTime(2023, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
+                            CreationDate = new DateTime(2022, 3, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5278),
+                            ExpirationDate = new DateTime(2025, 1, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5280),
+                            InventoryId = 1,
                             StateId = 4
                         },
                         new
                         {
                             Id = 95,
-                            CreationDate = new DateTime(2023, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2021, 12, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5284),
+                            ExpirationDate = new DateTime(2026, 8, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5286),
                             InventoryId = 9,
-                            StateId = 1
+                            StateId = 3
                         },
                         new
                         {
                             Id = 96,
-                            CreationDate = new DateTime(2023, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 7, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5290),
+                            ExpirationDate = new DateTime(2025, 3, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5293),
                             InventoryId = 2,
-                            StateId = 4
+                            StateId = 3
                         },
                         new
                         {
                             Id = 97,
-                            CreationDate = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 10, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5295),
+                            ExpirationDate = new DateTime(2026, 4, 18, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5298),
+                            InventoryId = 9,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 98,
-                            CreationDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 8, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5302),
+                            ExpirationDate = new DateTime(2026, 1, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5305),
+                            InventoryId = 6,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 99,
-                            CreationDate = new DateTime(2023, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
+                            CreationDate = new DateTime(2022, 6, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5309),
+                            ExpirationDate = new DateTime(2026, 5, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5311),
+                            InventoryId = 9,
                             StateId = 2
                         },
                         new
                         {
                             Id = 100,
-                            CreationDate = new DateTime(2023, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 3
+                            CreationDate = new DateTime(2023, 3, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5314),
+                            ExpirationDate = new DateTime(2024, 4, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5316),
+                            InventoryId = 4,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 101,
-                            CreationDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 4, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5321),
+                            ExpirationDate = new DateTime(2024, 5, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5324),
                             InventoryId = 1,
                             StateId = 3
                         },
                         new
                         {
                             Id = 102,
-                            CreationDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 2, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5328),
+                            ExpirationDate = new DateTime(2025, 8, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5330),
                             InventoryId = 5,
-                            StateId = 4
+                            StateId = 2
                         },
                         new
                         {
                             Id = 103,
-                            CreationDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 104,
-                            CreationDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
+                            CreationDate = new DateTime(2023, 3, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5333),
+                            ExpirationDate = new DateTime(2024, 4, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5336),
+                            InventoryId = 5,
                             StateId = 1
                         },
                         new
                         {
-                            Id = 105,
-                            CreationDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
+                            Id = 104,
+                            CreationDate = new DateTime(2023, 6, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5339),
+                            ExpirationDate = new DateTime(2026, 4, 6, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5342),
+                            InventoryId = 1,
                             StateId = 2
+                        },
+                        new
+                        {
+                            Id = 105,
+                            CreationDate = new DateTime(2023, 5, 14, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5345),
+                            ExpirationDate = new DateTime(2026, 3, 22, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5348),
+                            InventoryId = 9,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 106,
-                            CreationDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 8, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5352),
+                            ExpirationDate = new DateTime(2026, 8, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5355),
+                            InventoryId = 4,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 107,
-                            CreationDate = new DateTime(2023, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 6, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5358),
+                            ExpirationDate = new DateTime(2024, 3, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5361),
                             InventoryId = 8,
-                            StateId = 4
+                            StateId = 3
                         },
                         new
                         {
                             Id = 108,
-                            CreationDate = new DateTime(2023, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
+                            CreationDate = new DateTime(2021, 12, 14, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5364),
+                            ExpirationDate = new DateTime(2024, 5, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5368),
+                            InventoryId = 8,
                             StateId = 3
                         },
                         new
                         {
                             Id = 109,
-                            CreationDate = new DateTime(2024, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 4
+                            CreationDate = new DateTime(2022, 10, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5372),
+                            ExpirationDate = new DateTime(2023, 10, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5374),
+                            InventoryId = 6,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 110,
-                            CreationDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
+                            CreationDate = new DateTime(2022, 10, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5377),
+                            ExpirationDate = new DateTime(2025, 7, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5380),
+                            InventoryId = 8,
                             StateId = 3
                         },
                         new
                         {
                             Id = 111,
-                            CreationDate = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 2, 21, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5383),
+                            ExpirationDate = new DateTime(2026, 3, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5385),
                             InventoryId = 5,
-                            StateId = 4
+                            StateId = 1
                         },
                         new
                         {
                             Id = 112,
-                            CreationDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
+                            CreationDate = new DateTime(2022, 7, 2, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5389),
+                            ExpirationDate = new DateTime(2023, 11, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5392),
+                            InventoryId = 9,
                             StateId = 1
                         },
                         new
                         {
                             Id = 113,
-                            CreationDate = new DateTime(2023, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
+                            CreationDate = new DateTime(2023, 4, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5395),
+                            ExpirationDate = new DateTime(2024, 5, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5397),
+                            InventoryId = 5,
                             StateId = 4
                         },
                         new
                         {
                             Id = 114,
-                            CreationDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 3, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5401),
+                            ExpirationDate = new DateTime(2025, 6, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5404),
                             InventoryId = 9,
-                            StateId = 2
+                            StateId = 3
                         },
                         new
                         {
                             Id = 115,
-                            CreationDate = new DateTime(2023, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
+                            CreationDate = new DateTime(2023, 6, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5407),
+                            ExpirationDate = new DateTime(2026, 8, 31, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5409),
+                            InventoryId = 9,
                             StateId = 1
                         },
                         new
                         {
                             Id = 116,
-                            CreationDate = new DateTime(2023, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 12, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5412),
+                            ExpirationDate = new DateTime(2025, 4, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5415),
+                            InventoryId = 5,
+                            StateId = 2
                         },
                         new
                         {
                             Id = 117,
-                            CreationDate = new DateTime(2023, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 118,
-                            CreationDate = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 119,
-                            CreationDate = new DateTime(2023, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 120,
-                            CreationDate = new DateTime(2023, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 121,
-                            CreationDate = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 122,
-                            CreationDate = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 123,
-                            CreationDate = new DateTime(2023, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 124,
-                            CreationDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 125,
-                            CreationDate = new DateTime(2024, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 126,
-                            CreationDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2023, 2, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5418),
+                            ExpirationDate = new DateTime(2024, 6, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5420),
                             InventoryId = 4,
                             StateId = 1
                         },
                         new
                         {
-                            Id = 127,
-                            CreationDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 128,
-                            CreationDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 118,
+                            CreationDate = new DateTime(2022, 8, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5424),
+                            ExpirationDate = new DateTime(2024, 7, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5427),
                             InventoryId = 6,
                             StateId = 2
                         },
                         new
                         {
+                            Id = 119,
+                            CreationDate = new DateTime(2022, 8, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5430),
+                            ExpirationDate = new DateTime(2025, 9, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5433),
+                            InventoryId = 9,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 120,
+                            CreationDate = new DateTime(2022, 9, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5436),
+                            ExpirationDate = new DateTime(2026, 9, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5438),
+                            InventoryId = 2,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 121,
+                            CreationDate = new DateTime(2022, 9, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5442),
+                            ExpirationDate = new DateTime(2024, 6, 2, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5444),
+                            InventoryId = 6,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 122,
+                            CreationDate = new DateTime(2022, 5, 6, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5447),
+                            ExpirationDate = new DateTime(2024, 8, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5450),
+                            InventoryId = 5,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 123,
+                            CreationDate = new DateTime(2022, 4, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5454),
+                            ExpirationDate = new DateTime(2026, 4, 30, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5456),
+                            InventoryId = 9,
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 124,
+                            CreationDate = new DateTime(2023, 6, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5459),
+                            ExpirationDate = new DateTime(2025, 7, 18, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5461),
+                            InventoryId = 1,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 125,
+                            CreationDate = new DateTime(2022, 9, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5465),
+                            ExpirationDate = new DateTime(2026, 6, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5467),
+                            InventoryId = 2,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 126,
+                            CreationDate = new DateTime(2022, 7, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5471),
+                            ExpirationDate = new DateTime(2025, 7, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5474),
+                            InventoryId = 6,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 127,
+                            CreationDate = new DateTime(2022, 3, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5477),
+                            ExpirationDate = new DateTime(2025, 6, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5480),
+                            InventoryId = 5,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 128,
+                            CreationDate = new DateTime(2022, 11, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5482),
+                            ExpirationDate = new DateTime(2024, 4, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5486),
+                            InventoryId = 3,
+                            StateId = 4
+                        },
+                        new
+                        {
                             Id = 129,
-                            CreationDate = new DateTime(2024, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 5, 1, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5489),
+                            ExpirationDate = new DateTime(2025, 11, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5491),
                             InventoryId = 4,
                             StateId = 4
                         },
                         new
                         {
                             Id = 130,
-                            CreationDate = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 131,
-                            CreationDate = new DateTime(2023, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 3
-                        },
-                        new
-                        {
-                            Id = 132,
-                            CreationDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
+                            CreationDate = new DateTime(2022, 6, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5497),
+                            ExpirationDate = new DateTime(2026, 8, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5500),
+                            InventoryId = 5,
                             StateId = 4
                         },
                         new
                         {
+                            Id = 131,
+                            CreationDate = new DateTime(2023, 2, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5504),
+                            ExpirationDate = new DateTime(2026, 4, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5506),
+                            InventoryId = 5,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 132,
+                            CreationDate = new DateTime(2023, 1, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5510),
+                            ExpirationDate = new DateTime(2023, 10, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5512),
+                            InventoryId = 6,
+                            StateId = 3
+                        },
+                        new
+                        {
                             Id = 133,
-                            CreationDate = new DateTime(2023, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
+                            CreationDate = new DateTime(2022, 4, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5516),
+                            ExpirationDate = new DateTime(2026, 7, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5518),
+                            InventoryId = 7,
                             StateId = 3
                         },
                         new
                         {
                             Id = 134,
-                            CreationDate = new DateTime(2023, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 4
+                            CreationDate = new DateTime(2022, 11, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5521),
+                            ExpirationDate = new DateTime(2023, 10, 6, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5524),
+                            InventoryId = 5,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 135,
-                            CreationDate = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 4
+                            CreationDate = new DateTime(2022, 4, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5527),
+                            ExpirationDate = new DateTime(2024, 7, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5530),
+                            InventoryId = 3,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 136,
-                            CreationDate = new DateTime(2023, 10, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
-                            StateId = 2
+                            CreationDate = new DateTime(2023, 2, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5535),
+                            ExpirationDate = new DateTime(2024, 11, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5537),
+                            InventoryId = 6,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 137,
-                            CreationDate = new DateTime(2023, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
+                            CreationDate = new DateTime(2022, 10, 12, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5540),
+                            ExpirationDate = new DateTime(2026, 4, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5543),
+                            InventoryId = 7,
                             StateId = 2
                         },
                         new
                         {
                             Id = 138,
-                            CreationDate = new DateTime(2023, 7, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 1, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5547),
+                            ExpirationDate = new DateTime(2024, 6, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5550),
+                            InventoryId = 3,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 139,
-                            CreationDate = new DateTime(2023, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 4
+                            CreationDate = new DateTime(2022, 1, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5554),
+                            ExpirationDate = new DateTime(2025, 11, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5556),
+                            InventoryId = 5,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 140,
-                            CreationDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
+                            CreationDate = new DateTime(2022, 10, 6, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5559),
+                            ExpirationDate = new DateTime(2025, 7, 31, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5562),
+                            InventoryId = 5,
                             StateId = 3
                         },
                         new
                         {
                             Id = 141,
-                            CreationDate = new DateTime(2023, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 142,
-                            CreationDate = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
+                            CreationDate = new DateTime(2023, 3, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5564),
+                            ExpirationDate = new DateTime(2026, 6, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5567),
+                            InventoryId = 7,
                             StateId = 2
                         },
                         new
                         {
-                            Id = 143,
-                            CreationDate = new DateTime(2023, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 144,
-                            CreationDate = new DateTime(2023, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
+                            Id = 142,
+                            CreationDate = new DateTime(2023, 3, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5570),
+                            ExpirationDate = new DateTime(2026, 8, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5572),
+                            InventoryId = 4,
                             StateId = 3
                         },
                         new
                         {
-                            Id = 145,
-                            CreationDate = new DateTime(2024, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 143,
+                            CreationDate = new DateTime(2023, 7, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5574),
+                            ExpirationDate = new DateTime(2023, 11, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5577),
+                            InventoryId = 3,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 144,
+                            CreationDate = new DateTime(2022, 12, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5579),
+                            ExpirationDate = new DateTime(2025, 5, 30, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5582),
                             InventoryId = 2,
-                            StateId = 4
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 145,
+                            CreationDate = new DateTime(2022, 10, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5584),
+                            ExpirationDate = new DateTime(2025, 7, 30, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5586),
+                            InventoryId = 7,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 146,
-                            CreationDate = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
+                            CreationDate = new DateTime(2022, 10, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5589),
+                            ExpirationDate = new DateTime(2024, 10, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5591),
+                            InventoryId = 3,
                             StateId = 3
                         },
                         new
                         {
                             Id = 147,
-                            CreationDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
+                            CreationDate = new DateTime(2022, 12, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5595),
+                            ExpirationDate = new DateTime(2024, 2, 21, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5598),
+                            InventoryId = 9,
                             StateId = 1
                         },
                         new
                         {
                             Id = 148,
-                            CreationDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 149,
-                            CreationDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
+                            CreationDate = new DateTime(2022, 11, 22, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5601),
+                            ExpirationDate = new DateTime(2025, 8, 22, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5604),
+                            InventoryId = 9,
                             StateId = 3
                         },
                         new
                         {
+                            Id = 149,
+                            CreationDate = new DateTime(2022, 2, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5608),
+                            ExpirationDate = new DateTime(2024, 8, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5610),
+                            InventoryId = 2,
+                            StateId = 2
+                        },
+                        new
+                        {
                             Id = 150,
-                            CreationDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
+                            CreationDate = new DateTime(2022, 6, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5614),
+                            ExpirationDate = new DateTime(2024, 6, 30, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5616),
+                            InventoryId = 2,
                             StateId = 2
                         },
                         new
                         {
                             Id = 151,
-                            CreationDate = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 3
+                            CreationDate = new DateTime(2022, 10, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5621),
+                            ExpirationDate = new DateTime(2023, 10, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5624),
+                            InventoryId = 5,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 152,
-                            CreationDate = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 5, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5626),
+                            ExpirationDate = new DateTime(2026, 3, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5629),
                             InventoryId = 6,
-                            StateId = 2
+                            StateId = 1
                         },
                         new
                         {
                             Id = 153,
-                            CreationDate = new DateTime(2023, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
+                            CreationDate = new DateTime(2022, 9, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5646),
+                            ExpirationDate = new DateTime(2025, 1, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5648),
+                            InventoryId = 6,
                             StateId = 4
                         },
                         new
                         {
                             Id = 154,
-                            CreationDate = new DateTime(2023, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 10, 12, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5653),
+                            ExpirationDate = new DateTime(2025, 10, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5656),
+                            InventoryId = 9,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 155,
-                            CreationDate = new DateTime(2023, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 3
-                        },
-                        new
-                        {
-                            Id = 156,
-                            CreationDate = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 157,
-                            CreationDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 158,
-                            CreationDate = new DateTime(2023, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 159,
-                            CreationDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 160,
-                            CreationDate = new DateTime(2024, 1, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 161,
-                            CreationDate = new DateTime(2023, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 162,
-                            CreationDate = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 163,
-                            CreationDate = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
-                            StateId = 3
-                        },
-                        new
-                        {
-                            Id = 164,
-                            CreationDate = new DateTime(2023, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 165,
-                            CreationDate = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 3
-                        },
-                        new
-                        {
-                            Id = 166,
-                            CreationDate = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 167,
-                            CreationDate = new DateTime(2024, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
-                            StateId = 2
-                        },
-                        new
-                        {
-                            Id = 168,
-                            CreationDate = new DateTime(2023, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 169,
-                            CreationDate = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 170,
-                            CreationDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 3
-                        },
-                        new
-                        {
-                            Id = 171,
-                            CreationDate = new DateTime(2023, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 3
-                        },
-                        new
-                        {
-                            Id = 172,
-                            CreationDate = new DateTime(2023, 5, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 173,
-                            CreationDate = new DateTime(2023, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 6, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5659),
+                            ExpirationDate = new DateTime(2025, 11, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5662),
                             InventoryId = 2,
                             StateId = 4
                         },
                         new
                         {
-                            Id = 174,
-                            CreationDate = new DateTime(2024, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
+                            Id = 156,
+                            CreationDate = new DateTime(2023, 2, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5665),
+                            ExpirationDate = new DateTime(2026, 7, 18, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5668),
+                            InventoryId = 9,
                             StateId = 2
                         },
                         new
                         {
-                            Id = 175,
-                            CreationDate = new DateTime(2023, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 157,
+                            CreationDate = new DateTime(2022, 2, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5671),
+                            ExpirationDate = new DateTime(2025, 5, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5674),
+                            InventoryId = 8,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 158,
+                            CreationDate = new DateTime(2023, 7, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5677),
+                            ExpirationDate = new DateTime(2023, 12, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5680),
+                            InventoryId = 8,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 159,
+                            CreationDate = new DateTime(2023, 5, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5683),
+                            ExpirationDate = new DateTime(2025, 12, 31, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5685),
                             InventoryId = 1,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 160,
+                            CreationDate = new DateTime(2023, 1, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5688),
+                            ExpirationDate = new DateTime(2026, 4, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5691),
+                            InventoryId = 5,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 161,
+                            CreationDate = new DateTime(2022, 9, 18, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5695),
+                            ExpirationDate = new DateTime(2024, 4, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5697),
+                            InventoryId = 4,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 162,
+                            CreationDate = new DateTime(2022, 12, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5701),
+                            ExpirationDate = new DateTime(2023, 11, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5704),
+                            InventoryId = 1,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 163,
+                            CreationDate = new DateTime(2023, 3, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5707),
+                            ExpirationDate = new DateTime(2024, 4, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5709),
+                            InventoryId = 9,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 164,
+                            CreationDate = new DateTime(2023, 5, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5712),
+                            ExpirationDate = new DateTime(2026, 8, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5715),
+                            InventoryId = 8,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 165,
+                            CreationDate = new DateTime(2023, 1, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5718),
+                            ExpirationDate = new DateTime(2025, 6, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5721),
+                            InventoryId = 7,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 166,
+                            CreationDate = new DateTime(2022, 4, 27, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5724),
+                            ExpirationDate = new DateTime(2025, 10, 30, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5727),
+                            InventoryId = 3,
                             StateId = 2
                         },
                         new
                         {
-                            Id = 176,
-                            CreationDate = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 167,
+                            CreationDate = new DateTime(2022, 9, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5730),
+                            ExpirationDate = new DateTime(2024, 8, 22, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5734),
+                            InventoryId = 6,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 168,
+                            CreationDate = new DateTime(2022, 8, 22, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5739),
+                            ExpirationDate = new DateTime(2025, 6, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5741),
+                            InventoryId = 1,
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 169,
+                            CreationDate = new DateTime(2022, 8, 2, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5745),
+                            ExpirationDate = new DateTime(2026, 1, 21, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5748),
+                            InventoryId = 4,
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 170,
+                            CreationDate = new DateTime(2022, 8, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5751),
+                            ExpirationDate = new DateTime(2024, 8, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5754),
+                            InventoryId = 6,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 171,
+                            CreationDate = new DateTime(2022, 9, 2, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5758),
+                            ExpirationDate = new DateTime(2023, 12, 12, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5760),
+                            InventoryId = 8,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 172,
+                            CreationDate = new DateTime(2023, 7, 21, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5764),
+                            ExpirationDate = new DateTime(2023, 12, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5766),
+                            InventoryId = 8,
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 173,
+                            CreationDate = new DateTime(2022, 4, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5769),
+                            ExpirationDate = new DateTime(2025, 7, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5773),
                             InventoryId = 3,
                             StateId = 3
                         },
                         new
                         {
-                            Id = 177,
-                            CreationDate = new DateTime(2023, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 174,
+                            CreationDate = new DateTime(2022, 10, 5, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5777),
+                            ExpirationDate = new DateTime(2025, 2, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5780),
                             InventoryId = 7,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 175,
+                            CreationDate = new DateTime(2023, 8, 21, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5784),
+                            ExpirationDate = new DateTime(2026, 7, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5786),
+                            InventoryId = 1,
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 176,
+                            CreationDate = new DateTime(2022, 4, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5789),
+                            ExpirationDate = new DateTime(2026, 7, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5791),
+                            InventoryId = 3,
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 177,
+                            CreationDate = new DateTime(2022, 7, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5794),
+                            ExpirationDate = new DateTime(2025, 2, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5797),
+                            InventoryId = 6,
                             StateId = 2
                         },
                         new
                         {
                             Id = 178,
-                            CreationDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
+                            CreationDate = new DateTime(2022, 5, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5801),
+                            ExpirationDate = new DateTime(2025, 10, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5803),
+                            InventoryId = 1,
                             StateId = 1
                         },
                         new
                         {
                             Id = 179,
-                            CreationDate = new DateTime(2023, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 12, 3, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5806),
+                            ExpirationDate = new DateTime(2025, 3, 22, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5808),
                             InventoryId = 1,
                             StateId = 4
                         },
                         new
                         {
                             Id = 180,
-                            CreationDate = new DateTime(2023, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
-                            StateId = 4
+                            CreationDate = new DateTime(2022, 5, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5811),
+                            ExpirationDate = new DateTime(2025, 4, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5813),
+                            InventoryId = 1,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 181,
-                            CreationDate = new DateTime(2023, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 182,
-                            CreationDate = new DateTime(2023, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
+                            CreationDate = new DateTime(2022, 8, 22, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5816),
+                            ExpirationDate = new DateTime(2025, 7, 14, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5819),
+                            InventoryId = 9,
                             StateId = 2
                         },
                         new
                         {
+                            Id = 182,
+                            CreationDate = new DateTime(2022, 12, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5822),
+                            ExpirationDate = new DateTime(2025, 4, 21, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5824),
+                            InventoryId = 5,
+                            StateId = 1
+                        },
+                        new
+                        {
                             Id = 183,
-                            CreationDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
+                            CreationDate = new DateTime(2022, 11, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5828),
+                            ExpirationDate = new DateTime(2026, 7, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5830),
+                            InventoryId = 5,
                             StateId = 2
                         },
                         new
                         {
                             Id = 184,
-                            CreationDate = new DateTime(2023, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 5,
-                            StateId = 3
+                            CreationDate = new DateTime(2022, 11, 9, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5833),
+                            ExpirationDate = new DateTime(2024, 12, 12, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5837),
+                            InventoryId = 6,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 185,
-                            CreationDate = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
+                            CreationDate = new DateTime(2023, 6, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5841),
+                            ExpirationDate = new DateTime(2024, 2, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5843),
+                            InventoryId = 7,
                             StateId = 4
                         },
                         new
                         {
                             Id = 186,
-                            CreationDate = new DateTime(2023, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 11, 21, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5848),
+                            ExpirationDate = new DateTime(2024, 4, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5850),
+                            InventoryId = 7,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 187,
-                            CreationDate = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 4
+                            CreationDate = new DateTime(2022, 10, 31, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5854),
+                            ExpirationDate = new DateTime(2023, 12, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5856),
+                            InventoryId = 9,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 188,
-                            CreationDate = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 8, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5860),
+                            ExpirationDate = new DateTime(2024, 11, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5863),
                             InventoryId = 9,
                             StateId = 4
                         },
                         new
                         {
                             Id = 189,
-                            CreationDate = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 4
-                        },
-                        new
-                        {
-                            Id = 190,
-                            CreationDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreationDate = new DateTime(2022, 7, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5867),
+                            ExpirationDate = new DateTime(2026, 3, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5869),
                             InventoryId = 4,
                             StateId = 2
                         },
                         new
                         {
+                            Id = 190,
+                            CreationDate = new DateTime(2022, 12, 28, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5872),
+                            ExpirationDate = new DateTime(2023, 10, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5875),
+                            InventoryId = 3,
+                            StateId = 1
+                        },
+                        new
+                        {
                             Id = 191,
-                            CreationDate = new DateTime(2023, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 2,
+                            CreationDate = new DateTime(2023, 4, 20, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5878),
+                            ExpirationDate = new DateTime(2024, 8, 17, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5880),
+                            InventoryId = 3,
                             StateId = 1
                         },
                         new
                         {
                             Id = 192,
-                            CreationDate = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 9,
-                            StateId = 4
+                            CreationDate = new DateTime(2023, 1, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5885),
+                            ExpirationDate = new DateTime(2023, 11, 26, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5887),
+                            InventoryId = 6,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 193,
-                            CreationDate = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 6,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 1, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5890),
+                            ExpirationDate = new DateTime(2026, 3, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5892),
+                            InventoryId = 4,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 194,
-                            CreationDate = new DateTime(2023, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2025, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 7,
-                            StateId = 3
+                            CreationDate = new DateTime(2022, 5, 29, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5895),
+                            ExpirationDate = new DateTime(2023, 11, 19, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5898),
+                            InventoryId = 4,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 195,
-                            CreationDate = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
-                            StateId = 2
+                            CreationDate = new DateTime(2022, 8, 10, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5901),
+                            ExpirationDate = new DateTime(2023, 10, 7, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5904),
+                            InventoryId = 2,
+                            StateId = 1
                         },
                         new
                         {
                             Id = 196,
-                            CreationDate = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 4,
+                            CreationDate = new DateTime(2022, 3, 11, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5908),
+                            ExpirationDate = new DateTime(2025, 12, 31, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5911),
+                            InventoryId = 2,
                             StateId = 2
                         },
                         new
                         {
                             Id = 197,
-                            CreationDate = new DateTime(2023, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 3,
+                            CreationDate = new DateTime(2022, 8, 25, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5916),
+                            ExpirationDate = new DateTime(2024, 5, 13, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5918),
+                            InventoryId = 7,
                             StateId = 2
                         },
                         new
                         {
                             Id = 198,
-                            CreationDate = new DateTime(2023, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 1
+                            CreationDate = new DateTime(2022, 7, 23, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5921),
+                            ExpirationDate = new DateTime(2025, 6, 16, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5924),
+                            InventoryId = 2,
+                            StateId = 4
                         },
                         new
                         {
                             Id = 199,
-                            CreationDate = new DateTime(2023, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 1,
-                            StateId = 2
+                            CreationDate = new DateTime(2023, 1, 24, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5928),
+                            ExpirationDate = new DateTime(2023, 11, 8, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5931),
+                            InventoryId = 2,
+                            StateId = 3
                         },
                         new
                         {
                             Id = 200,
-                            CreationDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpirationDate = new DateTime(2026, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            InventoryId = 8,
-                            StateId = 1
+                            CreationDate = new DateTime(2023, 2, 15, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5934),
+                            ExpirationDate = new DateTime(2026, 1, 4, 20, 10, 2, 967, DateTimeKind.Local).AddTicks(5937),
+                            InventoryId = 5,
+                            StateId = 2
                         });
                 });
 
@@ -2586,42 +2586,42 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             Id = 1,
-                            BirthDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9491),
+                            BirthDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4507),
                             DocumentNumber = "0000000000",
                             DocumentTypeId = 3,
                             Name = "root",
                             PersonTypeId = 1,
-                            RegisterDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9457)
+                            RegisterDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4483)
                         },
                         new
                         {
                             Id = 2,
-                            BirthDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9498),
+                            BirthDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4516),
                             DocumentNumber = "0000000001",
                             DocumentTypeId = 3,
                             Name = "ProveedorA",
                             PersonTypeId = 2,
-                            RegisterDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9497)
+                            RegisterDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4515)
                         },
                         new
                         {
                             Id = 3,
-                            BirthDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9499),
+                            BirthDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4520),
                             DocumentNumber = "0000000002",
                             DocumentTypeId = 3,
                             Name = "ProveedorB",
                             PersonTypeId = 2,
-                            RegisterDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9498)
+                            RegisterDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4519)
                         },
                         new
                         {
                             Id = 4,
-                            BirthDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9501),
+                            BirthDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4524),
                             DocumentNumber = "0000000003",
                             DocumentTypeId = 3,
                             Name = "ProveedorC",
                             PersonTypeId = 2,
-                            RegisterDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9500)
+                            RegisterDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4523)
                         },
                         new
                         {
@@ -2631,7 +2631,7 @@ namespace Persistence.Data.Migrations
                             DocumentTypeId = 1,
                             Name = "Juan Paco",
                             PersonTypeId = 1,
-                            RegisterDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9501)
+                            RegisterDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4526)
                         },
                         new
                         {
@@ -2651,7 +2651,7 @@ namespace Persistence.Data.Migrations
                             DocumentTypeId = 2,
                             Name = "Maria Db",
                             PersonTypeId = 1,
-                            RegisterDate = new DateTime(2023, 9, 26, 12, 49, 22, 78, DateTimeKind.Local).AddTicks(9504)
+                            RegisterDate = new DateTime(2023, 9, 27, 20, 10, 2, 971, DateTimeKind.Local).AddTicks(4540)
                         },
                         new
                         {
@@ -2822,114 +2822,114 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             Id = 1,
-                            EmployeeId = 1,
-                            PersonId = 5,
-                            SaleDate = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            EmployeeId = 2,
+                            PersonId = 6,
+                            SaleDate = new DateTime(2023, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            EmployeeId = 3,
-                            PersonId = 6,
-                            SaleDate = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            EmployeeId = 2,
+                            PersonId = 10,
+                            SaleDate = new DateTime(2023, 12, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            EmployeeId = 3,
-                            PersonId = 6,
-                            SaleDate = new DateTime(2023, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            EmployeeId = 2,
+                            PersonId = 9,
+                            SaleDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
                             EmployeeId = 3,
-                            PersonId = 8,
-                            SaleDate = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PersonId = 7,
+                            SaleDate = new DateTime(2024, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
                             EmployeeId = 1,
-                            PersonId = 9,
-                            SaleDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PersonId = 8,
+                            SaleDate = new DateTime(2024, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
                             EmployeeId = 1,
-                            PersonId = 6,
-                            SaleDate = new DateTime(2024, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PersonId = 10,
+                            SaleDate = new DateTime(2023, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
                             EmployeeId = 3,
                             PersonId = 10,
-                            SaleDate = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SaleDate = new DateTime(2023, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
-                            EmployeeId = 2,
-                            PersonId = 10,
-                            SaleDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            EmployeeId = 1,
+                            PersonId = 7,
+                            SaleDate = new DateTime(2024, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
-                            EmployeeId = 1,
-                            PersonId = 7,
-                            SaleDate = new DateTime(2023, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            EmployeeId = 2,
+                            PersonId = 6,
+                            SaleDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 10,
                             EmployeeId = 2,
-                            PersonId = 6,
-                            SaleDate = new DateTime(2023, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PersonId = 7,
+                            SaleDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 11,
                             EmployeeId = 1,
                             PersonId = 10,
-                            SaleDate = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SaleDate = new DateTime(2024, 2, 29, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 12,
-                            EmployeeId = 3,
-                            PersonId = 8,
-                            SaleDate = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            EmployeeId = 1,
+                            PersonId = 5,
+                            SaleDate = new DateTime(2023, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 13,
                             EmployeeId = 3,
-                            PersonId = 9,
-                            SaleDate = new DateTime(2024, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PersonId = 5,
+                            SaleDate = new DateTime(2024, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 14,
                             EmployeeId = 3,
-                            PersonId = 7,
-                            SaleDate = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PersonId = 5,
+                            SaleDate = new DateTime(2023, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 15,
                             EmployeeId = 2,
                             PersonId = 7,
-                            SaleDate = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            SaleDate = new DateTime(2024, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 16,
-                            EmployeeId = 1,
-                            PersonId = 5,
-                            SaleDate = new DateTime(2024, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            EmployeeId = 2,
+                            PersonId = 9,
+                            SaleDate = new DateTime(2023, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -2946,6 +2946,503 @@ namespace Persistence.Data.Migrations
                     b.HasIndex("SaleId");
 
                     b.ToTable("saleDetail", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            MedicineId = 1,
+                            SaleId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 2,
+                            SaleId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 3,
+                            SaleId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 4,
+                            SaleId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 5,
+                            SaleId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 6,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 7,
+                            SaleId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 8,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 9,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 10,
+                            SaleId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 11,
+                            SaleId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 12,
+                            SaleId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 13,
+                            SaleId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 14,
+                            SaleId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 15,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 16,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 17,
+                            SaleId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 18,
+                            SaleId = 4
+                        },
+                        new
+                        {
+                            MedicineId = 19,
+                            SaleId = 2
+                        },
+                        new
+                        {
+                            MedicineId = 20,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 21,
+                            SaleId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 22,
+                            SaleId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 23,
+                            SaleId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 24,
+                            SaleId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 25,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 26,
+                            SaleId = 2
+                        },
+                        new
+                        {
+                            MedicineId = 27,
+                            SaleId = 2
+                        },
+                        new
+                        {
+                            MedicineId = 28,
+                            SaleId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 29,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 30,
+                            SaleId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 31,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 32,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 33,
+                            SaleId = 6
+                        },
+                        new
+                        {
+                            MedicineId = 34,
+                            SaleId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 35,
+                            SaleId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 36,
+                            SaleId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 37,
+                            SaleId = 3
+                        },
+                        new
+                        {
+                            MedicineId = 38,
+                            SaleId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 39,
+                            SaleId = 3
+                        },
+                        new
+                        {
+                            MedicineId = 40,
+                            SaleId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 41,
+                            SaleId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 42,
+                            SaleId = 6
+                        },
+                        new
+                        {
+                            MedicineId = 43,
+                            SaleId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 44,
+                            SaleId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 45,
+                            SaleId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 46,
+                            SaleId = 4
+                        },
+                        new
+                        {
+                            MedicineId = 47,
+                            SaleId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 48,
+                            SaleId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 49,
+                            SaleId = 1
+                        },
+                        new
+                        {
+                            MedicineId = 50,
+                            SaleId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 51,
+                            SaleId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 52,
+                            SaleId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 53,
+                            SaleId = 1
+                        },
+                        new
+                        {
+                            MedicineId = 54,
+                            SaleId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 55,
+                            SaleId = 6
+                        },
+                        new
+                        {
+                            MedicineId = 56,
+                            SaleId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 57,
+                            SaleId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 58,
+                            SaleId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 59,
+                            SaleId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 60,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 61,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 62,
+                            SaleId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 63,
+                            SaleId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 64,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 65,
+                            SaleId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 66,
+                            SaleId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 67,
+                            SaleId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 68,
+                            SaleId = 3
+                        },
+                        new
+                        {
+                            MedicineId = 69,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 70,
+                            SaleId = 4
+                        },
+                        new
+                        {
+                            MedicineId = 71,
+                            SaleId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 72,
+                            SaleId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 73,
+                            SaleId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 74,
+                            SaleId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 75,
+                            SaleId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 76,
+                            SaleId = 2
+                        },
+                        new
+                        {
+                            MedicineId = 77,
+                            SaleId = 4
+                        },
+                        new
+                        {
+                            MedicineId = 78,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 79,
+                            SaleId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 80,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 81,
+                            SaleId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 82,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 83,
+                            SaleId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 84,
+                            SaleId = 3
+                        },
+                        new
+                        {
+                            MedicineId = 85,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 86,
+                            SaleId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 87,
+                            SaleId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 88,
+                            SaleId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 89,
+                            SaleId = 3
+                        },
+                        new
+                        {
+                            MedicineId = 90,
+                            SaleId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 91,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 92,
+                            SaleId = 1
+                        },
+                        new
+                        {
+                            MedicineId = 93,
+                            SaleId = 1
+                        },
+                        new
+                        {
+                            MedicineId = 94,
+                            SaleId = 6
+                        },
+                        new
+                        {
+                            MedicineId = 95,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 96,
+                            SaleId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 97,
+                            SaleId = 3
+                        },
+                        new
+                        {
+                            MedicineId = 98,
+                            SaleId = 4
+                        },
+                        new
+                        {
+                            MedicineId = 99,
+                            SaleId = 8
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Shopping", b =>
@@ -2981,113 +3478,113 @@ namespace Persistence.Data.Migrations
                         {
                             Id = 1,
                             EmployeeId = 3,
-                            ShoppingDate = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SupplierId = 1
+                            ShoppingDate = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SupplierId = 2
                         },
                         new
                         {
                             Id = 2,
                             EmployeeId = 2,
-                            ShoppingDate = new DateTime(2023, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SupplierId = 2
+                            ShoppingDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SupplierId = 1
                         },
                         new
                         {
                             Id = 3,
-                            EmployeeId = 2,
-                            ShoppingDate = new DateTime(2023, 10, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmployeeId = 1,
+                            ShoppingDate = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SupplierId = 2
                         },
                         new
                         {
                             Id = 4,
-                            EmployeeId = 1,
-                            ShoppingDate = new DateTime(2023, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmployeeId = 2,
+                            ShoppingDate = new DateTime(2023, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SupplierId = 1
                         },
                         new
                         {
                             Id = 5,
-                            EmployeeId = 3,
-                            ShoppingDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmployeeId = 1,
+                            ShoppingDate = new DateTime(2023, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SupplierId = 1
                         },
                         new
                         {
                             Id = 6,
-                            EmployeeId = 3,
-                            ShoppingDate = new DateTime(2023, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SupplierId = 1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            EmployeeId = 1,
-                            ShoppingDate = new DateTime(2023, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmployeeId = 2,
+                            ShoppingDate = new DateTime(2023, 12, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SupplierId = 2
                         },
                         new
                         {
-                            Id = 8,
+                            Id = 7,
                             EmployeeId = 2,
-                            ShoppingDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShoppingDate = new DateTime(2024, 1, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SupplierId = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            EmployeeId = 1,
+                            ShoppingDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SupplierId = 2
                         },
                         new
                         {
                             Id = 9,
-                            EmployeeId = 3,
-                            ShoppingDate = new DateTime(2023, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SupplierId = 2
-                        },
-                        new
-                        {
-                            Id = 10,
                             EmployeeId = 1,
-                            ShoppingDate = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShoppingDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SupplierId = 1
                         },
                         new
                         {
+                            Id = 10,
+                            EmployeeId = 3,
+                            ShoppingDate = new DateTime(2023, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SupplierId = 2
+                        },
+                        new
+                        {
                             Id = 11,
-                            EmployeeId = 1,
-                            ShoppingDate = new DateTime(2023, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmployeeId = 3,
+                            ShoppingDate = new DateTime(2023, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SupplierId = 2
                         },
                         new
                         {
                             Id = 12,
-                            EmployeeId = 1,
-                            ShoppingDate = new DateTime(2023, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmployeeId = 2,
+                            ShoppingDate = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SupplierId = 2
                         },
                         new
                         {
                             Id = 13,
                             EmployeeId = 3,
-                            ShoppingDate = new DateTime(2023, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShoppingDate = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SupplierId = 1
                         },
                         new
                         {
                             Id = 14,
-                            EmployeeId = 1,
-                            ShoppingDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SupplierId = 2
+                            EmployeeId = 3,
+                            ShoppingDate = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SupplierId = 1
                         },
                         new
                         {
                             Id = 15,
-                            EmployeeId = 2,
-                            ShoppingDate = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SupplierId = 2
+                            EmployeeId = 3,
+                            ShoppingDate = new DateTime(2023, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SupplierId = 1
                         },
                         new
                         {
                             Id = 16,
                             EmployeeId = 2,
-                            ShoppingDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SupplierId = 2
+                            ShoppingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SupplierId = 1
                         });
                 });
 
@@ -3108,73 +3605,433 @@ namespace Persistence.Data.Migrations
                     b.HasData(
                         new
                         {
-                            MedicineId = 192,
-                            ShoppingId = 15
+                            MedicineId = 101,
+                            ShoppingId = 14
                         },
                         new
                         {
-                            MedicineId = 181,
-                            ShoppingId = 5
+                            MedicineId = 102,
+                            ShoppingId = 14
                         },
                         new
                         {
-                            MedicineId = 126,
-                            ShoppingId = 3
+                            MedicineId = 103,
+                            ShoppingId = 6
                         },
                         new
                         {
-                            MedicineId = 157,
-                            ShoppingId = 15
-                        },
-                        new
-                        {
-                            MedicineId = 177,
-                            ShoppingId = 7
-                        },
-                        new
-                        {
-                            MedicineId = 121,
-                            ShoppingId = 9
-                        },
-                        new
-                        {
-                            MedicineId = 115,
+                            MedicineId = 104,
                             ShoppingId = 10
                         },
                         new
                         {
-                            MedicineId = 127,
+                            MedicineId = 105,
+                            ShoppingId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 106,
                             ShoppingId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 107,
+                            ShoppingId = 4
+                        },
+                        new
+                        {
+                            MedicineId = 108,
+                            ShoppingId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 109,
+                            ShoppingId = 9
                         },
                         new
                         {
                             MedicineId = 110,
+                            ShoppingId = 1
+                        },
+                        new
+                        {
+                            MedicineId = 111,
+                            ShoppingId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 112,
+                            ShoppingId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 113,
+                            ShoppingId = 2
+                        },
+                        new
+                        {
+                            MedicineId = 114,
+                            ShoppingId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 115,
+                            ShoppingId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 116,
                             ShoppingId = 5
                         },
                         new
                         {
-                            MedicineId = 179,
+                            MedicineId = 117,
+                            ShoppingId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 118,
+                            ShoppingId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 119,
+                            ShoppingId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 120,
+                            ShoppingId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 121,
+                            ShoppingId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 122,
                             ShoppingId = 13
                         },
                         new
                         {
                             MedicineId = 123,
-                            ShoppingId = 4
+                            ShoppingId = 3
                         },
                         new
                         {
-                            MedicineId = 129,
-                            ShoppingId = 7
+                            MedicineId = 124,
+                            ShoppingId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 125,
+                            ShoppingId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 126,
+                            ShoppingId = 12
                         },
                         new
                         {
                             MedicineId = 127,
+                            ShoppingId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 128,
+                            ShoppingId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 129,
                             ShoppingId = 6
                         },
                         new
                         {
-                            MedicineId = 194,
+                            MedicineId = 130,
+                            ShoppingId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 131,
+                            ShoppingId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 132,
+                            ShoppingId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 133,
+                            ShoppingId = 3
+                        },
+                        new
+                        {
+                            MedicineId = 134,
+                            ShoppingId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 135,
+                            ShoppingId = 1
+                        },
+                        new
+                        {
+                            MedicineId = 136,
+                            ShoppingId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 137,
+                            ShoppingId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 138,
+                            ShoppingId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 139,
+                            ShoppingId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 140,
+                            ShoppingId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 141,
+                            ShoppingId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 142,
+                            ShoppingId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 143,
+                            ShoppingId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 144,
+                            ShoppingId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 145,
+                            ShoppingId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 146,
+                            ShoppingId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 147,
+                            ShoppingId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 148,
+                            ShoppingId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 149,
+                            ShoppingId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 150,
+                            ShoppingId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 151,
+                            ShoppingId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 152,
+                            ShoppingId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 153,
+                            ShoppingId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 154,
+                            ShoppingId = 13
+                        },
+                        new
+                        {
+                            MedicineId = 155,
+                            ShoppingId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 156,
+                            ShoppingId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 157,
+                            ShoppingId = 4
+                        },
+                        new
+                        {
+                            MedicineId = 158,
+                            ShoppingId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 159,
                             ShoppingId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 160,
+                            ShoppingId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 161,
+                            ShoppingId = 14
+                        },
+                        new
+                        {
+                            MedicineId = 162,
+                            ShoppingId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 163,
+                            ShoppingId = 6
+                        },
+                        new
+                        {
+                            MedicineId = 164,
+                            ShoppingId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 165,
+                            ShoppingId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 166,
+                            ShoppingId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 167,
+                            ShoppingId = 6
+                        },
+                        new
+                        {
+                            MedicineId = 168,
+                            ShoppingId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 169,
+                            ShoppingId = 1
+                        },
+                        new
+                        {
+                            MedicineId = 170,
+                            ShoppingId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 171,
+                            ShoppingId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 172,
+                            ShoppingId = 1
+                        },
+                        new
+                        {
+                            MedicineId = 173,
+                            ShoppingId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 174,
+                            ShoppingId = 3
+                        },
+                        new
+                        {
+                            MedicineId = 175,
+                            ShoppingId = 11
+                        },
+                        new
+                        {
+                            MedicineId = 176,
+                            ShoppingId = 15
+                        },
+                        new
+                        {
+                            MedicineId = 177,
+                            ShoppingId = 6
+                        },
+                        new
+                        {
+                            MedicineId = 178,
+                            ShoppingId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 179,
+                            ShoppingId = 4
+                        },
+                        new
+                        {
+                            MedicineId = 180,
+                            ShoppingId = 10
+                        },
+                        new
+                        {
+                            MedicineId = 181,
+                            ShoppingId = 1
+                        },
+                        new
+                        {
+                            MedicineId = 182,
+                            ShoppingId = 8
+                        },
+                        new
+                        {
+                            MedicineId = 183,
+                            ShoppingId = 2
+                        },
+                        new
+                        {
+                            MedicineId = 184,
+                            ShoppingId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 185,
+                            ShoppingId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 186,
+                            ShoppingId = 12
                         },
                         new
                         {
@@ -3183,27 +4040,62 @@ namespace Persistence.Data.Migrations
                         },
                         new
                         {
-                            MedicineId = 173,
-                            ShoppingId = 10
+                            MedicineId = 188,
+                            ShoppingId = 2
                         },
                         new
                         {
-                            MedicineId = 160,
-                            ShoppingId = 11
+                            MedicineId = 189,
+                            ShoppingId = 2
                         },
                         new
                         {
-                            MedicineId = 174,
+                            MedicineId = 190,
                             ShoppingId = 8
                         },
                         new
                         {
-                            MedicineId = 123,
-                            ShoppingId = 6
+                            MedicineId = 191,
+                            ShoppingId = 7
                         },
                         new
                         {
-                            MedicineId = 178,
+                            MedicineId = 192,
+                            ShoppingId = 12
+                        },
+                        new
+                        {
+                            MedicineId = 193,
+                            ShoppingId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 194,
+                            ShoppingId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 195,
+                            ShoppingId = 5
+                        },
+                        new
+                        {
+                            MedicineId = 196,
+                            ShoppingId = 9
+                        },
+                        new
+                        {
+                            MedicineId = 197,
+                            ShoppingId = 7
+                        },
+                        new
+                        {
+                            MedicineId = 198,
+                            ShoppingId = 2
+                        },
+                        new
+                        {
+                            MedicineId = 199,
                             ShoppingId = 4
                         });
                 });

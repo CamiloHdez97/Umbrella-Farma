@@ -17,7 +17,7 @@ public class MedicineController : BaseApiController{
     public MedicineController (IUnitOfWork unitOfWork,IMapper mapper){
         _UnitOfWork = unitOfWork;
         _Mapper = mapper;
-    }
+    }    
 
     [HttpGet]
     //[Authorize]

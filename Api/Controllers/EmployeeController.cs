@@ -29,6 +29,15 @@ public class EmployeeController : BaseApiController{
        return _Mapper.Map<List<EmployeeDto>>(records);
     }
 
+    [HttpGet("EmployeSales/{year}")]
+    //[Authorize]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IEnumerable<object>> GetEmployeSale(int year){
+       return await _UnitOfWork.Employees.GetEmployeSale(year);
+    }
+
     [HttpGet("{id}")]
     [Authorize]
     [MapToApiVersion("1.0")]

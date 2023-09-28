@@ -29,6 +29,17 @@ public class ShoppingController : BaseApiController{
        return _Mapper.Map<List<ShoppingDto>>(records);
     }
 
+    [HttpGet("SupplierNoShopping/{year}")]
+    //[Authorize]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IEnumerable<object>> NoSalesSupplier(int year){
+
+       return await _UnitOfWork.Shoppings.NoSalesSupplier(year);
+
+    }
+
     [HttpGet("{id}")]
     [Authorize]
     [MapToApiVersion("1.0")]

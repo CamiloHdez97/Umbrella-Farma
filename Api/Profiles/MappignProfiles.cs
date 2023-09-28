@@ -5,6 +5,7 @@ using Domain.Entities;
 namespace Api.Profiles;
 public class MappignProfiles: Profile{
     public MappignProfiles(){
+        
         CreateMap<ChargeDto,Charge>()
             .ReverseMap();
         CreateMap<AddressDto,Address>()
@@ -35,6 +36,8 @@ public class MappignProfiles: Profile{
             .ReverseMap();
         CreateMap<MedicineInfoDto,MedicineInfo>()
             .ReverseMap();
+        CreateMap<MedicineInfoSimpleDto,MedicineInfo>()
+            .ReverseMap();            
         CreateMap<MedicinePresentationDto,MedicinePresentation>()
             .ReverseMap();
         CreateMap<PersonDto,Person>()
