@@ -8,6 +8,7 @@ using Persistence;
 namespace Application.Repositories;
 public sealed class ShoppingRepository : GenericRepositoryIntId<Shopping>, IShoppingRepository{
     private readonly DbContext _context ;
+    
     public ShoppingRepository(DataContext context) : base(context){
         _context = context;
 
