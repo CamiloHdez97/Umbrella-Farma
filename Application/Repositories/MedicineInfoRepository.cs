@@ -262,4 +262,29 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
                 Total = grouped.Count()
             };
     }    
+
+    
+        public async Task<IEnumerable<object>> MedicineExpireYear(int year){
+
+            var listMedicine = _Context.Set<Medicine>();
+            var listMedicineInfo = _Context.Set<MedicineInfo>();
+            var listInventory = _Context.Set<Inventory>();
+
+            var query = (
+
+                from medicineInfo in listMedicineInfo
+                join inventory in listInventory on medicineInfo.Id equals inventory.MedicineInfoId
+                join medicine in listMedicine on inventory.Id equals medicine.InventoryId
+                where medicine.ExpirationDate.Year > year
+                select new {
+
+                    id = medicine.Id,
+                    Medicine = medicineInfo.Name,
+                    Expiration = medicine.ExpirationDate
+
+                } 
+            );
+
+            return await query.ToListAsync();
+        }
 }

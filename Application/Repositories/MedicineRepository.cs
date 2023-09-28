@@ -71,4 +71,5 @@ public sealed class MedicineRepository : GenericRepositoryIntId<Medicine>, IMedi
                 ).FirstOrDefault();
                 return await Task.FromResult(new[] { query });     
         }
+
 }
