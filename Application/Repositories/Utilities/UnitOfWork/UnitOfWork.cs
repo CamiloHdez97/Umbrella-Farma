@@ -31,6 +31,7 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
     private IStateRepository _State;
     private ISupplierTypeRepository _SupplierType;
     private IPersonTypeRepository _PersonType;
+    private ICustomQueriesManager _CustomQueriesManager;
 
     public UnitOfWork(DataContext context)=>_Context = context;
 
@@ -83,6 +84,7 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
     public ISupplierTypeRepository SupplierTypes => _SupplierType??= new SupplierTypeRepository(_Context);
 
     public IPersonTypeRepository PersonTypes => _PersonType??= new PersonTypeRepository(_Context);
+    public ICustomQueriesManager CustomQueries => _CustomQueriesManager??= new CustomQueriesManager(_Context);
 
 
     //-Other Properties
