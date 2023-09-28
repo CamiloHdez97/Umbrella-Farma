@@ -25,8 +25,8 @@ public class SupplierTypeController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IEnumerable<SupplierTypeDto>> Get(){
-       var records = await _UnitOfWork.SupplierTypes.GetAllAsync();
-       return _Mapper.Map<List<SupplierTypeDto>>(records);
+        var records = await _UnitOfWork.SupplierTypes.GetAllAsync();
+        return _Mapper.Map<List<SupplierTypeDto>>(records);
     }
 
     [HttpGet("{id}")]
