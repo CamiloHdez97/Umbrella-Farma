@@ -13,8 +13,93 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
     private readonly DbContext _Context;
     public MedicineInfoRepository(DataContext context) : base(context)
     => _Context = context;
+    public async Task<IEnumerable<object>> SuppliersWhoHaveSuppliedMedications(SuppliersWhoHaveSuppliedMedicationsModel data = null){
+        var medicines = await (from detail in _Context.Set<ShoppingDetail>()
+            join shopping in _Context.Set<Shopping>() on detail.ShoppingId equals shopping.Id
+            join medicineInfo in _Context.Set<MedicineInfo>() on detail.Medicine.Inventory.MedicineInfo.Id equals medicineInfo.Id
+            join supplier in _Context.Set<Supplier>() on shopping.SupplierId equals supplier.Id
+            join person in _Context.Set<Person>() on supplier.PersonId equals person.Id
+            let Price = medicineInfo.Price - (medicineInfo.Price * (medicineInfo.Discount / 100))
+            select new {
+                Supplier = person.Name,
+                medicineInfo.Name,
+                shopping.ShoppingDate,
+                Price,
+            }).ToListAsync();
 
-    
+        if(data?.InitialDate != null ){
+            if( data?.FinalDate != null && data.InitialDate < data.FinalDate){
+                medicines = medicines.Where(x => 
+                    x.ShoppingDate <= data.FinalDate  && 
+                    x.ShoppingDate >= data.InitialDate
+                ).ToList();
+            }else {
+                medicines = medicines.Where(x => x.ShoppingDate >= data.InitialDate ).ToList();
+            } 
+        }        
+
+        var res =  from medicine in medicines 
+            group medicine by medicine.Supplier into medicineGroup
+            let MoneyInvested = medicineGroup.Sum(x => x.Price)
+            let TotalPurchases = medicineGroup.Count()
+            orderby TotalPurchases descending
+            let medicinesTotals = from medicineTotal in medicineGroup
+                group medicineTotal by medicineTotal.Name into medicineTotalGroup
+                select  new {
+                    medicineTotalGroup.First().Name,
+                    TotalPurchases = medicineTotalGroup.Sum(x => x.Price).ToString("c"), 
+                    medicinesTotals = medicineTotalGroup.Count()
+                }
+            select new {
+                medicineGroup.First().Supplier,  
+                medicines = medicinesTotals,           
+                MoneyInvested = MoneyInvested.ToString("c"),
+                TotalPurchases
+            };    
+
+        if(data?.IsUnder != false){
+            return res.Where(x => x.TotalPurchases <= data.MinimalMedications);    
+        }
+        return res.Where(x => x.TotalPurchases >= data.MinimalMedications);     
+    }
+    public async Task<IEnumerable<object>> EmployeesWhoHaveMadeSales(EmployeesWhoHaveMadeSalesModel data = null){
+        var medicines =  await (from detail in _Context.Set<SaleDetail>()
+            join sale in _Context.Set<Sale>() on detail.SaleId equals sale.Id
+            join employee in _Context.Set<Employee>() on sale.EmployeeId equals employee.Id
+            join person in _Context.Set<Person>() on employee.PersonId equals person.Id
+            join medicineInfo in _Context.Set<MedicineInfo>() on detail.Medicine.Inventory.MedicineInfoId equals medicineInfo.Id
+            let Price = medicineInfo.Price - (medicineInfo.Price * (medicineInfo.Discount / 100))
+            select new {
+                person.Name,
+                Price,
+                sale.SaleDate
+            }).ToListAsync();
+
+        if(data?.InitialDate != null ){
+            if( data?.FinalDate != null && data.InitialDate < data.FinalDate){
+                medicines = medicines.Where(x => 
+                    x.SaleDate <= data.FinalDate  && 
+                    x.SaleDate >= data.InitialDate
+                ).ToList();
+            }else {
+                medicines = medicines.Where(x => x.SaleDate >= data.InitialDate ).ToList();
+            } 
+        }
+
+        var res = from medicine in medicines
+            group medicine by medicine.Name into medicineGroup
+            let RaisedMoney = medicineGroup.Sum(x => x.Price)
+            let TotalSales = medicineGroup.Count()
+            select new {
+                medicineGroup.First().Name,
+                RaisedMoney = RaisedMoney.ToString("c"),
+                TotalSales
+            };
+        if(data?.IsUnder != false){
+            return res.Where(x => x.TotalSales <= data.MinimumSales);    
+        }
+        return res.Where(x => x.TotalSales >= data.MinimumSales);
+    }
     public async Task<IEnumerable<object>> MedicineWithMinStock (int minStock){
         return await (from medicineItem in _Entities
             select new {
@@ -264,12 +349,26 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
     }    
 
     
-        public async Task<IEnumerable<object>> MedicineExpireYear(int year){
+    public async Task<IEnumerable<object>> MedicineExpireBeforeYear(int year){
+        return await (
+            from medicineInfo in _Context.Set<MedicineInfo>()
+                join inventory in _Context.Set<Inventory>() on medicineInfo.Id equals inventory.MedicineInfoId
+                join medicine in _Context.Set<Medicine>() on inventory.Id equals medicine.InventoryId
+                where medicine.ExpirationDate.Year > year
+                select new
+                {
+                    id = medicine.Id,
+                    Medicine = medicineInfo.Name,
+                    Expiration = medicine.ExpirationDate
+                }).ToListAsync();            
+    }
+
+    public async Task<IEnumerable<object>> MedicineExpireInYear(int year){
             return await (
                 from medicineInfo in _Context.Set<MedicineInfo>()
                     join inventory in _Context.Set<Inventory>() on medicineInfo.Id equals inventory.MedicineInfoId
                     join medicine in _Context.Set<Medicine>() on inventory.Id equals medicine.InventoryId
-                    where medicine.ExpirationDate.Year > year
+                    where medicine.ExpirationDate.Year == year
                     select new
                     {
                         id = medicine.Id,
@@ -277,4 +376,6 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
                         Expiration = medicine.ExpirationDate
                     }).ToListAsync();            
         }
+
+    
 }

@@ -39,7 +39,7 @@ builder.Services.AddAuthentication();
 
 //-Add Sql Connection
 builder.Services.AddDbContext<DataContext>(opts =>{
-    string connection = builder.Configuration["ConnectionStrings:ConnectionLeon"]?? throw new Exception("Error: Invalid Connection");
+    string connection = builder.Configuration["ConnectionStrings:ConnectionWindows"]?? throw new Exception("Error: Invalid Connection");
     opts.UseMySql(connection, ServerVersion.AutoDetect(connection));
 });
 

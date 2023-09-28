@@ -68,7 +68,6 @@ public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>{
                 EmployeeId = _random.Next(1,4),
                 SupplierId = _random.Next(1,3)
             });
-
         }
         return ShoppingsList;
             
