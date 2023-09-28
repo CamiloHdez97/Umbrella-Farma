@@ -39,8 +39,17 @@ public class MedicineInfoController : BaseApiController{
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-   public async Task<IEnumerable<object>> MedicineExpireYear(int year){
-      return await _UnitOfWork.MedicineInfos.MedicineExpireYear(year);
+   public async Task<IEnumerable<object>> MedicineExpireBeforeYear(int year){
+      return await _UnitOfWork.MedicineInfos.MedicineExpireBeforeYear(year);
+   }
+
+   [HttpGet("ExpireInDate/{year}")]
+   //[Authorize]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> MedicineExpireInYear(int year){
+      return await _UnitOfWork.MedicineInfos.MedicineExpireInYear(year);
    }
 
    //*3 Medicamentos comprados al ‘Proveedor A’
@@ -55,6 +64,25 @@ public class MedicineInfoController : BaseApiController{
       return await _UnitOfWork.MedicineInfos.PurchasedBySupplier(data);
    }
    //* fin de la consulta 
+
+   //*32. Empleado que ha vendido la mayor cantidad de medicamentos distintos en 2023.
+   //*------ Pendiente
+   
+   /* 
+   *20. Empleados que hayan hecho más de 5 ventas en total.
+   *23. Empleados que no han realizado ninguna venta en 2023.
+   *27. Empleados con menos de 5 ventas en 2023.
+   *37. Empleados que no realizaron ventas en abril de 2023. */
+   [HttpGet("EmployeesWhoHaveMadeSales")]
+   //[Authorize]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> EmployeesWhoHaveMadeSales([FromBody] EmployeesWhoHaveMadeSalesModel data = null){
+      return await _UnitOfWork.MedicineInfos.EmployeesWhoHaveMadeSales(data);
+   }
+   //* fin de la consulta
+
    
    //*5 Total de ventas del medicamento ‘Paracetamol’
    [HttpGet("TotalDrugSales/{MedicineName}")]
