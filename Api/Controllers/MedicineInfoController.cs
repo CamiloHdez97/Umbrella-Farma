@@ -23,7 +23,7 @@ public class MedicineInfoController : BaseApiController{
     }
     
     //*1 Obtener todos los medicamentos con menos de 50 unidades en stock
-    [HttpGet("MinStock")]
+    [HttpGet("MinStock/{minStock}")]
     //[Authorize]
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
