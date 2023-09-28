@@ -29,6 +29,17 @@ public class SaleController : BaseApiController{
        return _Mapper.Map<List<SaleDto>>(records);
     }
 
+    
+    [HttpGet("VipApi")]
+    //[Authorize]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<Object> GetVipApi(){
+        return await _UnitOfWork.Sales.VipBuyer();
+       //return _Mapper.Map<List<SaleDto>>(records);
+    }
+
     [HttpGet("{id}")]
     [Authorize]
     [MapToApiVersion("1.0")]

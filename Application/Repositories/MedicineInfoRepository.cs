@@ -13,6 +13,17 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
     private readonly DbContext _Context;
     public MedicineInfoRepository(DataContext context) : base(context)
     => _Context = context;
+    public async Task<IEnumerable<object>> MedicinesByPriceAndStock(MedicinesByPriceAndStockModel data = null){
+        return from detail in _Context.Set<ShoppingDetail>()
+            join medicineInfo in _Context.Set<MedicineInfo>() on detail.Medicine.Inventory.MedicineInfo.Id equals medicineInfo.Id
+            join shopping in _Context.Set<Shopping>() on detail.ShoppingId equals shopping.Id
+            join supplier in _Context.Set<Supplier>() on shopping.SupplierId equals supplier.Id
+            join person in _Context.Set<Person>() on supplier.PersonId equals person.Id
+            select new {
+                medicineInfo,
+                person
+            };
+    }
     public async Task<IEnumerable<object>> SuppliersWhoHaveSuppliedMedications(SuppliersWhoHaveSuppliedMedicationsModel data = null){
         var medicines = await (from detail in _Context.Set<ShoppingDetail>()
             join shopping in _Context.Set<Shopping>() on detail.ShoppingId equals shopping.Id

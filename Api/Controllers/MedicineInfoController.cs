@@ -54,7 +54,7 @@ public class MedicineInfoController : BaseApiController{
 
    //*3 Medicamentos comprados al ‘Proveedor A’
    //*11 Número de medicamentos por proveedor.
-   //*Proveedores que no han vendido medicamentos en el último año.
+   //*13 Proveedores que no han vendido medicamentos en el último año.
    [HttpGet("PurchasedBySupplier")]
    //[Authorize]
    [MapToApiVersion("1.0")]
@@ -67,12 +67,19 @@ public class MedicineInfoController : BaseApiController{
 
    //*29. Proveedores de los medicamentos con menos de 50 unidades en stock.
    //*38. Medicamentos con un precio mayor a 50 y un stock menor a 100.
-   //*--pendiente
+   [HttpGet("MedicinesByPriceAndStock")]
+   //[Authorize]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> MedicinesByPriceAndStock([FromBody] MedicinesByPriceAndStockModel data = null){
+      return await _UnitOfWork.MedicineInfos.MedicinesByPriceAndStock(data);
+   }
 
    /*    
    *32. Empleado que ha vendido la mayor cantidad de medicamentos distintos en 2023. 
    *35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.*/
-   
+   //*--pendiente
 
    /*
    *28. Número total de proveedores que suministraron medicamentos en 2023.
