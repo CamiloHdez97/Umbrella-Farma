@@ -34,11 +34,7 @@ namespace Persistence.Data.Configuration{
                 },
                 new{
                     Id = 4,
-                    Description = "Sold"
-                },
-                new{
-                    Id = 5,
-                    Description = "Returned"
+                    Description = "sold"
                 }
             );
         }

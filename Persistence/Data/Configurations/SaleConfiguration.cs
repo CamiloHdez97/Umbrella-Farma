@@ -51,7 +51,7 @@ public class SaleConfiguration : IEntityTypeConfiguration<Sale>
                 t => {//--Configurations
                     t.ToTable("saleDetail");
                     t.HasKey(j => new{j.MedicineId,j.SaleId});                    
-                    t.HasData(GetSaleDetailSeed());
+                    t.HasData(GetSaleDetailSeed(102));
                 }
             );
         builder.HasData(
@@ -61,7 +61,7 @@ public class SaleConfiguration : IEntityTypeConfiguration<Sale>
 
     private static List<Sale> GetSaleSeed(){
         List<Sale> salesList = new();
-        for (int i = 1; i <= 16; i++){
+        for (int i = 1; i <= 130; i++){
             salesList.Add(new Sale{
                 Id = i,
                 SaleDate = new DateTime(2023,05,05).AddDays(_random.Next(1,365)),
@@ -73,12 +73,12 @@ public class SaleConfiguration : IEntityTypeConfiguration<Sale>
         return salesList;
             
     }
-    private static HashSet<SaleDetail> GetSaleDetailSeed(){
+    private static HashSet<SaleDetail> GetSaleDetailSeed(int recordsNumber){
         HashSet<SaleDetail> SaleDetailsList = new();
-        for (int i = 1; i < 100; i++){
+        for (int i = 1; i < recordsNumber; i++){
             SaleDetailsList.Add(new SaleDetail{                                    
                 MedicineId = i,
-                SaleId = _random.Next(1,16)
+                SaleId = _random.Next(1,130)
             });
         }
         return SaleDetailsList;

@@ -47,19 +47,32 @@ namespace Persistence.Data.Configurations;
                 .HasForeignKey(p => p.InventoryId);
 
 
-            builder.HasData(MedicineGenerator(200));
+            builder.HasData(MedicineGenerator(500));
         }      
 
         private static List<Medicine> MedicineGenerator(int NumberOfMedicines){
             var data = new List<Medicine>();
             Random random = new();
-            for (int i = 0; i < NumberOfMedicines; i++){
+            for (int i = 1; i < NumberOfMedicines; i++){
+                int stateId = 1;
+                if(i <= 102){stateId = 4;}
+
+                int hasAddDays = random.Next(0, 365) < 30 ? -1 : 1;            
+
+                var  CreationDate = DateTime.Now.AddDays(-1 * random.Next(1,365)).AddMonths(-1 * random.Next(0,
+                12));
+
+                var ExpirationDate = DateTime.Now.AddDays(hasAddDays * random.Next(1,365)).AddMonths(hasAddDays * random.Next(0,12));
+
+                if(random.Next(1,500) < 70){stateId = 3;}
+                if(ExpirationDate<DateTime.Now){stateId = 2;}
+
                 var medicine = new Medicine{
-                    Id = i + 1,
-                    CreationDate = DateTime.Now.AddDays(-1 * random.Next(1,365)).AddMonths(-1 * random.Next(0,12)),
-                    ExpirationDate = DateTime.Now.AddDays(random.Next(1,365)).AddYears(random.Next(0,3)),
+                    Id = i ,
+                    CreationDate =CreationDate,
+                    ExpirationDate =ExpirationDate ,
                     InventoryId = random.Next(1,10),
-                    StateId = random.Next(1,5)
+                    StateId = stateId
                 };      
                 data.Add(medicine);
             }
