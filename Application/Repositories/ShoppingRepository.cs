@@ -7,7 +7,12 @@ using Persistence;
 
 namespace Application.Repositories;
 public sealed class ShoppingRepository : GenericRepositoryIntId<Shopping>, IShoppingRepository{
-    public ShoppingRepository(DataContext context) : base(context){}
+    private readonly DbContext _context ;
+    
+    public ShoppingRepository(DataContext context) : base(context){
+        _context = context;
+
+    }
     protected override async Task<IEnumerable<Shopping>> GetAll(Expression<Func<Shopping, bool>> expression = null)
     {
         if (expression is not null)
