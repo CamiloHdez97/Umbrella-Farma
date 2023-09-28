@@ -72,6 +72,7 @@ public class MedicineInfoController : BaseApiController{
    /*    
    *32. Empleado que ha vendido la mayor cantidad de medicamentos distintos en 2023. 
    *35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.*/
+   
 
    /*
    *28. Número total de proveedores que suministraron medicamentos en 2023.

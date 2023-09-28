@@ -38,7 +38,7 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
             } 
         }        
 
-        return from medicine in medicines 
+        var res =  from medicine in medicines 
             group medicine by medicine.Supplier into medicineGroup
             let MoneyInvested = medicineGroup.Sum(x => x.Price)
             let TotalPurchases = medicineGroup.Count()
@@ -55,7 +55,12 @@ public sealed class MedicineInfoRepository : GenericRepositoryIntId<MedicineInfo
                 medicines = medicinesTotals,           
                 MoneyInvested = MoneyInvested.ToString("c"),
                 TotalPurchases
-            };            
+            };    
+
+        if(data?.IsUnder != false){
+            return res.Where(x => x.TotalPurchases <= data.MinimalMedications);    
+        }
+        return res.Where(x => x.TotalPurchases >= data.MinimalMedications);     
     }
     public async Task<IEnumerable<object>> EmployeesWhoHaveMadeSales(EmployeesWhoHaveMadeSalesModel data = null){
         var medicines =  await (from detail in _Context.Set<SaleDetail>()
