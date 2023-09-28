@@ -26,4 +26,29 @@ public sealed class ShoppingRepository : GenericRepositoryIntId<Shopping>, IShop
             .Include(x => x.ShoppingDetails)
             .ToListAsync();
     }
+
+        public async Task<IEnumerable<object>> NoSalesSupplier(int year){
+
+        var listPersons = _context.Set<Person>();
+        var listSuppliers = _context.Set<Supplier>();
+        var listShoppings = _context.Set<Shopping>();
+
+        var query = (
+            from person in listPersons
+            join supplier in listSuppliers on person.Id equals supplier.PersonId
+            join shopping in listShoppings on supplier.Id equals shopping.SupplierId
+            where shopping == null || shopping.ShoppingDate.Year < year
+            select new {
+
+                id = person.Id,
+                Responsable = person.Name,
+                UltimaCompra = shopping.ShoppingDate
+                          
+            });
+            
+            var uniqueSupplier = query.GroupBy(item => new {item.id, item.Responsable}).Select(g => g.First());
+
+            return await uniqueSupplier.ToListAsync();
+
+    }
 }
