@@ -13,6 +13,7 @@ public interface IMedicineInfoRepository: IGenericRepositoryIntId<MedicineInfo>{
     Task<float> MoneyRaisedFromSales(string medicineName = null);
     Task<IEnumerable<object>> TotalMedicineSold(TotalMedicineSoldModel data = null);        
     Task<IEnumerable<object>> EmployeesWhoHaveMadeSales(EmployeesWhoHaveMadeSalesModel data = null);        
+    Task<IEnumerable<object>> SuppliersWhoHaveSuppliedMedications(SuppliersWhoHaveSuppliedMedicationsModel data = null);
     Task<IEnumerable<object>> PatientsWhoHaveAcquiredParacetamol(string Patients = null);      
     Task<IEnumerable<Object>> MedicineExpireBeforeYear(int year);
     Task<IEnumerable<object>> MedicationsThatHaveNotBeenSold(int? year);    

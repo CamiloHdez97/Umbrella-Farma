@@ -65,8 +65,26 @@ public class MedicineInfoController : BaseApiController{
    }
    //* fin de la consulta 
 
-   //*32. Empleado que ha vendido la mayor cantidad de medicamentos distintos en 2023.
-   //*------ Pendiente
+   //*29. Proveedores de los medicamentos con menos de 50 unidades en stock.
+   //*38. Medicamentos con un precio mayor a 50 y un stock menor a 100.
+   //*--pendiente
+
+   /*    
+   *32. Empleado que ha vendido la mayor cantidad de medicamentos distintos en 2023. 
+   *35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.*/
+
+   /*
+   *28. Número total de proveedores que suministraron medicamentos en 2023.
+   *24. Proveedor que ha suministrado más medicamentos en 2023.
+   */
+   [HttpGet("SuppliersWhoHaveSuppliedMedications")]
+   //[Authorize]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> SuppliersWhoHaveSuppliedMedications([FromBody] SuppliersWhoHaveSuppliedMedicationsModel data = null){
+      return await _UnitOfWork.MedicineInfos.SuppliersWhoHaveSuppliedMedications(data);
+   }
    
    /* 
    *20. Empleados que hayan hecho más de 5 ventas en total.
