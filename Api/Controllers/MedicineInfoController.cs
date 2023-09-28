@@ -35,13 +35,14 @@ public class MedicineInfoController : BaseApiController{
 
    //*3 Medicamentos comprados al ‘Proveedor A’
    //*11 Número de medicamentos por proveedor.
-   [HttpGet("PurchasedBySupplier/{supplierName}")]
+   //*Proveedores que no han vendido medicamentos en el último año.
+   [HttpGet("PurchasedBySupplier")]
    //[Authorize]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-   public async Task<IEnumerable<MedicineDetailTotalModel>> PurchasedBySupplier(string supplierName){
-      return await _UnitOfWork.MedicineInfos.PurchasedBySupplier(supplierName);
+   public async Task<IEnumerable<object>> PurchasedBySupplier([FromBody ] MedicineInfoSupplierModel data = null){
+      return await _UnitOfWork.MedicineInfos.PurchasedBySupplier(data);
    }
    //* fin de la consulta 
    
@@ -76,17 +77,36 @@ public class MedicineInfoController : BaseApiController{
    }
    //* fin de la consulta
 
+
    //*9 Medicamentos que no han sido vendidos
-   [HttpGet("MedicationsThatWereNotSold")]
+   //*34 Medicamentos que no han sido vendidos en 2023.
+   //*21 Medicamentos que no han sido vendidos nunca.   
+   [HttpGet("MedicationsThatHaveNotBeenSold/{year?}")]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-   public async Task<IEnumerable<MedicineDetailTotalModel>> MedicationsThatWereNotSold(){
-      return await _UnitOfWork.MedicineInfos.MedicationsThatWereNotSold();
+   public async Task<IEnumerable<object>> MedicationsThatHaveNotBeenSold(int? year = null){
+      return await _UnitOfWork.MedicineInfos.MedicationsThatHaveNotBeenSold(year);
+   }
+   
+
+
+   //*15 Obtener el medicamento menos vendido en 2023
+   //*17 Promedio de medicamentos comprados por venta.
+   //*14 Obtener el total de medicamentos vendidos en marzo de 2023.
+   //*26 Total de medicamentos vendidos por mes en 2023.
+   //*31 Medicamentos que han sido vendidos cada mes del año 2023.
+   //*36 Total de medicamentos vendidos en el primer trimestre de 2023.
+   [HttpGet("TotalMedicineSold")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> TotalMedicineSold([FromBody] TotalMedicineSoldModel data = null){
+      return await _UnitOfWork.MedicineInfos.TotalMedicineSold(data);
    }
    //* fin de la consulta
 
-   //*10 Obtener el medicamento más caro
+   //*10 Obtener el medicamento más caro   
    [HttpGet("GetTheMostExpensiveMedicine")]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
@@ -96,9 +116,19 @@ public class MedicineInfoController : BaseApiController{
       float maxPrice = medicines.Max(x => x.Price - (x.Price * (x.Discount / 100)));
       var MostExpensiveMedicine = medicines.First(x => x.Price - (x.Price * (x.Discount / 100)) == maxPrice);
       return _Mapper.Map<MedicineInfoSimpleDto>(MostExpensiveMedicine);
-
    }
    //* fin de la consulta
+
+   //*12 Pacientes que han comprado Paracetamol.
+   [HttpGet("PatientsWhoHaveAcquiredParacetamol/{Patients?}")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> PatientsWhoHaveAcquiredParacetamol(string Patients = null ){
+      return await _UnitOfWork.MedicineInfos.PatientsWhoHaveAcquiredParacetamol(Patients);
+   }
+   //* fin de la consulta
+
     [HttpGet]
     //[Authorize]
     [MapToApiVersion("1.0")]
