@@ -151,6 +151,55 @@
               <!-- Content Row -->
               <div class="row">
 
+                <div class="container mt-5">
+                    <h1>Historial del Compras</h1>
+                    <form id="searchForm">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Buscar compra por nombre" id="searchInput">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="container mt-4" id="resultContainer" style="display: none;">
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultTableBody">
+                        <!-- Aquí se agregarán las filas de datos después de la búsqueda -->
+                    </tbody>
+                    </table>
+                </div>
+                
+                <!-- Query -->
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
+                $(document).ready(function () {
+                    $("#searchButton").click(function () {
+                    var searchTerm = $("#searchInput").val();
+                    // Llamada al backend para buscar el historial del cliente
+                    // Luego se actualiza las tablas con los resultados
+
+                    // Agregar datos de muestra a la tabla:
+                    $("#resultTableBody").html(`
+                        <tr>
+                        <td>1</td>
+                        <td>Compra de ejemplo</td>
+                        </tr>
+                    `);
+
+                    // Mostrar la tabla de resultados
+                    $("#resultContainer").show();
+                    });
+                });
+                </script>
+
               </div>
               
             </div>
