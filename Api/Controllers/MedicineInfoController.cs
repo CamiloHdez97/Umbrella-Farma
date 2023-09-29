@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Builder.Extensions;
 
 namespace ApiIncidencias.Controllers;
 [ApiVersion("1.0")]
+[ApiVersion("1.1")]
 public class MedicineInfoController : BaseApiController{
    private readonly IUnitOfWork _UnitOfWork;
    private readonly IMapper _Mapper;

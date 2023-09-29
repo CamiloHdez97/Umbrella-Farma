@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Text;
 using Api.Extensions;
+using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -12,12 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-//Add Configurations
-builder.Services.AddApplicationServices();
-builder.Services.ConfigureCors();
-builder.Services.ConfigurationRatelimiting();
-builder.Services.ConfigureApiVersioning();
-builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
+
 
 //-Add Authentication
 builder.Services.AddAuthentication(x => {
@@ -35,6 +31,7 @@ builder.Services.AddAuthentication(x => {
             ValidateIssuerSigningKey = true
         };
     });
+
 builder.Services.AddAuthentication();
 
 //-Add Sql Connection
@@ -47,6 +44,13 @@ builder.Services.AddDbContext<DataContext>(opts =>{
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//Add Configurations
+builder.Services.AddApplicationServices();
+builder.Services.ConfigureCors();
+builder.Services.ConfigurationRatelimiting();
+builder.Services.ConfigureApiVersioning();
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 
 var app = builder.Build();
 
@@ -72,12 +76,11 @@ using(var scope = app.Services.CreateScope()){
 }
 
 app.UseCors("CorsPolicy");
-
+app.UseApiVersioning();
 app.UseHttpsRedirection();
-app.UseRateLimiter();
-
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseIpRateLimiting();
 
 app.MapControllers();
 
