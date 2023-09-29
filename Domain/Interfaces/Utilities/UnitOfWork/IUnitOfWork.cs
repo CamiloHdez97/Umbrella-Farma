@@ -24,7 +24,8 @@ public interface IUnitOfWork{
     IStateRepository States { get; }
     ISupplierTypeRepository SupplierTypes { get; }
     IPersonTypeRepository PersonTypes { get; }
-    IUserRepository Users { get; }   
+    IUserRepository Users { get; }  
+    ICustomQueriesManager CustomQueries { get; }   
 
     Task<int> SaveChanges();
 }

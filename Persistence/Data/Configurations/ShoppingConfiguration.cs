@@ -48,7 +48,7 @@ public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>{
                 t => {//--Configurations
                     t.ToTable("shoppingDetail");
                     t.HasKey(j => new{j.MedicineId,j.ShoppingId});    
-                    t.HasData(GetShoppingDetailSeed()) ;
+                    t.HasData(GetShoppingDetailSeed(500)) ;
                 }
             );
 
@@ -61,7 +61,7 @@ public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>{
 
      private static List<Shopping> GetShoppingSeed(){
         List<Shopping> ShoppingsList = new();
-        for (int i = 1; i <= 16; i++){
+        for (int i = 1; i <= 130; i++){
             ShoppingsList.Add(new Shopping{
                 Id = i,
                 ShoppingDate = new DateTime(2023,05,05).AddDays(_random.Next(1,365)),
@@ -72,12 +72,12 @@ public class ShoppingConfiguration : IEntityTypeConfiguration<Shopping>{
         return ShoppingsList;
             
     }
-    private static HashSet<ShoppingDetail> GetShoppingDetailSeed(){
+    private static HashSet<ShoppingDetail> GetShoppingDetailSeed(int recorsNumber){
         HashSet<ShoppingDetail> ShoppingDetailsList = new();
-        for (int i = 1; i < 100; i++){
+        for (int i = 1; i < recorsNumber; i++){
             ShoppingDetailsList.Add(new ShoppingDetail{                                    
-                MedicineId = i + 100,
-                ShoppingId = _random.Next(1,16)
+                MedicineId = i,
+                ShoppingId = _random.Next(1,130)
             });
         }
         return ShoppingDetailsList;
