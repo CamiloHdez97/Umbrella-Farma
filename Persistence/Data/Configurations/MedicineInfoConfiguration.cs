@@ -28,7 +28,7 @@ public class MedicineInfoConfiguration : IEntityTypeConfiguration<MedicineInfo>
             .HasMaxLength(250);
         
         builder.Property(p => p.Price)
-           .IsRequired()
+            .IsRequired()
             .HasColumnName("price");
 
         builder.Property(p => p.Discount)
