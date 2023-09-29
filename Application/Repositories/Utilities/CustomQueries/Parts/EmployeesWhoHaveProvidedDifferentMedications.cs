@@ -6,11 +6,9 @@ namespace Application.Repositories;
 public partial class CustomQueriesManager{
     //? pendiente para refactorizar con el metodo ProvidersWhoHaveProvidedDifferentMedications 
     public async Task<IEnumerable<object>> EmployeesWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null){
-        if(data == null){
-            data = new(){
+        data ??= new(){
                 MinimumNumberOfDifferentMedications = 0
             };
-        }
           var medicines =  await (from detail in _Context.Set<SaleDetail>()
             join sale in _Context.Set<Sale>() on detail.SaleId equals sale.Id
             join employee in _Context.Set<Employee>() on sale.EmployeeId equals employee.Id

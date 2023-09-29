@@ -157,6 +157,16 @@ public class CustomQueriesController:BaseApiController{
    }
    //* fin de la consulta
 
+   //*16. Ganancia total por proveedor en 2023 (asumiendo un campo precioCompra en Compras).
+   [HttpGet("ProfitsPerSupplier/")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<float> ProfitsPerSupplier(string medicineName = null){
+      return await _UnitOfWork.CustomQueries.ProfitsPerSupplier(medicineName);
+   }
+   //* fin de la consulta
+
 
    //*9 Medicamentos que no han sido vendidos
    //*34 Medicamentos que no han sido vendidos en 2023.
