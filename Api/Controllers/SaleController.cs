@@ -59,9 +59,21 @@ public class SaleController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<Object> GetSaleParacetamol(string medidineInput,int year){
 
-        return await _UnitOfWork.Sales.GetSaleParacetamol(medidineInput,year);
+        return await _UnitOfWork.Sales.GetSaleMedicineYear(medidineInput,year);
        //return _Mapper.Map<List<SaleDto>>(records);
     }
+
+    [HttpGet("PersonNoPurchase/{year}")]
+    //[Authorize]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IEnumerable<object>> PersonNoPurchasedYear(int year){
+
+        return await _UnitOfWork.Sales.PersonNoPurchasedYear(year);
+       //return _Mapper.Map<List<SaleDto>>(records);
+    }
+
 
     [HttpGet("{id}")]
     [Authorize]
