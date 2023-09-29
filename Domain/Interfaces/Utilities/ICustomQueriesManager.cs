@@ -17,6 +17,7 @@ public interface ICustomQueriesManager{
     Task<IEnumerable<object>> EmployeesWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null);
     
     Task<IEnumerable<object>> MedicinesByPriceAndStock(MedicinesByPriceAndStockModel data = null);
+    Task<IEnumerable<object>> ProfitsPerSupplier(ProfitsPerSupplierModel data = null);
     Task<IEnumerable<object>> PatientsWhoHaveAcquiredParacetamol(string Patients = null);      
     Task<IEnumerable<Object>> MedicineExpireBeforeYear(int year);
     Task<IEnumerable<object>> MedicationsThatHaveNotBeenSold(int? year);    
