@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
-      public async Task<IEnumerable<object>> TotalMedicationsSoldByProvider(){
+    //*7 Total de medicamentos vendidos por cada proveedor.
+    public async Task<IEnumerable<object>> TotalMedicationsSoldByProvider(){
         var medicines = await (
                 from detail in _Context.Set<ShoppingDetail>()
                 let medicineInfo = detail.Medicine.Inventory.MedicineInfo

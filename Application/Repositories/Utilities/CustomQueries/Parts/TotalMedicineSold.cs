@@ -4,6 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
+    //*15 Obtener el medicamento menos vendido en 2023
+    //*17 Promedio de medicamentos comprados por venta.
+    //*14 Obtener el total de medicamentos vendidos en marzo de 2023.
+    //*26 Total de medicamentos vendidos por mes en 2023.
+    //*31 Medicamentos que han sido vendidos cada mes del año 2023.
+    //*36 Total de medicamentos vendidos en el primer trimestre de 2023.
     public async Task<IEnumerable<object>> TotalMedicineSold(TotalMedicineSoldModel conditions = null){
         var medicines = await (from detail in _Context.Set<SaleDetail>()
             join sale in _Context.Set<Sale>() on detail.SaleId equals sale.Id

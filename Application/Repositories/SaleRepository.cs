@@ -39,6 +39,7 @@ public sealed class SaleRepository : GenericRepositoryIntId<Sale>, ISaleReposito
             .ToListAsync();
     }
 
+    //*22. Paciente que ha gastado más dinero en 2023.
     public async Task<object> VipBuyer(){
 
         var query = await (from person in _Context.Set<Person>()
@@ -59,7 +60,7 @@ public sealed class SaleRepository : GenericRepositoryIntId<Sale>, ISaleReposito
         return query.FirstOrDefault();
     }
 
-
+    //*33. Total gastado por cada paciente en 2023.
         public async Task<IEnumerable<object>> AllSaleCustomer(int year){
 
         var query = await (from person in _Context.Set<Person>()
@@ -106,6 +107,7 @@ public sealed class SaleRepository : GenericRepositoryIntId<Sale>, ISaleReposito
             return await query;
         }
 
+        //*30. Pacientes que no han comprado ningún medicamento en 2023.
         public async Task<IEnumerable<object>> PersonNoPurchasedYear(int year)
         {
             var listSales = _Context.Set<Sale>();

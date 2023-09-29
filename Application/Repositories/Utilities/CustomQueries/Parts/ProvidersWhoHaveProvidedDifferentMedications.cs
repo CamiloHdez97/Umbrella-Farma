@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
     //? pendiente para refactorizar con el metodo EmployeesWhoHaveProvidedDifferentMedications 
+    //*35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.
     public async Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null){
         data ??= new(){
                 MinimumNumberOfDifferentMedications = 0
