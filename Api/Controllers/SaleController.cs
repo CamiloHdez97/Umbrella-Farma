@@ -36,7 +36,30 @@ public class SaleController : BaseApiController{
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<Object> GetVipApi(){
+
         return await _UnitOfWork.Sales.VipBuyer();
+       //return _Mapper.Map<List<SaleDto>>(records);
+    }
+
+    [HttpGet("AllSaleCustomer/{year}")]
+    //[Authorize]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IEnumerable<Object>> AllSaleCustomer(int year){
+        return await _UnitOfWork.Sales.AllSaleCustomer(year);
+       //return _Mapper.Map<List<SaleDto>>(records);
+    }
+
+    
+    [HttpGet("SaleMedicine/{medidineInput}/{year}")]
+    //[Authorize]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<Object> GetSaleParacetamol(string medidineInput,int year){
+
+        return await _UnitOfWork.Sales.GetSaleParacetamol(medidineInput,year);
        //return _Mapper.Map<List<SaleDto>>(records);
     }
 
