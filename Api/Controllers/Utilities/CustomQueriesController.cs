@@ -77,7 +77,14 @@ public class CustomQueriesController:BaseApiController{
    //* fin de la consultas
 
    //*32. Empleado que ha vendido la mayor cantidad de medicamentos distintos en 2023. 
-   //!--PENDIENTE
+   [HttpGet("EmployeesWhoHaveProvidedDifferentMedications")]
+   //[Authorize]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> EmployeesWhoHaveProvidedDifferentMedications([FromBody] WhoHaveProvidedDifferentMedicationsModel data = null){
+      return await _UnitOfWork.CustomQueries.EmployeesWhoHaveProvidedDifferentMedications(data);
+   }
 
    //*35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.
    [HttpGet("ProvidersWhoHaveProvidedDifferentMedications")]
@@ -85,7 +92,7 @@ public class CustomQueriesController:BaseApiController{
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-   public async Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications([FromBody] ProvidersWhoHaveProvidedDifferentMedicationsModel data = null){
+   public async Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications([FromBody] WhoHaveProvidedDifferentMedicationsModel data = null){
       return await _UnitOfWork.CustomQueries.ProvidersWhoHaveProvidedDifferentMedications(data);
    }
    //* fin de la consultas
@@ -147,6 +154,16 @@ public class CustomQueriesController:BaseApiController{
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
    public async Task<float> MoneyRaisedFromSales(string medicineName = null){
       return await _UnitOfWork.CustomQueries.MoneyRaisedFromSales(medicineName);
+   }
+   //* fin de la consulta
+
+   //*16. Ganancia total por proveedor en 2023 (asumiendo un campo precioCompra en Compras).
+   [HttpGet("ProfitsPerSupplier/")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<float> ProfitsPerSupplier(string medicineName = null){
+      return await _UnitOfWork.CustomQueries.ProfitsPerSupplier(medicineName);
    }
    //* fin de la consulta
 

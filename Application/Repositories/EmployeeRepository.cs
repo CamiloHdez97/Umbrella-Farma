@@ -28,7 +28,7 @@ public sealed class EmployeeRepository : GenericRepositoryIntId<Employee>, IEmpl
             .ToListAsync();
     }
 
-        public async Task<IEnumerable<object>> GetEmployeSale(int year){
+    public async Task<IEnumerable<object>> GetEmployeSale(int year){
 
         var listPerson = _context.Set<Person>();
         var listEmployee = _context.Set<Employee>();
@@ -43,18 +43,13 @@ public sealed class EmployeeRepository : GenericRepositoryIntId<Employee>, IEmpl
                                 CodEmpleado = employee.Id,
                                 Empleado = person.Name,
                                 year
-
                                 } into g
 
             select new {
-
                 Empleado = g.Key,
                 Sales = g.Count(),
-
             }
-
         );
-
         return await query.ToListAsync();
 
     }

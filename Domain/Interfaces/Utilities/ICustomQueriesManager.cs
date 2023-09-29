@@ -12,7 +12,9 @@ public interface ICustomQueriesManager{
     Task<IEnumerable<object>> TotalMedicineSold(TotalMedicineSoldModel data = null);        
     Task<IEnumerable<object>> EmployeesWhoHaveMadeSales(EmployeesWhoHaveMadeSalesModel data = null); 
     Task<IEnumerable<object>> SuppliersWhoHaveSuppliedMedications(SuppliersWhoHaveSuppliedMedicationsModel data = null);
-    Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications(ProvidersWhoHaveProvidedDifferentMedicationsModel data = null);
+    Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null);
+
+    Task<IEnumerable<object>> EmployeesWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null);
     
     Task<IEnumerable<object>> MedicinesByPriceAndStock(MedicinesByPriceAndStockModel data = null);
     Task<IEnumerable<object>> PatientsWhoHaveAcquiredParacetamol(string Patients = null);      
