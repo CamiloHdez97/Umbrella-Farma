@@ -4,21 +4,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
+    //*29. Proveedores de los medicamentos con menos de 50 unidades en stock.
+    //*38. Medicamentos con un precio mayor a 50 y un stock menor a 100.
     public async Task<IEnumerable<object>> MedicinesByPriceAndStock(MedicinesByPriceAndStockModel data = null){
-        var medicines = await (from detail in _Context.Set<ShoppingDetail>()
-            join medicine in _Context.Set<Medicine>() on detail.MedicineId equals medicine.Id
-            join state in _Context.Set<State>() on medicine.StateId equals state.Id
-            join inventory in _Context.Set<Inventory>() on medicine.InventoryId equals inventory.Id
-            join medicineInfo in _Context.Set<MedicineInfo>() on inventory.MedicineInfo.Id equals medicineInfo.Id
-            join shopping in _Context.Set<Shopping>() on detail.ShoppingId equals shopping.Id
-            join supplier in _Context.Set<Supplier>() on shopping.SupplierId equals supplier.Id
-            join person in _Context.Set<Person>() on supplier.PersonId equals person.Id
-            where state.Id == 1 
-            select new {
-                Supplier = person.Name,
-                medicineInfo.Name,
-                medicineInfo.Price                
-            }).ToListAsync();
+        var medicines = await (
+            from detail in _Context.Set<ShoppingDetail>()
+                join medicine in _Context.Set<Medicine>() on detail.MedicineId equals medicine.Id
+                join state in _Context.Set<State>() on medicine.StateId equals state.Id
+                join inventory in _Context.Set<Inventory>() on medicine.InventoryId equals inventory.Id
+                join medicineInfo in _Context.Set<MedicineInfo>() on inventory.MedicineInfo.Id equals medicineInfo.Id
+                join shopping in _Context.Set<Shopping>() on detail.ShoppingId equals shopping.Id
+                join supplier in _Context.Set<Supplier>() on shopping.SupplierId equals supplier.Id
+                join person in _Context.Set<Person>() on supplier.PersonId equals person.Id
+                where state.Id == 1 
+                select new {
+                    Supplier = person.Name,
+                    medicineInfo.Name,
+                    medicineInfo.Price                
+                }
+            ).ToListAsync();
         
         var res = from medicine in medicines
             group medicine by medicine.Name into medicineGroups

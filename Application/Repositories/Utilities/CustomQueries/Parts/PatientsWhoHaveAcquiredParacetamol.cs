@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
+    //*12 Pacientes que han comprado Paracetamol.
     public async Task<IEnumerable<object>> PatientsWhoHaveAcquiredParacetamol(string Patients = null){
         var medicines =  await (from detail in _Context.Set<SaleDetail>()
             join person in _Context.Set<Person>() on detail.Sale.PersonId equals person.Id

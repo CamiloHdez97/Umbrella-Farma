@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
-    
+    //*9 Medicamentos que no han sido vendidos
+    //*34 Medicamentos que no han sido vendidos en 2023.
+    //*21 Medicamentos que no han sido vendidos nunca.  
     public async Task<IEnumerable<object>> MedicationsThatHaveNotBeenSold(int? year){
         year ??= DateTime.Now.Year;
         var medicines =  await (from medicine in _Context.Set<Medicine>()

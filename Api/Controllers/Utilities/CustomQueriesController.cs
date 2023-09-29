@@ -32,6 +32,7 @@ public class CustomQueriesController:BaseApiController{
    }
    //*Fin de la consulta 1
 
+   //*4. Obtener recetas médicas emitidas después del 1 de enero de 2023.
    //Obtener Fecha Expiración por año
    [HttpGet("ExpireDate/{year}")]
    //[Authorize]
@@ -41,7 +42,9 @@ public class CustomQueriesController:BaseApiController{
    public async Task<IEnumerable<object>> MedicineExpireBeforeYear(int year){
       return await _UnitOfWork.CustomQueries.MedicineExpireBeforeYear(year);
    }
+   //*Fin de la consulta 
 
+   //*19. Obtener todos los medicamentos que expiren en 2024.
    [HttpGet("ExpireInDate/{year}")]
    //[Authorize]
    [MapToApiVersion("1.0")]
@@ -50,6 +53,7 @@ public class CustomQueriesController:BaseApiController{
    public async Task<IEnumerable<object>> MedicineExpireInYear(int year){
       return await _UnitOfWork.CustomQueries.MedicineExpireInYear(year);
    }
+   //*Fin de la consulta 
 
    //*3 Medicamentos comprados al ‘Proveedor A’
    //*11 Número de medicamentos por proveedor.
@@ -85,6 +89,7 @@ public class CustomQueriesController:BaseApiController{
    public async Task<IEnumerable<object>> EmployeesWhoHaveProvidedDifferentMedications([FromBody] WhoHaveProvidedDifferentMedicationsModel data = null){
       return await _UnitOfWork.CustomQueries.EmployeesWhoHaveProvidedDifferentMedications(data);
    }
+   //*Fin de la consulta 
 
    //*35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.
    [HttpGet("ProvidersWhoHaveProvidedDifferentMedications")]
@@ -178,6 +183,7 @@ public class CustomQueriesController:BaseApiController{
    public async Task<IEnumerable<object>> MedicationsThatHaveNotBeenSold(int? year = null){
       return await _UnitOfWork.CustomQueries.MedicationsThatHaveNotBeenSold(year);
    }
+   //*Fin de la consulta 
    
 
 

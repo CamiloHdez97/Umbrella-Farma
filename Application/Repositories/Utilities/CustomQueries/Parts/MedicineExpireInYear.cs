@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
+    //*19. Obtener todos los medicamentos que expiren en 2024.
     public async Task<IEnumerable<object>> MedicineExpireInYear(int year){
         return await (
             from medicineInfo in _Context.Set<MedicineInfo>()

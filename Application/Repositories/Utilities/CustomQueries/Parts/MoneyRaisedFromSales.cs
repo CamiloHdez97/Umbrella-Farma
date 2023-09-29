@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
+    //*8 Cantidad total de dinero recaudado por las ventas de medicamentos.
     public async Task<float> MoneyRaisedFromSales(string medicineName = null){
 
         var medicines =  await (from detail in _Context.Set<SaleDetail>()

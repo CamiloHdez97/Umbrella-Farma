@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
-     
+    //*4. Obtener recetas médicas emitidas después del 1 de enero de 2023.
      public async Task<IEnumerable<object>> MedicineExpireBeforeYear(int year){
         return await (
             from medicineInfo in _Context.Set<MedicineInfo>()

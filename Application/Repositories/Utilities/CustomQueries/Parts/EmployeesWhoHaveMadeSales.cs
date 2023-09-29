@@ -4,6 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
+    /* 
+    *20. Empleados que hayan hecho más de 5 ventas en total.
+    *23. Empleados que no han realizado ninguna venta en 2023.
+    *27. Empleados con menos de 5 ventas en 2023.
+    *37. Empleados que no realizaron ventas en abril de 2023. */
      public async Task<IEnumerable<object>> EmployeesWhoHaveMadeSales(EmployeesWhoHaveMadeSalesModel data = null){
         var medicines =  await (from detail in _Context.Set<SaleDetail>()
             join sale in _Context.Set<Sale>() on detail.SaleId equals sale.Id

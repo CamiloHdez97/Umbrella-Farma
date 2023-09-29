@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
+    //*3 Medicamentos comprados al ‘Proveedor A’
+    //*11 Número de medicamentos por proveedor.
+    //*13 Proveedores que no han vendido medicamentos en el último año.
     public async Task<IEnumerable<object>> PurchasedBySupplier (MedicineInfoSupplierModel data ){
         var medicines =  await(from detail in _Context.Set<ShoppingDetail>()
             join supplier in _Context.Set<Supplier>() on detail.Shopping.SupplierId equals supplier.Id
