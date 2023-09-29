@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
 namespace ApiIncidencias.Controllers;
+[ApiVersion("1.1")]
 [ApiVersion("1.0")]
 public class StateController : BaseApiController{
     private readonly IUnitOfWork _UnitOfWork;
