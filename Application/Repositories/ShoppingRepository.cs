@@ -54,6 +54,5 @@ public sealed class ShoppingRepository : GenericRepositoryIntId<Shopping>, IShop
             var uniqueSupplier = query.GroupBy(item => new {item.id, item.Responsable}).Select(g => g.First());
 
             return await uniqueSupplier.ToListAsync();
-
     }
 }

@@ -83,9 +83,7 @@ public sealed class SaleRepository : GenericRepositoryIntId<Sale>, ISaleReposito
             return query;
         }
 
-    
-
-        public async Task<object> GetSaleParacetamol(string medicineInput, int year)
+        public async Task<object> GetSaleMedicineYear(string medicineInput, int year)
         {
             string capitalizedMedicineInput = char.ToUpper(medicineInput[0]) + medicineInput.Substring(1);
             var query = (
@@ -107,5 +105,30 @@ public sealed class SaleRepository : GenericRepositoryIntId<Sale>, ISaleReposito
 
             return await query;
         }
+
+        public async Task<IEnumerable<object>> PersonNoPurchasedYear(int year)
+        {
+            var listSales = _Context.Set<Sale>();
+
+            var query = (
+                            from person in _Context.Set<Person>()
+                            join sale in listSales on person.Id equals sale.PersonId
+                            join saleDetail in _Context.Set<SaleDetail>() on sale.Id equals saleDetail.SaleId
+                            join medicine in _Context.Set<Medicine>() on saleDetail.MedicineId equals medicine.Id
+                            join inventory in _Context.Set<Inventory>() on medicine.Id equals inventory.MedicineInfoId
+                            join medicineInfo in _Context.Set<MedicineInfo>() on inventory.MedicineInfoId equals medicineInfo.Id
+                            where !listSales.Any(s => s.PersonId == person.Id && s.SaleDate.Year == year)
+                                                    select new
+                                                    {
+                                                        PersonId = person.Id,
+                                                        person.Name
+                                                        
+                                                    }).ToListAsync();
+
+            return await query;
+        }
+
+        
+
 
 }
