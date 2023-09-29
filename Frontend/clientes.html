@@ -9,6 +9,7 @@
 
     <title> Clientes </title>
 
+    <script src="js/clientes.js" defer></script>
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -161,9 +162,47 @@
                         </div>
                     </form>
                 </div>
+
+                <div class="container mt-4" id="resultContainer" style="display: none;">
+                    <table class="table">
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultTableBody">
+                        <!-- Aquí se agregarán las filas de datos después de la búsqueda -->
+                    </tbody>
+                    </table>
+                </div>
                 
-              </div>
-              
+                <!-- Query -->
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
+                $(document).ready(function () {
+                    $("#searchButton").click(function () {
+                    var searchTerm = $("#searchInput").val();
+                    // Llamada al backend para buscar el historial del cliente
+                    // Luego se actualiza las tablas con los resultados
+
+                    // Agregar datos de muestra a la tabla:
+                    $("#resultTableBody").html(`
+                        <tr>
+                        <td>1</td>
+                        <td>Cliente de ejemplo</td>
+                        </tr>
+                    `);
+
+                    // Mostrar la tabla de resultados
+                    $("#resultContainer").show();
+                    });
+                });
+                </script>
+
+                
+                </div>
+            
             </div>
             <!-- End of Main Content -->
 
