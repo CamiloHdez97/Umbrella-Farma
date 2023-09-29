@@ -158,12 +158,12 @@ public class CustomQueriesController:BaseApiController{
    //* fin de la consulta
 
    //*16. Ganancia total por proveedor en 2023 (asumiendo un campo precioCompra en Compras).
-   [HttpGet("ProfitsPerSupplier/")]
+   [HttpGet("ProfitsPerSupplier")]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-   public async Task<float> ProfitsPerSupplier(string medicineName = null){
-      return await _UnitOfWork.CustomQueries.ProfitsPerSupplier(medicineName);
+   public async Task<IEnumerable<object>> ProfitsPerSupplier(ProfitsPerSupplierModel data = null){
+      return await _UnitOfWork.CustomQueries.ProfitsPerSupplier(data);
    }
    //* fin de la consulta
 

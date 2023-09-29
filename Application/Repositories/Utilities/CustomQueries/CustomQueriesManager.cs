@@ -26,5 +26,5 @@ public partial class CustomQueriesManager: ICustomQueriesManager{
                 Medicine = grouped.First(),
                 Total = grouped.Count()
             };
-    }   
+    }    
 }
