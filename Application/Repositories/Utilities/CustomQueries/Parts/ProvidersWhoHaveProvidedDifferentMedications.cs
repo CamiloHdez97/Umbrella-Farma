@@ -4,7 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Repositories;
 public partial class CustomQueriesManager{
+    //? pendiente para refactorizar con el metodo EmployeesWhoHaveProvidedDifferentMedications 
     public async Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null){
+        if(data == null){
+            data = new(){
+                MinimumNumberOfDifferentMedications = 0
+            };
+        }
         var medicines =  await (from detail in _Context.Set<ShoppingDetail>()
             join shopping in _Context.Set<Shopping>() on detail.ShoppingId equals shopping.Id
             join supplier in _Context.Set<Supplier>() on shopping.SupplierId equals supplier.Id
