@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Domain.Models;
 using Microsoft.AspNetCore.Builder.Extensions;
 
-namespace ApiIncidencias.Controllers;
+namespace API.Controllers;
 [ApiVersion("1.0")]
 [ApiVersion("1.1")]
 public class MedicineInfoController : BaseApiController{

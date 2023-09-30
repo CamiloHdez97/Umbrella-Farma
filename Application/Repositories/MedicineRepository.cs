@@ -72,4 +72,29 @@ public sealed class MedicineRepository : GenericRepositoryIntId<Medicine>, IMedi
                 return await Task.FromResult(new[] { query });     
         }
 
+public Task<IEnumerable<object>> ListMedicines(){
+            
+            var listMedicines = _context.Medicines.ToList();
+            var listInventory = _context.Inventories.ToList();
+            var listMedicineInfo = _context.MedicineInfos.ToList();
+
+            var query = (
+
+                from medicineInfo in listMedicineInfo
+                join inventory in listInventory on medicineInfo.Id equals inventory.MedicineInfoId
+                join medicine in listMedicines on inventory.Id equals medicine.InventoryId
+
+                //group provider by person into g
+                select new {
+
+                        id = medicine.Id,
+                        name = medicineInfo.Name,    
+                        price = medicineInfo.Price,
+                        medicineInfo = medicineInfo.Description
+                        
+                        }
+                ).ToList();
+                
+                return Task.FromResult<IEnumerable<object>>(query);     
+        }
 }

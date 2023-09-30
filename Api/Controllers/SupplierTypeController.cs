@@ -8,7 +8,7 @@ using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
-namespace ApiIncidencias.Controllers;
+namespace API.Controllers;
 [ApiVersion("1.1")]
 [ApiVersion("1.0")]
 public class SupplierTypeController : BaseApiController{

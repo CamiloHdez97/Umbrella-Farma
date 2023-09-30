@@ -8,7 +8,7 @@ using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
-namespace ApiIncidencias.Controllers;
+namespace API.Controllers;
 [ApiVersion("1.0")]
 [ApiVersion("1.1")]
 public class MedicineController : BaseApiController{
@@ -25,9 +25,11 @@ public class MedicineController : BaseApiController{
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IEnumerable<MedicineDto>> Get(){
-       var records = await _UnitOfWork.Medicines.GetAllAsync();
-       return _Mapper.Map<List<MedicineDto>>(records);
+    public async Task<IEnumerable<object>>  Get(){
+        
+        return await _UnitOfWork.Medicines.ListMedicines();
+       //var records = await _UnitOfWork.Medicines.ListMedicines();
+       //return _Mapper.Map<List<MedicineDto>>(records);
     }
 
     [HttpGet("ProviderContact")]
