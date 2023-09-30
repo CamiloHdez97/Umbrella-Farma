@@ -20,11 +20,12 @@ public abstract class GenericRepository<T> where T : class{
 
     public async virtual Task<T> FindFirst(Expression<Func<T, bool>> expression)
     {
-        if (expression is not null)
-        {
-            return await _Entities.Where(expression).FirstAsync();
+        if (expression != null){
+
+            var res = await _Entities.Where(expression).ToListAsync();
+            return res.First();
         }
-        return await _Entities.FindAsync();
+        return await _Entities.FirstAsync();
     }
 
 

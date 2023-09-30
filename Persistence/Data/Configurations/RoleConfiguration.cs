@@ -25,6 +25,14 @@ public class RoleConfiguration : IEntityTypeConfiguration<Role>{
             new{
                 Id =1,
                 Description = "Administrator"
+            },
+            new{
+                Id =2,
+                Description = "Employee"
+            },
+            new{
+                Id =3,
+                Description = "Manager"
             }
         );
     }

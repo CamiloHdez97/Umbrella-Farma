@@ -31,15 +31,31 @@ public class AuthController:BaseApiController{
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> RegisterAsync(UserSignup model){        
         var user = _TokenManager.CreateUser(model);
-
-        var existingUser = await _UnitOfWork.Users.GetUserByName(model.Username!);
-        if (existingUser != null){
+        User existingUser = null;
+        Person existingPerson = null;
+        try{
+            existingUser = await _UnitOfWork.Users.GetUserByName(model.Username!);
+            Console.WriteLine("\n\n\n\n"+ existingPerson.Name + "\n\n\n\n");
+        }catch (System.Exception ex){
+            _Logger.LogError(ex.Message);
+        }
+         try{
+            existingPerson = await _UnitOfWork.Person.FindFirst(x => x.DocumentNumber.Trim() == model.DocumentNumber.Trim());
+        }catch (System.Exception ex){
+            _Logger.LogError(ex.Message);
+        }
+        if (existingUser != null ){
             return BadRequest($"El usuario {model.Username} ya se encuentra registrado.");
         }
+        if (existingPerson == null ){
+            return BadRequest($"La persona identificada con numero de documento {model.DocumentNumber} no se encuentra.");
+        }
         
-        var defaultRol =  (await _UnitOfWork.Roles.GetRolByRoleName( UserRoles.Employee ))!;        
         try{
+            var defaultRol =  await _UnitOfWork.Roles.GetRolByRoleName( UserRoles.Employee );        
             user.Roles.Add(defaultRol);
+            user.Person = existingPerson;
+            user.PersonId =  existingPerson.Id;        
             _UnitOfWork.Users.Add(user);
             await _UnitOfWork.SaveChanges();
             return Ok($"El usuario  {model.Username} ha sido registrado exitosamente");
@@ -90,7 +106,7 @@ public class AuthController:BaseApiController{
     }
 
     [HttpPost("changeRol")]
-    [Authorize(Roles = "Administator")]
+    //[Authorize(Roles = "Administator")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> ChangeRolAsync(AddRol model){
